@@ -1,0 +1,148 @@
+---
+layout: mvp
+permalink: "/verticals/home-services/handyman"
+subvertical: Handyman
+---
+
+<h1>Content Depot</h1>
+<p class="subhead">A list of upcoming holidays, topics, and prompts to help inspire your social posts.</p>
+
+<ul class="top_tabs">
+  <li><a class="" href="/">Calendar</a></li>
+  <li><a class="" href="/posts">Post Gallery</a></li>
+  <li><a class="top_tabs--active" href="/verticals/professional-services">Verticals</a></li>
+</ul>
+
+<div class="verticals-wrapper clearfix">
+  <div class="verticals-sidebar">
+
+  <ul>
+    <li><a class="{% if page.permalink == '/verticals/professional-services' %}active{% endif %}" href="/verticals/professional-services">Professional Services</a></li>
+    <li><a class="{% if page.permalink == '/verticals/home-services' %}active{% endif %}" href="/verticals/home-services">Home Services</a>
+      <ul>
+        <li><a class="{% if page.permalink == '/verticals/home-services/carpentry' %}active{% endif %}" href="/verticals/home-services/carpentry">Carpentry</a></li>
+        <li><a class="{% if page.permalink == '/verticals/home-services/cleaning-services' %}active{% endif %}" href="/verticals/home-services/cleaning-services">Cleaning Services</a></li>
+        <li><a class="{% if page.permalink == '/verticals/home-services/construction-engineering' %}active{% endif %}" href="/verticals/home-services/construction-engineering">Construction Engineering</a></li>
+        <li><a class="{% if page.permalink == '/verticals/home-services/contractors' %}active{% endif %}" href="/verticals/home-services/contractors">Contractors</a></li>
+        <li><a class="{% if page.permalink == '/verticals/home-services/electrician' %}active{% endif %}" href="/verticals/home-services/electrician">Electrician</a></li>
+        <li><a class="{% if page.permalink == '/verticals/home-services/gardening-landscaping' %}active{% endif %}" href="/verticals/home-services/gardening-landscaping">Gardening &amp; Landscaping</a></li>
+        <li><a class="{% if page.permalink == '/verticals/home-services/handyman' %}active{% endif %}" href="/verticals/home-services/handyman">Handyman</a></li>
+        <li><a class="{% if page.permalink == '/verticals/home-services/hvac' %}active{% endif %}" href="/verticals/home-services/hvac">HVAC</a></li>
+        <li><a class="{% if page.permalink == '/verticals/home-services/moving' %}active{% endif %}" href="/verticals/home-services/moving">Moving</a></li>
+        <li><a class="{% if page.permalink == '/verticals/home-services/pest-control' %}active{% endif %}" href="/verticals/home-services/pest-control">Pest Control</a></li>
+        <li><a class="{% if page.permalink == '/verticals/home-services/plumbing' %}active{% endif %}" href="/verticals/home-services/plumbing">Plumbing</a></li>
+        <li><a class="{% if page.permalink == '/verticals/home-services/tv-internet' %}active{% endif %}" href="/verticals/home-services/tv-internet">TV &amp; Internet</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+  <div class="verticals-main-content">
+
+      <div class="primary tile-wrapper">
+
+        <div class="tile-minivan tile-minivan--with-carousel">
+          <h3 class="tile-minivan--heading">Trending Topics</h3>
+          <!-- <p class="tile--description">One line of text giving text as to what these are.</p> -->
+          <div class="tile--carousel-controls">
+            <span class="tile--carousel-prev"></span><span class="tile--carousel-next"></span>
+          </div>
+          <div class="tile--carousel-wrapper">
+            <!-- Start: topic loop -->
+            {% assign noMatches = true %}
+            {% for topic in site.data.topics %}
+              {% assign tsubvs = topic | split: "," %}
+              {% for subv in tsubvs %}
+                {% if subv contains page.subvertical %}
+                  {% assign noMatches = false %}
+                  <div class="tile-carousel-item tile-carousel-item--topic">
+                    <div class="tile-carousel-item--topic--heading">{{topic.name}}</div>
+                    <div class="tile-carousel-item--topic--description">{{topic.description}} {% if topic.url %}<a href="{{topic.url}}">Learn more &raquo;</a>{% endif %}</div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+
+            {% if noMatches == true %}
+              <p style="font-size: 14px; margin-left: 21px">No matches found for "{{page.subvertical}}"</p>
+            {% endif %}
+            <!-- End: topic loop -->
+          </div>
+        </div>
+
+
+        <div class="tile-minivan tile-minivan--with-carousel">
+          <h3 class="tile-minivan--heading">Hashtags</h3>
+          <!-- <p class="tile--description">One line of text giving text as to what these are.</p> -->
+          <div class="tile--carousel-controls">
+            <span class="tile--carousel-prev"></span><span class="tile--carousel-next"></span>
+          </div>
+          <div class="tile--carousel-wrapper">
+
+
+            <!-- Start: hashtag loop -->
+            {% assign noMatches = true %}
+            {% for hashtag in site.data.hashtags %}
+              {% assign hsubvs = hashtag | split: "," %}
+              {% for subv in hsubvs %}
+                {% if subv contains page.subvertical %}
+                  {% assign noMatches = false %}
+
+                  <div class="tile-carousel-item tile-carousel-item--topic">
+                    <div class="tile-carousel-item--topic--heading">#{{hashtag.name}} <a data-hashtag="#{{hashtag.name}}" class="copy-button copy-hashtag tile--hashtag-copy" href="#">copy</a></div>
+                    <div class="tile-carousel-item--topic--description">{{hashtag.description}}</div>
+                  </div>
+
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+
+            {% if noMatches == true %}
+              <p style="font-size: 14px; margin-left: 21px">No matches found for "{{page.subvertical}}"</p>
+            {% endif %}
+            <!-- End: hashtag loop -->
+
+
+          </div>
+        </div>
+
+
+        <div class="tile-minivan">
+          <h3 class="tile-minivan--heading">Common Words & Phrases</h3>
+
+            {% assign noMatches = true %}
+            {% for phrase in site.data.phrases %}
+              {% assign psubvs = phrase | split: "," %}
+              {% for subv in psubvs %}
+                {% if subv contains page.subvertical %}
+                  {% assign noMatches = false %}
+
+                  <div class="tile">
+                    <div class="tile--phrase tile--body">
+                      <p class="tile--details"><a href="">Details</a></p>
+                      <h3 class="tile--title">{{phrase.name}}</h3>
+                      <div class="tile--expandedContent">
+                        <p class="tile--description">{{phrase.description}}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+
+            {% if noMatches == true %}
+              <p style="font-size: 14px;">No matches found for "{{page.subvertical}}"</p>
+            {% endif %}
+
+        </div>
+      </div>
+
+  </div>
+</div>
+
+
+
+<!-- Javascript -->
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/shootingstar.js"></script>
