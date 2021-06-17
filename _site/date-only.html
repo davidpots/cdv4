@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary Meta Tags -->
+  <title>Social Media Planner</title>
+  <meta name="title" content="Social Media Planner">
+  <meta name="description" content="A curated collection of ideas for your next social media post.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://localhost:4000">
+  <meta property="og:title" content="Social Media Planner">
+  <meta property="og:description" content="A curated collection of ideas for your next social media post.">
+  <meta property="og:image" content="http://localhost:4000/assets/images/site-preview.png">
+
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+
+
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet"> -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/mvp.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/assets/js/interaction.js"></script>
+
+  <script>
+    $(document).ready(function(){
+
+      $('.tile--hashtag-copy').click(function(){
+        var hashtag = $(this).data('hashtag');
+        copyToClipboard(hashtag);
+        var chloe = this;
+        $(chloe).addClass('copy-copied').text("copied!");
+        setTimeout(function(){
+          $(chloe).removeClass('copy-copied').text("copy");
+        }, 2000);
+
+        return false;
+      });
+
+      function copyToClipboard(element) {
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val(element).select();
+        document.execCommand("copy");
+        $temp.remove();
+      }
+
+      $('.tile--details').click(function(){
+        $(this).toggleClass('tile--details--expanded').parent().find('.tile--expandedContent').toggle();
+        prepArticles();
+        $(window).scroll();
+        return false;
+      });
+
+      $('.calendar-next').click(function(){
+        if ( $(this).parent().attr('data-current-month') == "May" ) {
+          $(this).parent().attr('data-current-month',"June");
+          $('.calendar-image').attr('src','/assets/images/cal-june.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "June" ) {
+          $(this).parent().attr('data-current-month',"July");
+          $('.calendar-image').attr('src','/assets/images/cal-july.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "July" ) {
+          $(this).parent().attr('data-current-month',"August");
+          $('.calendar-image').attr('src','/assets/images/cal-aug.png');
+          return false;
+        }
+      });
+
+      $('.calendar-prev').click(function(){
+        if ( $(this).parent().attr('data-current-month') == "June" ) {
+          $(this).parent().attr('data-current-month',"May");
+          $('.calendar-image').attr('src','/assets/images/cal-may.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "July" ) {
+          $(this).parent().attr('data-current-month',"June");
+          $('.calendar-image').attr('src','/assets/images/cal-june.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "August" ) {
+          $(this).parent().attr('data-current-month',"July");
+          $('.calendar-image').attr('src','/assets/images/cal-july.png');
+          return false;
+        }
+      });
+
+
+
+
+      // Normal carousel
+      $('.tile--carousel-next').click(function(){
+        scrollAmount = $(this).parent().next('.tile--carousel-wrapper').scrollLeft();
+        if ( $(this).closest('.tile--with-carousel').hasClass('.tile--with-carousel--narrow') ) {
+          var distance = 160;
+        } else {
+          var distance = 490;
+        }
+        $(this).parent().next('.tile--carousel-wrapper').scrollLeft( scrollAmount+distance );
+        return false;
+      });
+      $('.tile--carousel-prev').click(function(){
+        scrollAmount = $(this).parent().next('.tile--carousel-wrapper').scrollLeft();
+        if ( $(this).closest('.tile--with-carousel').hasClass('.tile--with-carousel--narrow') ) {
+          var distance = 210;
+        } else {
+          var distance = 490;
+        }
+        $(this).parent().next('.tile--carousel-wrapper').scrollLeft( scrollAmount-distance );
+        return false;
+      });
+
+
+    });
+  </script>
+
+</head>
+<body>
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="">
+  <div class="ss-container">
+    
+
+
+
+
+
+
+
+
+<h1>Admin View</h1>
+<p class="subhead"><a href="https://docs.google.com/spreadsheets/d/1F-zfXlRT6-4Xa2T-cckYQwzTp7SExaSBwfbX4YNBSZ0/edit#gid=2139753352">Google Sheet</a> | <a href="/">Design for user test</a> | <a href="/date-only">Date-only version</a> | <a href="/eow">End-of-week version</a></p>
+
+<div class="feed-wrapper clearfix">
+  <div class="feed-controls">
+    <a class="new_post_button">+ Create Social Post</a>
+    <div class="tile tile-calendar" data-current-month="May">
+      <span class="calendar-next"></span>
+      <span class="calendar-prev"></span>
+      <span class="calendar-today"></span>
+      <img class="calendar-image" width="100%" src="/assets/images/cal-may.png" />
+    </div>
+
+    <!-- <h4 class="tile-scheduled-posts--heading">My Scheduled Posts:</h4>
+    <div class="tile tile-scheduled-posts" style="height: 200px;"></div> -->
+  </div>
+
+
+
+  <div class="feed-main">
+
+    <article>
+      <div class="secondary date_range">
+        <div class="date-ribbon">
+          <h3>This Week</h3>
+          <h4>May 16–22</h4>
+        </div>
+      </div>
+      <div class="primary tile-wrapper">
+        <div class="tile-minivan">
+          <h3 class="tile-minivan--heading">Dates of Interest</h3>
+          
+        </div>
+      </div>
+    </article>
+
+    <article>
+      <div class="secondary date_range">
+        <div class="date-ribbon">
+          <h3>Next Week</h3>
+          <h4>May 23–29</h4>
+        </div>
+      </div>
+      <div class="primary tile-wrapper">
+        <div class="tile-minivan">
+          <h3 class="tile-minivan--heading">Dates of Interest</h3>
+        
+        </div>
+      </div>
+    </article>
+
+    <article>
+      <div class="secondary date_range">
+        <div class="date-ribbon">
+          <h4>Week of</h4>
+          <h3>May 30</h3>
+        </div>
+      </div>
+      <div class="primary tile-wrapper">
+        <div class="tile-minivan">
+          <h3 class="tile-minivan--heading">Dates of Interest</h3>
+        
+        </div>
+      </div>
+    </article>
+
+    <article>
+      <div class="secondary date_range">
+        <div class="date-ribbon">
+          <h4>Week of</h4>
+          <h3>June 6</h3>
+        </div>
+      </div>
+      <div class="primary tile-wrapper">
+        <div class="tile-minivan">
+          <h3 class="tile-minivan--heading">Dates of Interest</h3>
+        
+        </div>
+      </div>
+    </article>
+
+    <article>
+      <div class="secondary date_range">
+        <div class="date-ribbon">
+          <h4>Week of</h4>
+          <h3>June 13</h3>
+        </div>
+      </div>
+      <div class="primary tile-wrapper">
+        <div class="tile-minivan">
+          <h3 class="tile-minivan--heading">Dates of Interest</h3>
+        
+        </div>
+      </div>
+    </article>
+
+  </div>
+</div>
+
+<!-- Javascript -->
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/shootingstar.js"></script>
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+  </body>
+
+</html>

@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary Meta Tags -->
+  <title>Social Media Planner</title>
+  <meta name="title" content="Social Media Planner">
+  <meta name="description" content="A curated collection of ideas for your next social media post.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://localhost:4000">
+  <meta property="og:title" content="Social Media Planner">
+  <meta property="og:description" content="A curated collection of ideas for your next social media post.">
+  <meta property="og:image" content="http://localhost:4000/assets/images/site-preview.png">
+
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+
+
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet"> -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/mvp.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/assets/js/interaction.js"></script>
+
+  <script>
+    $(document).ready(function(){
+
+      $('.tile--hashtag-copy').click(function(){
+        var hashtag = $(this).data('hashtag');
+        copyToClipboard(hashtag);
+        var chloe = this;
+        $(chloe).addClass('copy-copied').text("copied!");
+        setTimeout(function(){
+          $(chloe).removeClass('copy-copied').text("copy");
+        }, 2000);
+
+        return false;
+      });
+
+      function copyToClipboard(element) {
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val(element).select();
+        document.execCommand("copy");
+        $temp.remove();
+      }
+
+      $('.tile--details').click(function(){
+        $(this).toggleClass('tile--details--expanded').parent().find('.tile--expandedContent').toggle();
+        prepArticles();
+        $(window).scroll();
+        return false;
+      });
+
+      $('.calendar-next').click(function(){
+        if ( $(this).parent().attr('data-current-month') == "May" ) {
+          $(this).parent().attr('data-current-month',"June");
+          $('.calendar-image').attr('src','/assets/images/cal-june.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "June" ) {
+          $(this).parent().attr('data-current-month',"July");
+          $('.calendar-image').attr('src','/assets/images/cal-july.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "July" ) {
+          $(this).parent().attr('data-current-month',"August");
+          $('.calendar-image').attr('src','/assets/images/cal-aug.png');
+          return false;
+        }
+      });
+
+      $('.calendar-prev').click(function(){
+        if ( $(this).parent().attr('data-current-month') == "June" ) {
+          $(this).parent().attr('data-current-month',"May");
+          $('.calendar-image').attr('src','/assets/images/cal-may.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "July" ) {
+          $(this).parent().attr('data-current-month',"June");
+          $('.calendar-image').attr('src','/assets/images/cal-june.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "August" ) {
+          $(this).parent().attr('data-current-month',"July");
+          $('.calendar-image').attr('src','/assets/images/cal-july.png');
+          return false;
+        }
+      });
+
+
+
+
+      // Normal carousel
+      $('.tile--carousel-next').click(function(){
+        scrollAmount = $(this).parent().next('.tile--carousel-wrapper').scrollLeft();
+        if ( $(this).closest('.tile--with-carousel').hasClass('.tile--with-carousel--narrow') ) {
+          var distance = 160;
+        } else {
+          var distance = 490;
+        }
+        $(this).parent().next('.tile--carousel-wrapper').scrollLeft( scrollAmount+distance );
+        return false;
+      });
+      $('.tile--carousel-prev').click(function(){
+        scrollAmount = $(this).parent().next('.tile--carousel-wrapper').scrollLeft();
+        if ( $(this).closest('.tile--with-carousel').hasClass('.tile--with-carousel--narrow') ) {
+          var distance = 210;
+        } else {
+          var distance = 490;
+        }
+        $(this).parent().next('.tile--carousel-wrapper').scrollLeft( scrollAmount-distance );
+        return false;
+      });
+
+
+    });
+  </script>
+
+</head>
+<body>
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="">
+  <div class="ss-container">
+    
+
+
+
+
+<h1>Content Depot</h1>
+<p class="subhead">A list of upcoming holidays, topics, and prompts to help inspire your social posts.</p>
+
+<ul class="top_tabs">
+  <li><a class="top_tabs--active" href="/">Calendar</a></li>
+  <li><a class="" href="/posts">Post Gallery</a></li>
+  <li><a class="" href="/verticals/professional-services">Verticals</a></li>
+</ul>
+
+<div class="feed-wrapper clearfix">
+  <div class="feed-controls">
+    <div class="tile tile-calendar" data-current-month="May">
+      <span class="calendar-next"></span>
+      <span class="calendar-prev"></span>
+      <span class="calendar-today" style="background-image: url(/assets/images/cal-today/cal-may19.png);"></span>
+      <img class="calendar-image" width="100%" src="/assets/images/cal-may.png" />
+    </div>
+    <!-- <h4 class="tile-scheduled-posts--heading">My Scheduled Posts:</h4>
+    <div class="tile tile-scheduled-posts" style="height: 200px;"></div> -->
+  </div>
+
+
+
+  <div class="feed-main">
+
+    <article>
+      <div class="secondary date_range">
+        <div class="date-ribbon">
+          <h3>Next Week</h3>
+          <h4>Jun 20–26</h4>
+        </div>
+      </div>
+      <div class="primary tile-wrapper">
+
+        <div class="tile-minivan tile-minivan--with-carousel">
+          <h3 class="tile-minivan--heading">Trending Topics</h3>
+          <p class="tile--description">One line of text giving text as to what these are.</p>
+          <div class="tile--carousel-controls">
+            <span class="tile--carousel-prev"></span><span class="tile--carousel-next"></span>
+          </div>
+          <div class="tile--carousel-wrapper">
+            <!-- Start: topic loop -->
+            
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Best Dressed</div>
+              <div class="tile-carousel-item--topic--description">Loungewear may still reign supreme, but people are planning for future events. Weddings, vacations, casual get-togethers are top-of-mind for many. How can your customer help those planning for their first events post-quarantine? Think eretail or businesses in the wedding industry. </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Everyday Wellness</div>
+              <div class="tile-carousel-item--topic--description">A shift to natural, shorter movement being incorporated throughout the day rather than spending hours in the gym is on the rise. Activities like biking, cleaning, and gardening set a new exercise model for many. Look to promote movement as accessible activities that can be attainably woven through the week. </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Anyone Can Cook</div>
+              <div class="tile-carousel-item--topic--description">Limited dining options and quarantine in 2020 taught many folks how to take the fate of weeknight dinners into their own hands. In 2021, we're seeing the result of millions of home chefs flexing their skills and wanting to push their kitchen-prowess further. From new cookbooks to viral Tik Tok recipes, we'll see the cooking community come together more and more this year. How can you engage with at-home chefs or those looking to expand their palate.  </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Meal Prep Comeback</div>
+              <div class="tile-carousel-item--topic--description">During quarantine, many loosened up their strict meal prep routines. However, we're seeing more and more folks ease back into meal prep. At the core of meal prep is the sentiment of being prepped and prepared for the week. How can your customers help consumers achieve this? </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Travel Planning</div>
+              <div class="tile-carousel-item--topic--description">70% of consumers are planning vacations this year. That means a larger audience for our consumers to connect with. Weekend trips or staycations are trending this year likely in more rural or secluded destinations. Now's the time to showcase the value our travel customers have to offer. Why choose their services? Why choose to stay with them rather than a brand they've stayed with before? Look to specific services or details about your travel customers that help them stand out. Also don't be afraid to think outside the box when it comes to travel planning (think boarding pets, vehicle storage, packing tips, or guides to local areas). </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Hosting From Home</div>
+              <div class="tile-carousel-item--topic--description">While virtual meetups aren't going anywhere, folks are looking forward to hosting close family and friends in the somewhat near future. Think spruced up social spaces, fresh furniture ideas, and tips to get all that clutter under control. People are planning—and purchasing—for their post-quarantine lives. Consider how your customers can help. Think furniture DIY and inspo, potential first meals they'll serve, and outdoor living spaces. </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Values Matter Most</div>
+              <div class="tile-carousel-item--topic--description">The pandemic has put everyone in touch with what matters. People are more grounded in their values than ever—and they want the world to see it. Does your customer mention any particular values in their welcome call or in their brand kit? Are they passionate about the planet and making eco-conscious decisions? Do they work with the local community in any way to give back?  </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Morning Rituals</div>
+              <div class="tile-carousel-item--topic--description">The time spent at home in the past year has allowed folks to fine-tune their morning routines. With many gaining minutes to hours back in their day from the time not spent commuting, there's been a shift in focus on how to spend the first hours of the day. Breakfast is making a big comeback for many. Morning workouts, mediations, and yoga flows allow folks to start their day with less stress and more focus. Specialty coffee drinks made from an at-home coffee bar have found their place too. Do your health and wellness customers offer online meditations or yoga flows to tune into? Or maybe coffee shops offer a barista class or want to hear about the kinds of drinks folks have been trying to master at home. Think about how your customers can make morning routines that much more enjoyable for consumers. </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">End of the School Year</div>
+              <div class="tile-carousel-item--topic--description">The end of the school year symbolically kicks off the summer season for many families in the US. Timing varies across country. Prep for summer vacations, summer camps, swimming lessons, and outdoor activities kicks off early-mid may. Businesses tend to lean into start of summer specials and promotions to capitalize on the need for new summer clothing, activities, and travel. </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Gardeners Rejoice</div>
+              <div class="tile-carousel-item--topic--description">This horticultural hobby shows no signs of slowing down this year. . Things like herb gardens, home-grown produce, and perfecting lawn care will all be top of mind. Do your customers offer any gardening services, weed/pest control services, or tips for yard maintenance? Maybe they can offer ways to use home-grown veggies in healthy recipes or guidance around the stress relieving properties of gardening. </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Sleep is the New Self-Care</div>
+              <div class="tile-carousel-item--topic--description">From sleep yoga to essential oil blends made for sleep, folks are getting serious about getting some Zzz's. With more emphasis on mental health this year (and the last), sleep is becoming a comodity that cannot be sacrificed. Bed time routines are become a must-have along with anything that can get you a better night sleep. Think: silk sleep masks, noise machines. a rise in CBD products, and essential oils for bedtime. </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Spicing Up the Pantry</div>
+              <div class="tile-carousel-item--topic--description">2021 is shaping up to be a flavorful year. Consumers are looking for quick and easy ways to spice up the meals they've been making at home, and stores are seeing a lot of interest in handcrafted shelf-stable sauces and spice blends. Do your restaurant customers offer any dishes that pack a flavorful punch? Or engage followers by asking if they've cooked with any signature spices in popular menu items. </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Curbside Comfort </div>
+              <div class="tile-carousel-item--topic--description">Even as dining restrictions ease in many parts of the US, restaurant goers have learned to love the ease of curbside and to-go dining. While many will return to dining (especially in the summer months), the push for investing in digital experiences within the restuarant industry is here to stay. If curbside pick-up is offered by any of your customers, be sure to promote that aspect of the business as a CTA in your content. </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Home offices</div>
+              <div class="tile-carousel-item--topic--description">Looks like remote work is a permanent, accessible solution for many! Home offices are going to be a priority for home buyers.  Think of the educational content your customer could offer about home office design trends -- soothing colors, natural decor, access to sunlight/fresh air,  or even smart tech solutions. Engage with followers by asking your audience to share details about their home office spaces. </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Roadtrip Season</div>
+              <div class="tile-carousel-item--topic--description">End of May through June marks the beginning of roadtrip season. Auto businesses lean into vacation specials, oil changes, tire specials, rental vehicles, and more. RV and Camper sales were up a drastic amount in 2020 — while we may not see new purchases as high as last year, we're bound to see camper makeovers and a need to make traveling and working on the road easier for the whole family. #CamperRenovation, #CamperLife, #RoadTrippin </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Fourth of July Planning</div>
+              <div class="tile-carousel-item--topic--description">Fourth of July is a big consumer holiday many businesses begin preparing for weeks in advance. When thinking about how to plan in advance for your customer, consider things like live music tickets, dinner reservations, boat rentals, catering orders, and more seasonal items that may take advance notice.  </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Backyard Projects</div>
+              <div class="tile-carousel-item--topic--description">Maintaining yards and outdoor spaces during the Summer can be daunting. Many look for inspiration on how to keep their spaces fresh and pest free all season long. Springboard ideas to get you started: Dream garden inspo, patio furniture updates, easy pest control, and tool organization. #backyardreno </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Wedding Season</div>
+              <div class="tile-carousel-item--topic--description">June is typically considered peak wedding season. Couples will be finalizing details and arranging the final touches of their big day. Many potential wedding guests are already thinking about what they'll wear and how they'll travel to venues. The industry is seeing many rescheduled wedding due to Covid-19 and leading to some being downsized or changed before the event. A few things to consider this season: The rise in micro weddings (under 50 people), wedding gifts, dress cleaning/tailoring, video venue tours, photography sessions, and catering events/tastings. </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Pride Month</div>
+              <div class="tile-carousel-item--topic--description">Pride Month is celebrated every June in tribute to those involved in the Stonewall Riots and is a month-long celebration of lesbian, gay, bisexual, transgender, queer, intersex, non-binary, and questioning people to promote self-affirmation, dignity, community, and equality rights. Over time, several other queer identities have come to light and been embraced under the wider acronym of the LGBTQIA+ umbrella, and intersectional discussions of Pride that acknowledge queer identities regarding gender, race, disability, and more have been especially encouraged. Pride Month is celebrated in different cities with parades, festivals, and other events. With COVID-19 still being a worldwide concern, it's likely that many parades and events will be altered, cancelled, or held online.  See posting recommendations for guidelines. Only post celebratory Pride Month content if requested or if your customer has a clear focus/identity as a queer business. Since Pride Month can potentially be considered a political statement or stance on a social issue, be cautious with what and how you post. Additionally, we don't want to suggest Pride Month events may be happening at a business if COVID-19 is preventing them from fruition. See link for full guidelines. <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/2186543188/Pride+Month+2021">Learn more &raquo;</a></div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">National Rose Month</div>
+              <div class="tile-carousel-item--topic--description">June is National Rose Month. With over 150 different species throughout North America, roses are in peak bloom in June. They are a hardy plant that can be added to any landscape. Landscaping really kicks it up a notch as gardens come in full bloom. Consider educating followers on the care and keeping of different varieties of roses. #NationalRoseMonth </div>
+            </div>
+            
+            <!-- End: topic loop -->
+          </div>
+        </div>
+
+
+        <div class="tile-minivan tile-minivan--with-carousel">
+          <h3 class="tile-minivan--heading">Hashtags</h3>
+          <p class="tile--description">One line of text giving text as to what these are.</p>
+          <div class="tile--carousel-controls">
+            <span class="tile--carousel-prev"></span><span class="tile--carousel-next"></span>
+          </div>
+          <div class="tile--carousel-wrapper">
+
+
+            <!-- Start: hashtag loop -->
+            
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">#HomeReno <a data-hashtag="#HomeReno" class="copy-button copy-hashtag tile--hashtag-copy" href="#">copy</a></div>
+              <div class="tile-carousel-item--topic--description">Perfect for before/after posts, or tips for home renovation</div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">#InteriorDesign <a data-hashtag="#InteriorDesign" class="copy-button copy-hashtag tile--hashtag-copy" href="#">copy</a></div>
+              <div class="tile-carousel-item--topic--description">Perfect for before/after posts, or tips for home renovation</div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">#HomeGoals <a data-hashtag="#HomeGoals" class="copy-button copy-hashtag tile--hashtag-copy" href="#">copy</a></div>
+              <div class="tile-carousel-item--topic--description">Can be used on posts about trends in the industry</div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">#DecorGoals <a data-hashtag="#DecorGoals" class="copy-button copy-hashtag tile--hashtag-copy" href="#">copy</a></div>
+              <div class="tile-carousel-item--topic--description">Can be used on posts about trends in the industry</div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">#HouseHunting <a data-hashtag="#HouseHunting" class="copy-button copy-hashtag tile--hashtag-copy" href="#">copy</a></div>
+              <div class="tile-carousel-item--topic--description">For posts that center on buying a home</div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">#FirstDayOfSummer <a data-hashtag="#FirstDayOfSummer" class="copy-button copy-hashtag tile--hashtag-copy" href="#">copy</a></div>
+              <div class="tile-carousel-item--topic--description">June 21 marks the official first day of summer.</div>
+            </div>
+            
+            <!-- End: hashtag loop -->
+
+
+          </div>
+        </div>
+
+
+        <div class="tile-minivan">
+          <h3 class="tile-minivan--heading">Dates of Interest</h3>
+          
+          <div class="tile">
+            <div class="tile--icon"><img src="/assets/images/emojis/father.png" /></div>
+            <div class="tile--body">
+              <p class="tile--details"><a href="">Details</a></p>
+              <h3 class="tile--title">Father's Day</h3>
+              <p class="tile--date">Sunday, June 20</p>
+              <div class="tile--expandedContent">
+                <p class="tile--description">Father's Day is on June 20. A post is encouraged for most of your customers – just be sure to follow our guidelines while creating a post to ensure your content is customer-specific and relevant. </p>
+
+                
+                <div class="tile--hashtags-wrapper">
+                
+                  <div class="tile--hashtag-pill">
+                    <p>
+                      <span class="tile--hashtag-itself">#fathersday <span class="tile--hashtag-copy" data-hashtag="#fathersday">(<u>copy</u>)</span></span>
+                      <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/fathersday/" target="_blank">Instagram</a></span>
+                    </p>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="tile">
+            <div class="tile--icon"><img src="/assets/images/emojis/sun.png" /></div>
+            <div class="tile--body">
+              <p class="tile--details"><a href="">Details</a></p>
+              <h3 class="tile--title">First Day of Summer</h3>
+              <p class="tile--date">Sunday, June 20</p>
+              <div class="tile--expandedContent">
+                <p class="tile--description">In 2021, the June solstice occurs on Sunday, June 20, marking the start of summer in the Northern Hemisphere. The exact date and time of the solstice is Sunday, June 20, at 11:32 P.M. EDT.</p>
+
+                
+                <div class="tile--hashtags-wrapper">
+                
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="tile">
+            <div class="tile--icon"><img src="/assets/images/emojis/camera.png" /></div>
+            <div class="tile--body">
+              <p class="tile--details"><a href="">Details</a></p>
+              <h3 class="tile--title">National Selfie Day</h3>
+              <p class="tile--date">Monday, June 21</p>
+              <div class="tile--expandedContent">
+                <p class="tile--description">Grab your phone or camera, National Selfie Day is just what it sounds like! </p>
+
+                
+                <div class="tile--hashtags-wrapper">
+                
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="tile">
+            <div class="tile--icon"><img src="/assets/images/emojis/sunrise.png" /></div>
+            <div class="tile--body">
+              <p class="tile--details"><a href="">Details</a></p>
+              <h3 class="tile--title">Summer Solstice</h3>
+              <p class="tile--date">Monday, June 21</p>
+              <div class="tile--expandedContent">
+                <p class="tile--description">June 21 is the longest day of the year.</p>
+
+                
+                <div class="tile--hashtags-wrapper">
+                
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="tile">
+            <div class="tile--icon"><img src="/assets/images/emojis/cool.png" /></div>
+            <div class="tile--body">
+              <p class="tile--details"><a href="">Details</a></p>
+              <h3 class="tile--title">National HVAC Tech Day</h3>
+              <p class="tile--date">Tuesday, June 22</p>
+              <div class="tile--expandedContent">
+                <p class="tile--description">Founded in 2016 by HVAC company ARS/Rescue Rooter, this day is to show appreciation for all HVAC technicians in the industry. </p>
+
+                
+                <div class="tile--hashtags-wrapper">
+                
+                  <div class="tile--hashtag-pill">
+                    <p>
+                      <span class="tile--hashtag-itself">#HVACTech <span class="tile--hashtag-copy" data-hashtag="#HVACTech">(<u>copy</u>)</span></span>
+                      <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/HVACTech/" target="_blank">Instagram</a></span>
+                    </p>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="tile">
+            <div class="tile--icon"><img src="/assets/images/emojis/biking.png" /></div>
+            <div class="tile--body">
+              <p class="tile--details"><a href="">Details</a></p>
+              <h3 class="tile--title">Tour de France begins</h3>
+              <p class="tile--date">Saturday, June 26</p>
+              <div class="tile--expandedContent">
+                <p class="tile--description">The Tour de France is an annual men's multiple stage bicycle race primarily held in France, while also occasionally passing through nearby countries. Like the other Grand Tours, it consists of 21 day-long stages over the course of 23 days. This year's event runs from June 26 - July 18.</p>
+
+                
+                <div class="tile--hashtags-wrapper">
+                
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </article>
+
+    <article>
+      <div class="secondary date_range">
+        <div class="date-ribbon">
+          <h4>Week of</h4>
+          <h3>Jun 27 - Jul 3</h3>
+        </div>
+      </div>
+      <div class="primary tile-wrapper">
+
+        <div class="tile-minivan">
+          <h3 class="tile-minivan--heading">Dates of Interest</h3>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/music.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">World Music Day</h3>
+            <p class="tile--date">Monday, June 21</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">This day encourages both amateur and professional musicians alike to showcase their work. Also called Fête de la Musique, the yearly celebration started in 1982 and was created by the French Minister of Culture Jack Lang.</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#WorldMusicDay <span class="tile--hashtag-copy" data-hashtag="#WorldMusicDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/WorldMusicDay/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/handshake.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">National Handshake Day</h3>
+            <p class="tile--date">Thursday, June 24</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">Please…no wet fish! National Handshake Day is in honor of the classic greeting and the many different styles it takes. It has been acknowledged since 2005 when it was created by Miryam Roddy on behalf of BRODY Professional Development.</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#HandshakeDay <span class="tile--hashtag-copy" data-hashtag="#HandshakeDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/HandshakeDay/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/dog.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">Take Your Dog to Work Day</h3>
+            <p class="tile--date">Friday, June 25</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">This day honors our friends and encourages us to take our dogs in to work where possible. The day to celebrate our companions began in 1999 and is a great way to support and build new bridges with fellow workers.</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#TakeYourDogToWorkDay <span class="tile--hashtag-copy" data-hashtag="#TakeYourDogToWorkDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/TakeYourDogToWorkDay/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        </div>
+      </div>
+    </article>
+
+    <article>
+      <div class="secondary date_range">
+        <div class="date-ribbon">
+          <h4>Week of</h4>
+          <h3>Jul 4 - 10</h3>
+        </div>
+      </div>
+      <div class="primary tile-wrapper">
+
+        <div class="tile-minivan">
+          <h3 class="tile-minivan--heading">Dates of Interest</h3>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/flag-usa.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">Independence Day</h3>
+            <p class="tile--date">Sunday, July  4</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">Independence Day, also called Fourth of July or July 4th, in the United States, the annual celebration of nationhood. It commemorates the passage of the Declaration of Independence by the Continental Congress on July 4, 1776.</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#july4 <span class="tile--hashtag-copy" data-hashtag="#july4">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/july4/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#independenceday <span class="tile--hashtag-copy" data-hashtag="#independenceday">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/independenceday/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/chocolate.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">World Chocolate Day</h3>
+            <p class="tile--date">Wednesday, July  7</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">The observance of World Chocolate Day dates back to 2009, and some suggest July 7 in particular celebrates the introduction of chocolate to Europe in 1550. We don’t need to tell you what to do to celebrate this day, do we?</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#worldchocolateday <span class="tile--hashtag-copy" data-hashtag="#worldchocolateday">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/worldchocolateday/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/smile.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">National Cheer Up the Lonely Day</h3>
+            <p class="tile--date">Sunday, July 11</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">Each year on July 11th, people across the United States make a special effort to give someone a lift on National Cheer Up the Lonely Day. If you know someone who is lonely or going through a difficult time, be a bright spot in their life with a little extra thoughtfulness today.</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#CheerUpTheLonelyDay <span class="tile--hashtag-copy" data-hashtag="#CheerUpTheLonelyDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/CheerUpTheLonelyDay/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        </div>
+      </div>
+    </article>
+
+    <article>
+      <div class="secondary date_range">
+        <div class="date-ribbon">
+          <h4>Week of</h4>
+          <h3>Jun 17-23</h3>
+        </div>
+      </div>
+      <div class="primary tile-wrapper">
+        <div class="tile-minivan">
+          <h3 class="tile-minivan--heading">Dates of Interest</h3>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/flag-france.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">Bastille Day</h3>
+            <p class="tile--date">Wednesday, July 14</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">Primarily a holiday in France to commemorate the 1789 storming of the Bastille in Paris, Bastille Day is also celebrated in various US cities – such as New Orleans – as well as Canada.</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#BastilleDay <span class="tile--hashtag-copy" data-hashtag="#BastilleDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/BastilleDay/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/wave.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">Give Something Away Day</h3>
+            <p class="tile--date">Thursday, July 15</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">Give Something Away Day is a day to give something to someone. It can be a basic necessity like shoes or clothing, or something simple like flowers or a balloon. Give Something Away Day is a day to pay it forward and do something nice for someone.</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#GiveSomethingAwayDay <span class="tile--hashtag-copy" data-hashtag="#GiveSomethingAwayDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/GiveSomethingAwayDay/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/speech.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">Get to Know Your Customers Day</h3>
+            <p class="tile--date">Thursday, July 15</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">Observed annually each quarter, it’s a way for businesses of all sizes to get to know their customers by name, understand their shopping habits, and make them feel important.</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#GetToKnowYourCustomersDay <span class="tile--hashtag-copy" data-hashtag="#GetToKnowYourCustomersDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/GetToKnowYourCustomersDay/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        </div>
+      </div>
+    </article>
+
+  </div>
+</div>
+
+<!-- Javascript -->
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/shootingstar.js"></script>
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+  </body>
+
+</html>

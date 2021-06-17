@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary Meta Tags -->
+  <title>Social Media Planner</title>
+  <meta name="title" content="Social Media Planner">
+  <meta name="description" content="A curated collection of ideas for your next social media post.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://localhost:4000">
+  <meta property="og:title" content="Social Media Planner">
+  <meta property="og:description" content="A curated collection of ideas for your next social media post.">
+  <meta property="og:image" content="http://localhost:4000/assets/images/site-preview.png">
+
+<!-- favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+
+
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet"> -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/mvp.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/assets/js/interaction.js"></script>
+
+  <script>
+    $(document).ready(function(){
+
+      $('.tile--hashtag-copy').click(function(){
+        var hashtag = $(this).data('hashtag');
+        copyToClipboard(hashtag);
+        var chloe = this;
+        $(chloe).addClass('copy-copied').text("copied!");
+        setTimeout(function(){
+          $(chloe).removeClass('copy-copied').text("copy");
+        }, 2000);
+
+        return false;
+      });
+
+      function copyToClipboard(element) {
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val(element).select();
+        document.execCommand("copy");
+        $temp.remove();
+      }
+
+      $('.tile--details').click(function(){
+        $(this).toggleClass('tile--details--expanded').parent().find('.tile--expandedContent').toggle();
+        prepArticles();
+        $(window).scroll();
+        return false;
+      });
+
+      $('.calendar-next').click(function(){
+        if ( $(this).parent().attr('data-current-month') == "May" ) {
+          $(this).parent().attr('data-current-month',"June");
+          $('.calendar-image').attr('src','/assets/images/cal-june.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "June" ) {
+          $(this).parent().attr('data-current-month',"July");
+          $('.calendar-image').attr('src','/assets/images/cal-july.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "July" ) {
+          $(this).parent().attr('data-current-month',"August");
+          $('.calendar-image').attr('src','/assets/images/cal-aug.png');
+          return false;
+        }
+      });
+
+      $('.calendar-prev').click(function(){
+        if ( $(this).parent().attr('data-current-month') == "June" ) {
+          $(this).parent().attr('data-current-month',"May");
+          $('.calendar-image').attr('src','/assets/images/cal-may.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "July" ) {
+          $(this).parent().attr('data-current-month',"June");
+          $('.calendar-image').attr('src','/assets/images/cal-june.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "August" ) {
+          $(this).parent().attr('data-current-month',"July");
+          $('.calendar-image').attr('src','/assets/images/cal-july.png');
+          return false;
+        }
+      });
+
+
+
+
+      // Normal carousel
+      $('.tile--carousel-next').click(function(){
+        scrollAmount = $(this).parent().next('.tile--carousel-wrapper').scrollLeft();
+        if ( $(this).closest('.tile--with-carousel').hasClass('.tile--with-carousel--narrow') ) {
+          var distance = 160;
+        } else {
+          var distance = 490;
+        }
+        $(this).parent().next('.tile--carousel-wrapper').scrollLeft( scrollAmount+distance );
+        return false;
+      });
+      $('.tile--carousel-prev').click(function(){
+        scrollAmount = $(this).parent().next('.tile--carousel-wrapper').scrollLeft();
+        if ( $(this).closest('.tile--with-carousel').hasClass('.tile--with-carousel--narrow') ) {
+          var distance = 210;
+        } else {
+          var distance = 490;
+        }
+        $(this).parent().next('.tile--carousel-wrapper').scrollLeft( scrollAmount-distance );
+        return false;
+      });
+
+
+    });
+  </script>
+
+</head>
+<body>
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="">
+  <div class="ss-container">
+    <h1>Content Depot</h1>
+<p class="subhead">A list of upcoming holidays, topics, and prompts to help inspire your social posts.</p>
+
+<ul class="top_tabs">
+  <li><a class="" href="/">Calendar</a></li>
+  <li><a class="" href="/posts">Post Gallery</a></li>
+  <li><a class="top_tabs--active" href="/verticals/professional-services">Verticals</a></li>
+</ul>
+
+<div class="verticals-wrapper clearfix">
+  <div class="verticals-sidebar">
+
+  <ul>
+    <li><a class="active" href="/verticals/professional-services">Professional Services</a></li>
+    <li><a class="" href="/verticals/home-services">Home Services</a>
+      <ul>
+        <li><a class="" href="/verticals/home-services/carpentry">Carpentry</a></li>
+        <li><a class="" href="/verticals/home-services/cleaning-services">Cleaning Services</a></li>
+        <li><a class="" href="/verticals/home-services/construction-engineering">Construction Engineering</a></li>
+        <li><a class="" href="/verticals/home-services/contractors">Contractors</a></li>
+        <li><a class="" href="/verticals/home-services/electrician">Electrician</a></li>
+        <li><a class="" href="/verticals/home-services/gardening-landscaping">Gardening &amp; Landscaping</a></li>
+        <li><a class="" href="/verticals/home-services/handyman">Handyman</a></li>
+        <li><a class="" href="/verticals/home-services/hvac">HVAC</a></li>
+        <li><a class="" href="/verticals/home-services/moving">Moving</a></li>
+        <li><a class="" href="/verticals/home-services/pest-control">Pest Control</a></li>
+        <li><a class="" href="/verticals/home-services/plumbing">Plumbing</a></li>
+        <li><a class="" href="/verticals/home-services/tv-internet">TV &amp; Internet</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  </div>
+  <div class="verticals-main-content">
+
+      <div class="primary tile-wrapper">
+
+        <div class="tile-minivan tile-minivan--with-carousel">
+          <h3 class="tile-minivan--heading">Trending Topics</h3>
+          <!-- <p class="tile--description">One line of text giving text as to what these are.</p> -->
+          <div class="tile--carousel-controls">
+            <span class="tile--carousel-prev"></span><span class="tile--carousel-next"></span>
+          </div>
+          <div class="tile--carousel-wrapper">
+            <!-- Start: topic loop -->
+            
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Open-concept floorplans may be on the decline </div>
+              <div class="tile-carousel-item--topic--description">People are looking for ways to create a little personal space within their homes. Room dividers, using shelving to break up open space, creating at-home offices in unique ways, the open floor plan doesn't provide the privacy we need when spending more time at home. This content would work best for customers looking to explore trends in this industry or give tips on how to define spaces with furniture in an open-concept living space. #openconceptliving </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Home Projects and ROI</div>
+              <div class="tile-carousel-item--topic--description">Some folks may be hesitant to invest in an DIY project or home reno. Remodeling projects with the highest ROI include minor bathroom remodel, landscaping, minor kitchen remodel, and many others. <a href="https://www.hgtv.com/lifestyle/real-estate/top-home-updates-that-pay-off-pictures">Learn more &raquo;</a></div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Solid vs. Engineered Hardwood</div>
+              <div class="tile-carousel-item--topic--description">Solid hardwood flooring typically comes in long planks, milled with tongues and grooves on opposite edges so that the boards interlock when installed. It is always nailed down to the subfloor, a process that requires some skill. Because it is solid wood, this flooring can be sanded down and refinished several times over its life. Engineered flooring looks like solid hardwood, but it's made of a thin layer of hardwood bonded over a premium-quality plywood layer for added stability. It is both less expensive and easier for DIYers to install than solid hardwood. Solid hardwood vs engineered hardwood is a great topic to engage audiences — especially those looking to renovate or flip a new home. </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Thoughtful organization of decor</div>
+              <div class="tile-carousel-item--topic--description">We're seeing a shift away from minimalism folks spending more time in their homes. They're realizing rather than being tucked away in a drawer or closet, having the things they need within arms reach is important. This leads to careful curation of how these items are displayed: think curio cabinets or shelving with glass doors and carefully curated shelves in kitchens, offices, and living spaces. Useful for customers who offer staging as a part of their realty service or in educational posts about interior design trends. #shelfie </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Shifts to neutrals and warm colors</div>
+              <div class="tile-carousel-item--topic--description">Warm neutrals are on the rise. Cool tones aren't completely going away, but tones that are inviting and cozy are certainly making an entrance. Think natural feeling spaces over sleek and minimal. Useful for customers who offer staging as a part of their realty service, educational posts about interior design trends, audience participation posts about color palettes in the home </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Organization as a viral trend</div>
+              <div class="tile-carousel-item--topic--description">Pairing nicely with seasonal spring cleaning, projects that include organizing drawers, shelves, cabinets, and closets are making the rounds. Folks love the gratification of a clean and tidy space. More examples include: pantries, offices, bookshelves, garages, and bathrooms. This content compliments posts about decluttering and improving the appeal of a home before it goes on the market. #organized, #pantrymakeover, #declutter, #homeorganization </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Slim Pickings</div>
+              <div class="tile-carousel-item--topic--description">From late 2020 to mid 2021, real estate inventory has been incredibly low. As of November 2020, inventory has been down a whole 20%. In December, more that 70% of homes for sale were on the market for less than a month. Simply put, in some markets, there aren't enough houses to meet buyer demand. For buyers, low inventory means: moving faster, expanding the search geographically, and considering what things are "must haves" vs. "nice to haves." It's a great idea to get pre-approved ASAP and find less expensive homes in great neighborhoods in they can afford to upgrade over time. For sellers, this is better news: Low inventory means less selling competition.   <a href="https://www.ramseysolutions.com/real-estate/real-estate-trends">Learn more &raquo;</a></div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Rising home prices</div>
+              <div class="tile-carousel-item--topic--description">As of the end of last year, existing home prices had grown by about 15% as compared to the same time the prior year. This marked more than 100 straight months of consistent price gains. Encourage your audience to really know what they can afford. It could be time to post some budgeting tips for buyers, like: limiting their house payment to no more than a specified percentage of their take-home pay, saving up to make  a down payment, etc. Remember: Avoid specific numbers or percentages within content. We should never be giving specific financial advice on behalf of our customers. <a href="https://www.ramseysolutions.com/real-estate/real-estate-trends">Learn more &raquo;</a></div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Low Mortgage Interest Rates</div>
+              <div class="tile-carousel-item--topic--description">Mortgage interest rates, the fees that lenders charge as a percentage of a loan amount, are the lowest they've been in decades (around 3%), and economists think that this trend should continue through 2021. For buyers, this can help with affordability, but they should be cautious as to not purchse a home they cannot afford. For sellers, this means that buyers might be motivated to purchase their properties sooner. </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">The Rise of Millennials</div>
+              <div class="tile-carousel-item--topic--description">No longer just in the "entry-level" market, millennials are moving into and taking over the "move-up" market, as they grow their families and need more space. Consider the age of your audience when creating content. Older millennials in some places may be ready to move on from their starter homes into bigger properties with more space and resources.  <a href="https://www.realtor.com/research/2021-national-housing-forecast/">Learn more &raquo;</a></div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Suburban migration</div>
+              <div class="tile-carousel-item--topic--description">People are moving into the suburbs! With permanent remote work becoming more common, city-dwellers —freed from the daily tether of a commute to the office and looking for affordable space to shelter, work, learn, and live— are finding homing solutions outside of their typical urban communities. Even before the pandemic, homebuyers looking for affordability were drawn to these areas, too. This is a great trend to capitalize on if you have any Realtor clients who work in areas or communities that are adjacent to large, bustling urban sprawls. Highlight the benefits of those communities! <a href="https://www.realtor.com/research/2021-national-housing-forecast/">Learn more &raquo;</a></div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Above Asking Price</div>
+              <div class="tile-carousel-item--topic--description">The asking price for a home is the amount of money that the seller wishes to receive for their property. Due to lower inventory and higher demand, nearly every home sold during the pandemic went into a multiple-offer situation. Thus, a majority of recent buyers have had to pay over the asking price for their new home purchases. This particularly impacted first-time home buyers and millenials, who tended to have lower budgets. <a href="https://www.realtor.com/news/trends/how-covid-19-pandemic-impacted-millennial-home-buyers/">Learn more &raquo;</a></div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Required renovations</div>
+              <div class="tile-carousel-item--topic--description">Due to lower inventory and higher demand, many buyers have had to settle for properties that need more work or repairs than they had originally planned or budgeted for. According to a survey, 56% of millennials bought a home requiring minor or major renovations, although only 42.4% began their search with that intention. If your client has connections to contractors, remodelers, interior designers, etc -- highlight that! Also, this is a good time to post home-improvement tips, DIY projects, design trends and suggestions, and the like.  <a href="https://www.realtor.com/news/trends/how-covid-19-pandemic-impacted-millennial-home-buyers/">Learn more &raquo;</a></div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Playful details</div>
+              <div class="tile-carousel-item--topic--description">Due to budget or time constraints, making major aesthetic overhauls may be a difficulty or impossibility for some buyers. Small details, such as dashes of color, backsplashes, or unique hardware on cabinets or drawers are small,simple details that make big impacts. For audience participation, you can ask your clients' audience what their favorite small details in their home are. Alternatively, you can choose a stock photo that shows off a small detail and highlight this idea in the caption.  <a href="https://www.realtor.com/advice/home-improvement/bargain-block-unveils-a-new-design-style-that-modern-farmhouse-folks-will-love/">Learn more &raquo;</a></div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Vegetable gardens</div>
+              <div class="tile-carousel-item--topic--description">As people became wary of the grocery store in the beginning of the pandemic, at-home vegetable gardens grew (haha) in popularity. Expect to see these new gardeners keep at it as the late spring/early summer harvest season approaches.  Post gardening tips or recipes for seasonal fruits and veggies. Highlight veggie and fruit plants that look beautiful as a way to impress potential buyers and boost curb appeal.  <a href="realtor.com/videos/video-these-landscaping-trends-will-be-hot-this-summer/8302c422-ed18-480f-b791-1712b60cc4c1/">Learn more &raquo;</a></div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">DIY playgrounds</div>
+              <div class="tile-carousel-item--topic--description">Since many people spent most of their time at home last year, they invested in backyard entertainment to keep their families busy. Think inflatable pools, swing sets, rope swings, and lawn games like cornhole. These inexpensive improvements can bring a lot of life into an otherwise unimpressive backyard space.  Highlight ways to affordably and efficiently turn a backyard into a fun place the whole family can enjoy.  <a href="realtor.com/videos/video-these-landscaping-trends-will-be-hot-this-summer/8302c422-ed18-480f-b791-1712b60cc4c1/">Learn more &raquo;</a></div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">New construction </div>
+              <div class="tile-carousel-item--topic--description">Since inventory in the housing market is low, more buyers may be turning to new construction as a solution. Basically, this term refers to buying a house before it is complete or built. This process comes with its own set of complications, like securing permits, finding contractors, and more.  Also, as a result, the buyer may have more influence on what the finished product looks like,  </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Summer vacation</div>
+              <div class="tile-carousel-item--topic--description">May launches the start of summer vacation season which typically lasts through August. Things to highlight: second homes, beach houses, family cabins, etc </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Housing Market</div>
+              <div class="tile-carousel-item--topic--description">The spring & summer months are typically the busiest time of the year for real estate professional. Homeowners looking to sell may be finishing up renovations or looking for agents to get their houses on the market. Scoping out rental properties is common during this time of year, too. People use these months as an opportunity to check out new neighborhoods and parks, too -- the warmer weather makes strolls, walks, and other realty recon more enjoyable.  </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Curb appeal</div>
+              <div class="tile-carousel-item--topic--description">Sprucing up curb appeal is a traditional seasonal real estate marketing technique. A home's "curb appeal" is the first impression it gives to the outside world. It enhances the overall look and feel of a property, and it also stimulates interest and provides a return on investment. Think of all the things you see when you stand in front of a home -- the driveway, the door, the front yard, etc. In general, touching up or enhancing these things adds to curb appeal. You could even post gardening tips or wreath examples.  <a href="https://www.lifestorage.com/blog/moving/diy-curb-appeal-tips-increase-buyer-appeal/">Learn more &raquo;</a></div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Backyard Trends</div>
+              <div class="tile-carousel-item--topic--description">In the summer months, backyards can really stand out. They're defining features of the home and could lead potential buyers into thinking how to live their lives outdoors. Lately, people have been improving their backyards with particular attention paid to sustainability, "gardening with a purpose" (using native/local or functional plants, etc), and moving indoor living outside.  </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Summer vacation</div>
+              <div class="tile-carousel-item--topic--description">School's out - wheeee! Families will be spending more time together -- maybe travelling, or maybe entertaining each other at home. This would be a great chance to highlight local attractions in your clients' communities (for fun day trips), or post family-friendly craft ideas or recipes. Highlight the areas your clients sell/buy houses in by calling attention to local things or places people can do/visit with their families. #SchoolsOut </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Summer housing market update</div>
+              <div class="tile-carousel-item--topic--description">July is typically the last big push for sellers before the slower season starts in August. Due to the lower inventory and higher prices of homes this year, we may not see as big of a dip as previous years. </div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Booming Housing Market</div>
+              <div class="tile-carousel-item--topic--description">Spring is typically the best time to prep for the busy real estate market ahead (March - June). A few things folks do to prepare: renovate the backyard, tackle spring cleaning and decluttering (the first step to staging a home), explore areas for potential rental properties.  </div>
+            </div>
+            
+            <!-- End: topic loop -->
+          </div>
+        </div>
+
+
+        <div class="tile-minivan tile-minivan--with-carousel">
+          <h3 class="tile-minivan--heading">Hashtags</h3>
+          <!-- <p class="tile--description">One line of text giving text as to what these are.</p> -->
+          <div class="tile--carousel-controls">
+            <span class="tile--carousel-prev"></span><span class="tile--carousel-next"></span>
+          </div>
+          <div class="tile--carousel-wrapper">
+
+
+            <!-- Start: hashtag loop -->
+            
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">#luxurylistings <a data-hashtag="#luxurylistings" class="copy-button copy-hashtag tile--hashtag-copy" href="#">copy</a></div>
+              <div class="tile-carousel-item--topic--description">It's likely that you have some customers who support buyers and sellers in the luxury market. If so, try using this hashtag! It'll help draw in an engaging audience of luxury buyers & real estate enthusiasts. Similar hashtags: #LuxuryRealEstate #LuxuryConso #LuxuryLifestyle</div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">#HomeInspo <a data-hashtag="#HomeInspo" class="copy-button copy-hashtag tile--hashtag-copy" href="#">copy</a></div>
+              <div class="tile-carousel-item--topic--description">This hashtag can be used to highlight any beautiful, appealing home or well-designed room. </div>
+            </div>
+            
+            <!-- End: hashtag loop -->
+
+
+          </div>
+        </div>
+
+
+        <div class="tile-minivan">
+          <h3 class="tile-minivan--heading">Common Words & Phrases</h3>
+
+            <!-- Start: hashtag loop -->
+            
+            
+
+              <div class="tile">
+                <div class="tile--phrase tile--body">
+                  <p class="tile--details"><a href="">Details</a></p>
+                  <h3 class="tile--title">Down payment</h3>
+                  <div class="tile--expandedContent">
+                    <p class="tile--description">The amount of money a buyer pays at closing toward a home purchase.</p>
+                  </div>
+                </div>
+              </div>
+
+            
+
+              <div class="tile">
+                <div class="tile--phrase tile--body">
+                  <p class="tile--details"><a href="">Details</a></p>
+                  <h3 class="tile--title">Earnest money deposit</h3>
+                  <div class="tile--expandedContent">
+                    <p class="tile--description">A partial payment by a buyer when submitting a contract that demonstrates the buyer’s commitment to the deal. The money, which is held in an escrow account, goes toward closing costs.</p>
+                  </div>
+                </div>
+              </div>
+
+            
+
+              <div class="tile">
+                <div class="tile--phrase tile--body">
+                  <p class="tile--details"><a href="">Details</a></p>
+                  <h3 class="tile--title">Adjustable-rate mortgage</h3>
+                  <div class="tile--expandedContent">
+                    <p class="tile--description">In an adjustable-rate mortgage, the interest rate can change over the course of the loan at five, seven, or ten-year intervals. For homeowners who plan to stay in their homes for more than a few years, this is a risky loan as rates can suddenly skyrocket depending on market conditions.</p>
+                  </div>
+                </div>
+              </div>
+
+            
+
+              <div class="tile">
+                <div class="tile--phrase tile--body">
+                  <p class="tile--details"><a href="">Details</a></p>
+                  <h3 class="tile--title">Fixed-rate mortgage</h3>
+                  <div class="tile--expandedContent">
+                    <p class="tile--description">There are two types of conventional loans: the fixed-rate and the adjustable-rate mortgage. In a fixed-rate mortgage, the interest rate stays the same throughout the life of the loan.</p>
+                  </div>
+                </div>
+              </div>
+
+            
+
+              <div class="tile">
+                <div class="tile--phrase tile--body">
+                  <p class="tile--details"><a href="">Details</a></p>
+                  <h3 class="tile--title">For Sale By Owner (FSBO)</h3>
+                  <div class="tile--expandedContent">
+                    <p class="tile--description">The owner of the property is selling without a real estate agent.</p>
+                  </div>
+                </div>
+              </div>
+
+            
+
+              <div class="tile">
+                <div class="tile--phrase tile--body">
+                  <p class="tile--details"><a href="">Details</a></p>
+                  <h3 class="tile--title">Inspection</h3>
+                  <div class="tile--expandedContent">
+                    <p class="tile--description">Home inspections are required once a potential buyer makes an offer. Typically, they cost a few hundred dollars. The purpose is to check that the house’s plumbing, foundation, appliances, and other features are up to code. Issues that may turn up during an inspection may factor into the negotiation on a final price. Failing to do an inspection may result in surprise costly repairs down the road for the home buyer.</p>
+                  </div>
+                </div>
+              </div>
+
+            
+
+              <div class="tile">
+                <div class="tile--phrase tile--body">
+                  <p class="tile--details"><a href="">Details</a></p>
+                  <h3 class="tile--title">Listing</h3>
+                  <div class="tile--expandedContent">
+                    <p class="tile--description">A listing is essentially a home that is for sale. The term gets its name from the fact that these homes are often “listed” on a website or in a publication.</p>
+                  </div>
+                </div>
+              </div>
+
+            
+
+              <div class="tile">
+                <div class="tile--phrase tile--body">
+                  <p class="tile--details"><a href="">Details</a></p>
+                  <h3 class="tile--title">Listing agent</h3>
+                  <div class="tile--expandedContent">
+                    <p class="tile--description">This is the agent who represents the seller in the home-buying process. On the other side is the buyer’s agent, who represents the buyer.</p>
+                  </div>
+                </div>
+              </div>
+
+            
+
+              <div class="tile">
+                <div class="tile--phrase tile--body">
+                  <p class="tile--details"><a href="">Details</a></p>
+                  <h3 class="tile--title">Contingency</h3>
+                  <div class="tile--expandedContent">
+                    <p class="tile--description">A contingency in a real estate deal means there's something the buyer has to do for the process to go forward, like getting approved for a loan or selling their home. If the contingency terms are not met, the contract can be broken with no penalty or loss of earnest money to the buyer or seller.</p>
+                  </div>
+                </div>
+              </div>
+
+            
+
+              <div class="tile">
+                <div class="tile--phrase tile--body">
+                  <p class="tile--details"><a href="">Details</a></p>
+                  <h3 class="tile--title">Underwriting</h3>
+                  <div class="tile--expandedContent">
+                    <p class="tile--description">Underwriting is the part of the mortgage loan application process where the bank is scrutinizes all of the buyers credit and financial documents to determine their loan eligibility.</p>
+                  </div>
+                </div>
+              </div>
+
+            
+
+              <div class="tile">
+                <div class="tile--phrase tile--body">
+                  <p class="tile--details"><a href="">Details</a></p>
+                  <h3 class="tile--title">Debt-to-income ratio</h3>
+                  <div class="tile--expandedContent">
+                    <p class="tile--description">Simply put, this is the amount of debt a buyer has compared to their yearly income. Buyers don't need to be debt-free to secure loans -- loan officers are accustomed to working with certain kinds of debt, like student loans. But, if this ratio is too high, it could be hard for them to secure a loan (or it might result in a higher interest rate). </p>
+                  </div>
+                </div>
+              </div>
+
+            
+
+              <div class="tile">
+                <div class="tile--phrase tile--body">
+                  <p class="tile--details"><a href="">Details</a></p>
+                  <h3 class="tile--title">ARV</h3>
+                  <div class="tile--expandedContent">
+                    <p class="tile--description">The term "ARV" in real estate stands for "After Repair Value." It refers to the value of a property after the home's repairs are complete and the house is ready to sell. It takes into account the total cost of the repairs and the estimated value of the home. This is a useful term for buyers who want to invest and then flip homes/properties.</p>
+                  </div>
+                </div>
+              </div>
+
+            
+
+              <div class="tile">
+                <div class="tile--phrase tile--body">
+                  <p class="tile--details"><a href="">Details</a></p>
+                  <h3 class="tile--title">Under contract</h3>
+                  <div class="tile--expandedContent">
+                    <p class="tile--description">This term means a seller has accepted the buyer's offer but any contingencies have yet to be met. #UnderContract</p>
+                  </div>
+                </div>
+              </div>
+
+            
+
+              <div class="tile">
+                <div class="tile--phrase tile--body">
+                  <p class="tile--details"><a href="">Details</a></p>
+                  <h3 class="tile--title">Refinancing</h3>
+                  <div class="tile--expandedContent">
+                    <p class="tile--description">Refinancing is when you restructure your home loan, replacing your old loan with an entirely new loan that has different rates and payment structures. The main reason people refinance their home loans is to get a lower interest rate on their mortgage, and therefore lower not only the monthly payment but also the overall debt owed.</p>
+                  </div>
+                </div>
+              </div>
+
+            
+
+              <div class="tile">
+                <div class="tile--phrase tile--body">
+                  <p class="tile--details"><a href="">Details</a></p>
+                  <h3 class="tile--title">MLS</h3>
+                  <div class="tile--expandedContent">
+                    <p class="tile--description">A MLS is a local or regional real estate service that compiles available properties for sale submitted by real estate brokers and agents. An MLS can only be accessed by real estate brokers and agents.Having access to the MLS is a huge advantage of working with a real estate professional.</p>
+                  </div>
+                </div>
+              </div>
+
+            
+
+              <div class="tile">
+                <div class="tile--phrase tile--body">
+                  <p class="tile--details"><a href="">Details</a></p>
+                  <h3 class="tile--title">Concierge services</h3>
+                  <div class="tile--expandedContent">
+                    <p class="tile--description">If a Realtor offers concierge services, that essentially means they act as real estate consultants in addition to providing basic agent services. It also means they're committed to forming relationships with their clients that last beyond the transaction. They can share connections and coordinate appointments with other professionals (like repairmen, contractors, cleaners, etc), arrange inspections, inform buyers on the specifics of the property (HOA fees, property taxes, etc), assist in finding refinishing and remodeling professionals, and more. They may also anticipate and alleviate the stress of moving and act as an " enthusiastic welcome wagon" by acclimating their clients to their new neighborhoods, linking clients to  local social activities. and relaying information about local things that suit the new residents' interests. </p>
+                  </div>
+                </div>
+              </div>
+
+            
+
+              <div class="tile">
+                <div class="tile--phrase tile--body">
+                  <p class="tile--details"><a href="">Details</a></p>
+                  <h3 class="tile--title">As-is</h3>
+                  <div class="tile--expandedContent">
+                    <p class="tile--description">If a home is marked "as-is," that indicates that the property owner or seller is unwilling to perform most or all repairs. It could also mean that it's priced typically lower than market pricing in the area. One thing to note -- "as is" refers to the time that the offer is written. If something happens to the property after the offer but before closing, then it ought to be brought back to the same condition as it was when the offer was composed. </p>
+                  </div>
+                </div>
+              </div>
+
+            
+
+              <div class="tile">
+                <div class="tile--phrase tile--body">
+                  <p class="tile--details"><a href="">Details</a></p>
+                  <h3 class="tile--title">Backup offer</h3>
+                  <div class="tile--expandedContent">
+                    <p class="tile--description">When a buyer is interested in purchasing a property that's already under contract with someone else, then the buyer can submit a "backup offer" in case the 3 original one falls through. Legally, there can only be one backup offer. This could be a good thing to mention to ease the mind of potential buyers who may feel they've missed out on a home they've fallen in love with. </p>
+                  </div>
+                </div>
+              </div>
+
+            
+
+              <div class="tile">
+                <div class="tile--phrase tile--body">
+                  <p class="tile--details"><a href="">Details</a></p>
+                  <h3 class="tile--title">Buyer’s agent/listing agent</h3>
+                  <div class="tile--expandedContent">
+                    <p class="tile--description">A buyer's agent represents the buyer -- it's their job to locate the buyer's next property and negotiate to represent their interests. Alternatively, a listing agent represents the seller -- it's their job to market their clients' properties and negotiate on behalf of their interests. It's helpful to understand which (or both) "side" your customer is on so that you can appeal to the correct audience(s).</p>
+                  </div>
+                </div>
+              </div>
+
+            
+
+              <div class="tile">
+                <div class="tile--phrase tile--body">
+                  <p class="tile--details"><a href="">Details</a></p>
+                  <h3 class="tile--title">Closing costs</h3>
+                  <div class="tile--expandedContent">
+                    <p class="tile--description">"Closing costs" refer to an assortment of fees that are paid out at the end of a real estate transaction. They can include, but aren't limited to, fees charged by: the lender, the title company, real estate agents taxing authorities, insurance companies, HOAs, or attorneys. For transparency, it can be helpful to also mention or refer to closing costs when educating your clients' audiences about budgeting. A real estate transaction costs more than the price of the home.</p>
+                  </div>
+                </div>
+              </div>
+
+            
+
+              <div class="tile">
+                <div class="tile--phrase tile--body">
+                  <p class="tile--details"><a href="">Details</a></p>
+                  <h3 class="tile--title">Days on market (DOM)</h3>
+                  <div class="tile--expandedContent">
+                    <p class="tile--description">This phrase refers to the the number of days from the date when the property is listed on the MLS to to the date when the seller has signed a contract with the buyer for the sale of the property. Typically, this number is lower in the spring than the winter, since homes tend to sell faster in the warmer months. </p>
+                  </div>
+                </div>
+              </div>
+
+            
+
+              <div class="tile">
+                <div class="tile--phrase tile--body">
+                  <p class="tile--details"><a href="">Details</a></p>
+                  <h3 class="tile--title">Fixer-upper</h3>
+                  <div class="tile--expandedContent">
+                    <p class="tile--description">In real estate vernacular, a fixer-upper is a property that will require repair, though it usually can be lived in or used as it is. They are popular with buyers who wish to raise the property's potential value to get a return on their investment (I.e. "flip the house") , or as a starter home for buyers on a budget. </p>
+                  </div>
+                </div>
+              </div>
+
+            
+
+              <div class="tile">
+                <div class="tile--phrase tile--body">
+                  <p class="tile--details"><a href="">Details</a></p>
+                  <h3 class="tile--title">Interest rates</h3>
+                  <div class="tile--expandedContent">
+                    <p class="tile--description">We know that interest rates are the lowest they've been in a while, but how does a lender calculate what an interest rate might look like for an individual buyer? Here are some factors they might consider when making that decision: Credit score -- if a buyer's credit score is higher, their interest rate will likely be lower. Down payment -- if a client puts less than 20% down on a property purchase, the lender might require mortgage insurance, which requires a slightly higher interest rate. Loan term -- in general, shorter-term loans have lower interest rates and lower overall costs, but higher monthly payments. Interest rate type -- fixed interest rates are locked in, but adjustable rates fluctuate based on the market after an initial period. This means clients might qualify for a lower rate early on, but the rate could gradually increase. This topic is an educational content minefield. Feel free to pick and choose different aspects to draw attention to, and to teach your clients' audiences how they could potentially qualify for lower interest rates.</p>
+                  </div>
+                </div>
+              </div>
+
+            
+
+              <div class="tile">
+                <div class="tile--phrase tile--body">
+                  <p class="tile--details"><a href="">Details</a></p>
+                  <h3 class="tile--title">Open shelving</h3>
+                  <div class="tile--expandedContent">
+                    <p class="tile--description">Open shelving refers to shelves that are not encased and have a bookcase-type design. They are a great way to show off pretty kitchenware, momentos, and decor. They also may help make small rooms, like kitchens, seem bigger. Use a beautiful stock image to highlight and share this trendy design tip. </p>
+                  </div>
+                </div>
+              </div>
+
+            
+
+              <div class="tile">
+                <div class="tile--phrase tile--body">
+                  <p class="tile--details"><a href="">Details</a></p>
+                  <h3 class="tile--title">Foreclosure </h3>
+                  <div class="tile--expandedContent">
+                    <p class="tile--description">Foreclosure is the process of a lender seizing and selling a property to a new buyer when the owner fails to make their mortgage payments as agreed. It enables the lender to recover at least some of the mortgage balance that is left. In some states, there must be a legal process in court before the home can be taken. Other states offer options that don't require a court to get involved. They also might be priced to sell quickly because of the lender’s need to recoup their losses.</p>
+                  </div>
+                </div>
+              </div>
+
+            
+
+        </div>
+      </div>
+
+  </div>
+</div>
+
+
+
+<!-- Javascript -->
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/shootingstar.js"></script>
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+  </body>
+
+</html>
