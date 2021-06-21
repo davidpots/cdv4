@@ -128,6 +128,28 @@
       });
 
 
+
+
+          // ******************************************
+          // Limits long topic character count
+
+          var maxLength = 280;
+          $(".show-read-more").each(function(){
+              var myStr = $(this).text();
+              if($.trim(myStr).length > maxLength){
+                  var newStr = myStr.substring(0, maxLength);
+                  var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+                  $(this).empty().html(newStr).append('... (<span class="read-more-link">read more</span>)');
+              }
+          });
+          $(".read-more-link").hover(function(){
+            $("#description_overflow").text( $(this).parent().attr('data-full-description') ).fadeIn();
+          }, function() {
+            $("#description_overflow").fadeOut(50);
+          });
+
+
+
     });
   </script>
 
@@ -187,21 +209,50 @@
             
               
               
-                
+            
               
-                
               
-                
+            
               
-                
               
-                
+            
               
-                
               
-                
+            
               
-                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
               
             
               
@@ -210,15 +261,17 @@
               
                 
               
-                
+            
               
-                
               
-                
+            
               
-                
               
-                
+            
+              
+              
+            
+              
               
                 
               
@@ -227,472 +280,22 @@
               
                 
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
             
               
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
               
                 
                   
                   <div class="tile-carousel-item tile-carousel-item--topic">
                     <div class="tile-carousel-item--topic--heading">Tile Installation</div>
-                    <div class="tile-carousel-item--topic--description">Tiling contractors are great to call in for these spring home renos. They usually get discounts from tile stores and ensure spaces like showers and tubs are properly sealed to prevent future damage. Spring renovations on kitchens or bathrooms are a great opportunity to call a tiling contractor. </div>
+                       <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Tiling contractors are great to call in for these spring home renos. They usually get discounts from tile stores and ensure spaces like showers and tubs are properly sealed to prevent future damage. Spring renovations on kitchens or bathrooms are a great opportunity to call a tiling contractor.">Tiling contractors are great to call in for these spring home renos. They usually get discounts from tile stores and ensure spaces like showers and tubs are properly sealed to prevent future damage. Spring renovations on kitchens or bathrooms are a great opportunity to call a tiling contractor.</div>
+                    
                   </div>
                 
               
                 
               
-                
-              
             
               
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
                 
               
@@ -705,15 +308,8 @@
               
                 
               
-                
+            
               
-                
-              
-                
-              
-                
-              
-                
               
                 
               
@@ -722,192 +318,46 @@
               
                 
               
-                
+            
               
-                
-              
-                
               
                 
               
             
               
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
             
               
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
             
               
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
               
                 
                   
                   <div class="tile-carousel-item tile-carousel-item--topic">
                     <div class="tile-carousel-item--topic--heading">Remodeling Tip</div>
-                    <div class="tile-carousel-item--topic--description">Remodeling a home isn't for the faint of heart. It's recommended to budget a 10% cushion into your project if you're living in the home while remodeling and 30% if you plan to live elsewhere to account for delays or mishaps during construction.  </div>
+                       <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Remodeling a home isn't for the faint of heart. It's recommended to budget a 10% cushion into your project if you're living in the home while remodeling and 30% if you plan to live elsewhere to account for delays or mishaps during construction. ">Remodeling a home isn't for the faint of heart. It's recommended to budget a 10% cushion into your project if you're living in the home while remodeling and 30% if you plan to live elsewhere to account for delays or mishaps during construction. </div>
+                    
                   </div>
                 
               
-                
+            
+              
               
             
               
               
                 
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
             
               
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
               
                 
                   
                   <div class="tile-carousel-item tile-carousel-item--topic">
                     <div class="tile-carousel-item--topic--heading">Remodeling Projects</div>
-                    <div class="tile-carousel-item--topic--description">Lots of people jump into remodel-mode in the spring once the weather warms up. Contractors are needed to help plan new construction or larger remodeling projects to make sure all the right people get brought and to help estimate cost. </div>
-                  </div>
-                
-              
-                
-              
-                
-                  
-                  <div class="tile-carousel-item tile-carousel-item--topic">
-                    <div class="tile-carousel-item--topic--heading">Remodeling Projects</div>
-                    <div class="tile-carousel-item--topic--description">Lots of people jump into remodel-mode in the spring once the weather warms up. Contractors are needed to help plan new construction or larger remodeling projects to make sure all the right people get brought and to help estimate cost. </div>
-                  </div>
-                
-              
-                
-                  
-                  <div class="tile-carousel-item tile-carousel-item--topic">
-                    <div class="tile-carousel-item--topic--heading">Remodeling Projects</div>
-                    <div class="tile-carousel-item--topic--description">Lots of people jump into remodel-mode in the spring once the weather warms up. Contractors are needed to help plan new construction or larger remodeling projects to make sure all the right people get brought and to help estimate cost. </div>
+                       <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Lots of people jump into remodel-mode in the spring once the weather warms up. Contractors are needed to help plan new construction or larger remodeling projects to make sure all the right people get brought and to help estimate cost.">Lots of people jump into remodel-mode in the spring once the weather warms up. Contractors are needed to help plan new construction or larger remodeling projects to make sure all the right people get brought and to help estimate cost.</div>
+                    
                   </div>
                 
               
@@ -915,51 +365,20 @@
               
             
               
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
                 
                   
                   <div class="tile-carousel-item tile-carousel-item--topic">
                     <div class="tile-carousel-item--topic--heading">Home Refresh</div>
-                    <div class="tile-carousel-item--topic--description">Hiring a painting contractor is often needed for renovation projects that cover large parts of the home, high ceilings, or even where drywall has been repaired to match paint. Does your customer offer special services for repairs, or have specialty like cabinetry or exterior wall paint? </div>
+                       <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Hiring a painting contractor is often needed for renovation projects that cover large parts of the home, high ceilings, or even where drywall has been repaired to match paint. Does your customer offer special services for repairs, or have specialty like cabinetry or exterior wall paint?">Hiring a painting contractor is often needed for renovation projects that cover large parts of the home, high ceilings, or even where drywall has been repaired to match paint. Does your customer offer special services for repairs, or have specialty like cabinetry or exterior wall paint?</div>
+                    
                   </div>
                 
               
                 
               
-                
-              
             
               
-              
-                
-              
-                
-              
-                
-              
-                
-                  
-                  <div class="tile-carousel-item tile-carousel-item--topic">
-                    <div class="tile-carousel-item--topic--heading">Home Reno</div>
-                    <div class="tile-carousel-item--topic--description">Whether it's installing a pool in preparation of summer or smoothing out damaged parts of the property from fallen trees and debris, if there's dirt to be moved, Excavation Contractors are here to help. Spring is the perfect time to install a swimming pool. Check to see if your customer has any specializations or specialty equipment that could help. <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/654148382/Excavation">Learn more &raquo;</a></div>
-                  </div>
-                
-              
-                
-              
-                
               
                 
               
@@ -972,9 +391,8 @@
               
                 
               
-                
+            
               
-                
               
                 
               
@@ -987,13 +405,8 @@
               
                 
               
-                
+            
               
-                
-              
-                
-              
-                
               
                 
               
@@ -1006,15 +419,8 @@
               
                 
               
-                
+            
               
-                
-              
-                
-              
-                
-              
-                
               
                 
               
@@ -1025,19 +431,8 @@
               
                 
               
-                
+            
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
                 
               
@@ -1046,13 +441,17 @@
               
                 
               
-                
+            
               
-                
               
-                
+            
               
-                
+              
+            
+              
+              
+            
+              
               
                 
               
@@ -1061,17 +460,8 @@
               
                 
               
-                
+            
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
                 
               
@@ -1080,13 +470,8 @@
               
                 
               
-                
+            
               
-                
-              
-                
-              
-                
               
                 
               
@@ -1095,13 +480,26 @@
               
                 
               
-                
+            
               
-                
               
-                
+            
               
-                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
               
                 
               
@@ -1110,695 +508,54 @@
               
                 
               
-                
+            
               
-                
-              
-                
-              
-                
               
                 
               
             
               
               
-                
+            
               
-                
               
-                
+            
               
-                
               
-                
+            
               
-                
               
-                
+            
               
-                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
               
             
               
               
                 
               
-                
+            
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
             
               
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
             
               
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
             
 
@@ -2694,7 +1451,7 @@
   </div>
 </div>
 
-
+<div id="description_overflow"></div>
 
 <!-- Javascript -->
 <script src="/assets/js/jquery.js"></script>

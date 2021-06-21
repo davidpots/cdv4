@@ -51,13 +51,18 @@ subvertical: Plumbing
             <!-- Start: topic loop -->
             {% assign noMatches = true %}
             {% for topic in site.data.topics %}
-              {% assign tsubvs = topic | split: "," %}
+              {% assign tsubvs = topic.subvertical | split: "," %}
               {% for subv in tsubvs %}
-                {% if subv contains page.subvertical %}
+                {% if subv == page.subvertical %}
                   {% assign noMatches = false %}
                   <div class="tile-carousel-item tile-carousel-item--topic">
                     <div class="tile-carousel-item--topic--heading">{{topic.name}}</div>
-                    <div class="tile-carousel-item--topic--description">{{topic.description}} {% if topic.url %}<a href="{{topic.url}}">Learn more &raquo;</a>{% endif %}</div>
+                       <div class="tile-carousel-item--topic--description show-read-more" data-full-description="{{topic.description}}">{{topic.description}}</div>
+                    {% if topic.url %}
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="{{topic.url}}">Learn more &raquo;</a>
+                      </div>
+                    {% endif %}
                   </div>
                 {% endif %}
               {% endfor %}
@@ -141,7 +146,7 @@ subvertical: Plumbing
   </div>
 </div>
 
-
+<div id="description_overflow"></div>
 
 <!-- Javascript -->
 <script src="/assets/js/jquery.js"></script>

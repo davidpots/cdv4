@@ -128,6 +128,28 @@
       });
 
 
+
+
+          // ******************************************
+          // Limits long topic character count
+
+          var maxLength = 280;
+          $(".show-read-more").each(function(){
+              var myStr = $(this).text();
+              if($.trim(myStr).length > maxLength){
+                  var newStr = myStr.substring(0, maxLength);
+                  var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+                  $(this).empty().html(newStr).append('... (<span class="read-more-link">read more</span>)');
+              }
+          });
+          $(".read-more-link").hover(function(){
+            $("#description_overflow").text( $(this).parent().attr('data-full-description') ).fadeIn();
+          }, function() {
+            $("#description_overflow").fadeOut(50);
+          });
+
+
+
     });
   </script>
 
@@ -187,17 +209,79 @@
             
               
               
-                
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
               
                 
               
                 
               
-                
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
               
                 
               
+            
+              
+              
                 
+              
+            
+              
               
                 
               
@@ -210,13 +294,49 @@
               
                 
               
-                
+            
+              
               
                 
               
                 
               
+            
+              
+              
                 
+              
+            
+              
+              
+                
+              
+            
+              
+              
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+              
+            
+              
+              
+            
+              
+              
+                
+              
+            
+              
               
                 
               
@@ -229,11 +349,8 @@
               
                 
               
-                
+            
               
-                
-              
-                
               
                 
               
@@ -246,11 +363,8 @@
               
                 
               
-                
+            
               
-                
-              
-                
               
                 
               
@@ -263,13 +377,8 @@
               
                 
               
-                
+            
               
-                
-              
-                
-              
-                
               
                 
               
@@ -282,17 +391,8 @@
               
                 
               
-                
+            
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
                 
               
@@ -303,11 +403,8 @@
               
                 
               
-                
+            
               
-                
-              
-                
               
                 
               
@@ -316,846 +413,14 @@
               
                 
               
-                
+            
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
             
               
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
             
               
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-                  
-                  <div class="tile-carousel-item tile-carousel-item--topic">
-                    <div class="tile-carousel-item--topic--heading">Backyard Projects</div>
-                    <div class="tile-carousel-item--topic--description">Maintaining yards and outdoor spaces during the Summer can be daunting. Many look for inspiration on how to keep their spaces fresh and pest free all season long. Springboard ideas to get you started: Dream garden inspo, patio furniture updates, easy pest control, and tool organization. #backyardreno </div>
-                  </div>
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
             
               
@@ -1164,79 +429,29 @@
                   
                   <div class="tile-carousel-item tile-carousel-item--topic">
                     <div class="tile-carousel-item--topic--heading">Pest Control in the Kitchen</div>
-                    <div class="tile-carousel-item--topic--description">Spring pests, like ants, love kitchen spaces because of the availability of potential water and food sources. Crumbs, spill residue, and food left out are some of their favorite snacks. <a href="https://www.vulcantermite.com/home-pest-control/spring-cleaning-tips-avoid-spring-pests/">Learn more &raquo;</a></div>
+                       <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Spring pests, like ants, love kitchen spaces because of the availability of potential water and food sources. Crumbs, spill residue, and food left out are some of their favorite snacks.">Spring pests, like ants, love kitchen spaces because of the availability of potential water and food sources. Crumbs, spill residue, and food left out are some of their favorite snacks.</div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://www.vulcantermite.com/home-pest-control/spring-cleaning-tips-avoid-spring-pests/">Learn more &raquo;</a>
+                      </div>
+                    
                   </div>
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-                  
-                  <div class="tile-carousel-item tile-carousel-item--topic">
-                    <div class="tile-carousel-item--topic--heading">Pest Control in the Kitchen</div>
-                    <div class="tile-carousel-item--topic--description">Spring pests, like ants, love kitchen spaces because of the availability of potential water and food sources. Crumbs, spill residue, and food left out are some of their favorite snacks. <a href="https://www.vulcantermite.com/home-pest-control/spring-cleaning-tips-avoid-spring-pests/">Learn more &raquo;</a></div>
-                  </div>
-                
-              
                 
               
             
               
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
                 
                   
                   <div class="tile-carousel-item tile-carousel-item--topic">
                     <div class="tile-carousel-item--topic--heading">Pests That Thrive in the Summer</div>
-                    <div class="tile-carousel-item--topic--description">Mosquitoes, Ants, Fleas, Ticks, Termites, Grasshoppers, Flies, and Stinging Insects </div>
+                       <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Mosquitoes, Ants, Fleas, Ticks, Termites, Grasshoppers, Flies, and Stinging Insects">Mosquitoes, Ants, Fleas, Ticks, Termites, Grasshoppers, Flies, and Stinging Insects</div>
+                    
                   </div>
                 
               
-                
-              
             
               
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
                 
               
@@ -1245,19 +460,8 @@
               
                 
               
-                
+            
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
                 
               
@@ -1266,527 +470,89 @@
               
                 
               
-                
+            
               
-                
               
-                
+            
               
-                
               
-                
+            
               
-                
               
-                
+            
+              
+              
+            
+              
+              
+            
+              
               
             
               
               
                 
               
-                
-              
-                
-              
-                
-              
-                
-              
             
               
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
                 
                   
                   <div class="tile-carousel-item tile-carousel-item--topic">
                     <div class="tile-carousel-item--topic--heading">Natural mosquito control </div>
-                    <div class="tile-carousel-item--topic--description">Mosquito and other pest control using natural ingredients like plant oils are gaining in popularity. Additionally, making changes to your outdoor area like treating water features with repellent or working to remedy areas with standing water can be a big help. Mosquitoes thrive in hot, humid weather. Natural alternatives are popular because they are effective and safe for children and pets.  </div>
+                       <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Mosquito and other pest control using natural ingredients like plant oils are gaining in popularity. Additionally, making changes to your outdoor area like treating water features with repellent or working to remedy areas with standing water can be a big help. Mosquitoes thrive in hot, humid weather. Natural alternatives are popular because they are effective and safe for children and pets. ">Mosquito and other pest control using natural ingredients like plant oils are gaining in popularity. Additionally, making changes to your outdoor area like treating water features with repellent or working to remedy areas with standing water can be a big help. Mosquitoes thrive in hot, humid weather. Natural alternatives are popular because they are effective and safe for children and pets. </div>
+                    
                   </div>
                 
               
-                
-              
             
               
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
                 
               
             
               
               
-                
+            
               
-                
               
-                
+            
               
-                
               
-                
+            
               
-                
               
-                
+            
               
-                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
               
             
               
               
                 
               
-                
+            
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
             
               
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
             
               
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
             
 
@@ -2656,7 +1422,7 @@
   </div>
 </div>
 
-
+<div id="description_overflow"></div>
 
 <!-- Javascript -->
 <script src="/assets/js/jquery.js"></script>

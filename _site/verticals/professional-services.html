@@ -128,6 +128,28 @@
       });
 
 
+
+
+          // ******************************************
+          // Limits long topic character count
+
+          var maxLength = 280;
+          $(".show-read-more").each(function(){
+              var myStr = $(this).text();
+              if($.trim(myStr).length > maxLength){
+                  var newStr = myStr.substring(0, maxLength);
+                  var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+                  $(this).empty().html(newStr).append('... (<span class="read-more-link">read more</span>)');
+              }
+          });
+          $(".read-more-link").hover(function(){
+            $("#description_overflow").text( $(this).parent().attr('data-full-description') ).fadeIn();
+          }, function() {
+            $("#description_overflow").fadeOut(50);
+          });
+
+
+
     });
   </script>
 
@@ -187,122 +209,190 @@
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Open-concept floorplans may be on the decline </div>
-              <div class="tile-carousel-item--topic--description">People are looking for ways to create a little personal space within their homes. Room dividers, using shelving to break up open space, creating at-home offices in unique ways, the open floor plan doesn't provide the privacy we need when spending more time at home. This content would work best for customers looking to explore trends in this industry or give tips on how to define spaces with furniture in an open-concept living space. #openconceptliving </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="People are looking for ways to create a little personal space within their homes. Room dividers, using shelving to break up open space, creating at-home offices in unique ways, the open floor plan doesn't provide the privacy we need when spending more time at home. This content would work best for customers looking to explore trends in this industry or give tips on how to define spaces with furniture in an open-concept living space. #openconceptliving">People are looking for ways to create a little personal space within their homes. Room dividers, using shelving to break up open space, creating at-home offices in unique ways, the open floor plan doesn't provide the privacy we need when spending more time at home. This content would work best for customers looking to explore trends in this industry or give tips on how to define spaces with furniture in an open-concept living space. #openconceptliving</div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Home Projects and ROI</div>
-              <div class="tile-carousel-item--topic--description">Some folks may be hesitant to invest in an DIY project or home reno. Remodeling projects with the highest ROI include minor bathroom remodel, landscaping, minor kitchen remodel, and many others. <a href="https://www.hgtv.com/lifestyle/real-estate/top-home-updates-that-pay-off-pictures">Learn more &raquo;</a></div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Some folks may be hesitant to invest in an DIY project or home reno. Remodeling projects with the highest ROI include minor bathroom remodel, landscaping, minor kitchen remodel, and many others.">Some folks may be hesitant to invest in an DIY project or home reno. Remodeling projects with the highest ROI include minor bathroom remodel, landscaping, minor kitchen remodel, and many others.</div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://www.hgtv.com/lifestyle/real-estate/top-home-updates-that-pay-off-pictures">Learn more &raquo;</a>
+                      </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Solid vs. Engineered Hardwood</div>
-              <div class="tile-carousel-item--topic--description">Solid hardwood flooring typically comes in long planks, milled with tongues and grooves on opposite edges so that the boards interlock when installed. It is always nailed down to the subfloor, a process that requires some skill. Because it is solid wood, this flooring can be sanded down and refinished several times over its life. Engineered flooring looks like solid hardwood, but it's made of a thin layer of hardwood bonded over a premium-quality plywood layer for added stability. It is both less expensive and easier for DIYers to install than solid hardwood. Solid hardwood vs engineered hardwood is a great topic to engage audiences — especially those looking to renovate or flip a new home. </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Solid hardwood flooring typically comes in long planks, milled with tongues and grooves on opposite edges so that the boards interlock when installed. It is always nailed down to the subfloor, a process that requires some skill. Because it is solid wood, this flooring can be sanded down and refinished several times over its life. Engineered flooring looks like solid hardwood, but it's made of a thin layer of hardwood bonded over a premium-quality plywood layer for added stability. It is both less expensive and easier for DIYers to install than solid hardwood. Solid hardwood vs engineered hardwood is a great topic to engage audiences — especially those looking to renovate or flip a new home.">Solid hardwood flooring typically comes in long planks, milled with tongues and grooves on opposite edges so that the boards interlock when installed. It is always nailed down to the subfloor, a process that requires some skill. Because it is solid wood, this flooring can be sanded down and refinished several times over its life. Engineered flooring looks like solid hardwood, but it's made of a thin layer of hardwood bonded over a premium-quality plywood layer for added stability. It is both less expensive and easier for DIYers to install than solid hardwood. Solid hardwood vs engineered hardwood is a great topic to engage audiences — especially those looking to renovate or flip a new home.</div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Thoughtful organization of decor</div>
-              <div class="tile-carousel-item--topic--description">We're seeing a shift away from minimalism folks spending more time in their homes. They're realizing rather than being tucked away in a drawer or closet, having the things they need within arms reach is important. This leads to careful curation of how these items are displayed: think curio cabinets or shelving with glass doors and carefully curated shelves in kitchens, offices, and living spaces. Useful for customers who offer staging as a part of their realty service or in educational posts about interior design trends. #shelfie </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="We're seeing a shift away from minimalism folks spending more time in their homes. They're realizing rather than being tucked away in a drawer or closet, having the things they need within arms reach is important. This leads to careful curation of how these items are displayed: think curio cabinets or shelving with glass doors and carefully curated shelves in kitchens, offices, and living spaces. Useful for customers who offer staging as a part of their realty service or in educational posts about interior design trends. #shelfie">We're seeing a shift away from minimalism folks spending more time in their homes. They're realizing rather than being tucked away in a drawer or closet, having the things they need within arms reach is important. This leads to careful curation of how these items are displayed: think curio cabinets or shelving with glass doors and carefully curated shelves in kitchens, offices, and living spaces. Useful for customers who offer staging as a part of their realty service or in educational posts about interior design trends. #shelfie</div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Shifts to neutrals and warm colors</div>
-              <div class="tile-carousel-item--topic--description">Warm neutrals are on the rise. Cool tones aren't completely going away, but tones that are inviting and cozy are certainly making an entrance. Think natural feeling spaces over sleek and minimal. Useful for customers who offer staging as a part of their realty service, educational posts about interior design trends, audience participation posts about color palettes in the home </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Warm neutrals are on the rise. Cool tones aren't completely going away, but tones that are inviting and cozy are certainly making an entrance. Think natural feeling spaces over sleek and minimal. Useful for customers who offer staging as a part of their realty service, educational posts about interior design trends, audience participation posts about color palettes in the home">Warm neutrals are on the rise. Cool tones aren't completely going away, but tones that are inviting and cozy are certainly making an entrance. Think natural feeling spaces over sleek and minimal. Useful for customers who offer staging as a part of their realty service, educational posts about interior design trends, audience participation posts about color palettes in the home</div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Organization as a viral trend</div>
-              <div class="tile-carousel-item--topic--description">Pairing nicely with seasonal spring cleaning, projects that include organizing drawers, shelves, cabinets, and closets are making the rounds. Folks love the gratification of a clean and tidy space. More examples include: pantries, offices, bookshelves, garages, and bathrooms. This content compliments posts about decluttering and improving the appeal of a home before it goes on the market. #organized, #pantrymakeover, #declutter, #homeorganization </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Pairing nicely with seasonal spring cleaning, projects that include organizing drawers, shelves, cabinets, and closets are making the rounds. Folks love the gratification of a clean and tidy space. More examples include: pantries, offices, bookshelves, garages, and bathrooms. This content compliments posts about decluttering and improving the appeal of a home before it goes on the market. #organized, #pantrymakeover, #declutter, #homeorganization">Pairing nicely with seasonal spring cleaning, projects that include organizing drawers, shelves, cabinets, and closets are making the rounds. Folks love the gratification of a clean and tidy space. More examples include: pantries, offices, bookshelves, garages, and bathrooms. This content compliments posts about decluttering and improving the appeal of a home before it goes on the market. #organized, #pantrymakeover, #declutter, #homeorganization</div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Slim Pickings</div>
-              <div class="tile-carousel-item--topic--description">From late 2020 to mid 2021, real estate inventory has been incredibly low. As of November 2020, inventory has been down a whole 20%. In December, more that 70% of homes for sale were on the market for less than a month. Simply put, in some markets, there aren't enough houses to meet buyer demand. For buyers, low inventory means: moving faster, expanding the search geographically, and considering what things are "must haves" vs. "nice to haves." It's a great idea to get pre-approved ASAP and find less expensive homes in great neighborhoods in they can afford to upgrade over time. For sellers, this is better news: Low inventory means less selling competition.   <a href="https://www.ramseysolutions.com/real-estate/real-estate-trends">Learn more &raquo;</a></div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="From late 2020 to mid 2021, real estate inventory has been incredibly low. As of November 2020, inventory has been down a whole 20%. In December, more that 70% of homes for sale were on the market for less than a month. Simply put, in some markets, there aren't enough houses to meet buyer demand. For buyers, low inventory means: moving faster, expanding the search geographically, and considering what things are "must haves" vs. "nice to haves." It's a great idea to get pre-approved ASAP and find less expensive homes in great neighborhoods in they can afford to upgrade over time. For sellers, this is better news: Low inventory means less selling competition.  ">From late 2020 to mid 2021, real estate inventory has been incredibly low. As of November 2020, inventory has been down a whole 20%. In December, more that 70% of homes for sale were on the market for less than a month. Simply put, in some markets, there aren't enough houses to meet buyer demand. For buyers, low inventory means: moving faster, expanding the search geographically, and considering what things are "must haves" vs. "nice to haves." It's a great idea to get pre-approved ASAP and find less expensive homes in great neighborhoods in they can afford to upgrade over time. For sellers, this is better news: Low inventory means less selling competition.  </div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://www.ramseysolutions.com/real-estate/real-estate-trends">Learn more &raquo;</a>
+                      </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Rising home prices</div>
-              <div class="tile-carousel-item--topic--description">As of the end of last year, existing home prices had grown by about 15% as compared to the same time the prior year. This marked more than 100 straight months of consistent price gains. Encourage your audience to really know what they can afford. It could be time to post some budgeting tips for buyers, like: limiting their house payment to no more than a specified percentage of their take-home pay, saving up to make  a down payment, etc. Remember: Avoid specific numbers or percentages within content. We should never be giving specific financial advice on behalf of our customers. <a href="https://www.ramseysolutions.com/real-estate/real-estate-trends">Learn more &raquo;</a></div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="As of the end of last year, existing home prices had grown by about 15% as compared to the same time the prior year. This marked more than 100 straight months of consistent price gains. Encourage your audience to really know what they can afford. It could be time to post some budgeting tips for buyers, like: limiting their house payment to no more than a specified percentage of their take-home pay, saving up to make  a down payment, etc. Remember: Avoid specific numbers or percentages within content. We should never be giving specific financial advice on behalf of our customers.">As of the end of last year, existing home prices had grown by about 15% as compared to the same time the prior year. This marked more than 100 straight months of consistent price gains. Encourage your audience to really know what they can afford. It could be time to post some budgeting tips for buyers, like: limiting their house payment to no more than a specified percentage of their take-home pay, saving up to make  a down payment, etc. Remember: Avoid specific numbers or percentages within content. We should never be giving specific financial advice on behalf of our customers.</div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://www.ramseysolutions.com/real-estate/real-estate-trends">Learn more &raquo;</a>
+                      </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Low Mortgage Interest Rates</div>
-              <div class="tile-carousel-item--topic--description">Mortgage interest rates, the fees that lenders charge as a percentage of a loan amount, are the lowest they've been in decades (around 3%), and economists think that this trend should continue through 2021. For buyers, this can help with affordability, but they should be cautious as to not purchse a home they cannot afford. For sellers, this means that buyers might be motivated to purchase their properties sooner. </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Mortgage interest rates, the fees that lenders charge as a percentage of a loan amount, are the lowest they've been in decades (around 3%), and economists think that this trend should continue through 2021. For buyers, this can help with affordability, but they should be cautious as to not purchse a home they cannot afford. For sellers, this means that buyers might be motivated to purchase their properties sooner.">Mortgage interest rates, the fees that lenders charge as a percentage of a loan amount, are the lowest they've been in decades (around 3%), and economists think that this trend should continue through 2021. For buyers, this can help with affordability, but they should be cautious as to not purchse a home they cannot afford. For sellers, this means that buyers might be motivated to purchase their properties sooner.</div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">The Rise of Millennials</div>
-              <div class="tile-carousel-item--topic--description">No longer just in the "entry-level" market, millennials are moving into and taking over the "move-up" market, as they grow their families and need more space. Consider the age of your audience when creating content. Older millennials in some places may be ready to move on from their starter homes into bigger properties with more space and resources.  <a href="https://www.realtor.com/research/2021-national-housing-forecast/">Learn more &raquo;</a></div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="No longer just in the "entry-level" market, millennials are moving into and taking over the "move-up" market, as they grow their families and need more space. Consider the age of your audience when creating content. Older millennials in some places may be ready to move on from their starter homes into bigger properties with more space and resources. ">No longer just in the "entry-level" market, millennials are moving into and taking over the "move-up" market, as they grow their families and need more space. Consider the age of your audience when creating content. Older millennials in some places may be ready to move on from their starter homes into bigger properties with more space and resources. </div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://www.realtor.com/research/2021-national-housing-forecast/">Learn more &raquo;</a>
+                      </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Suburban migration</div>
-              <div class="tile-carousel-item--topic--description">People are moving into the suburbs! With permanent remote work becoming more common, city-dwellers —freed from the daily tether of a commute to the office and looking for affordable space to shelter, work, learn, and live— are finding homing solutions outside of their typical urban communities. Even before the pandemic, homebuyers looking for affordability were drawn to these areas, too. This is a great trend to capitalize on if you have any Realtor clients who work in areas or communities that are adjacent to large, bustling urban sprawls. Highlight the benefits of those communities! <a href="https://www.realtor.com/research/2021-national-housing-forecast/">Learn more &raquo;</a></div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="People are moving into the suburbs! With permanent remote work becoming more common, city-dwellers —freed from the daily tether of a commute to the office and looking for affordable space to shelter, work, learn, and live— are finding homing solutions outside of their typical urban communities. Even before the pandemic, homebuyers looking for affordability were drawn to these areas, too. This is a great trend to capitalize on if you have any Realtor clients who work in areas or communities that are adjacent to large, bustling urban sprawls. Highlight the benefits of those communities!">People are moving into the suburbs! With permanent remote work becoming more common, city-dwellers —freed from the daily tether of a commute to the office and looking for affordable space to shelter, work, learn, and live— are finding homing solutions outside of their typical urban communities. Even before the pandemic, homebuyers looking for affordability were drawn to these areas, too. This is a great trend to capitalize on if you have any Realtor clients who work in areas or communities that are adjacent to large, bustling urban sprawls. Highlight the benefits of those communities!</div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://www.realtor.com/research/2021-national-housing-forecast/">Learn more &raquo;</a>
+                      </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Above Asking Price</div>
-              <div class="tile-carousel-item--topic--description">The asking price for a home is the amount of money that the seller wishes to receive for their property. Due to lower inventory and higher demand, nearly every home sold during the pandemic went into a multiple-offer situation. Thus, a majority of recent buyers have had to pay over the asking price for their new home purchases. This particularly impacted first-time home buyers and millenials, who tended to have lower budgets. <a href="https://www.realtor.com/news/trends/how-covid-19-pandemic-impacted-millennial-home-buyers/">Learn more &raquo;</a></div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="The asking price for a home is the amount of money that the seller wishes to receive for their property. Due to lower inventory and higher demand, nearly every home sold during the pandemic went into a multiple-offer situation. Thus, a majority of recent buyers have had to pay over the asking price for their new home purchases. This particularly impacted first-time home buyers and millenials, who tended to have lower budgets.">The asking price for a home is the amount of money that the seller wishes to receive for their property. Due to lower inventory and higher demand, nearly every home sold during the pandemic went into a multiple-offer situation. Thus, a majority of recent buyers have had to pay over the asking price for their new home purchases. This particularly impacted first-time home buyers and millenials, who tended to have lower budgets.</div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://www.realtor.com/news/trends/how-covid-19-pandemic-impacted-millennial-home-buyers/">Learn more &raquo;</a>
+                      </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Required renovations</div>
-              <div class="tile-carousel-item--topic--description">Due to lower inventory and higher demand, many buyers have had to settle for properties that need more work or repairs than they had originally planned or budgeted for. According to a survey, 56% of millennials bought a home requiring minor or major renovations, although only 42.4% began their search with that intention. If your client has connections to contractors, remodelers, interior designers, etc -- highlight that! Also, this is a good time to post home-improvement tips, DIY projects, design trends and suggestions, and the like.  <a href="https://www.realtor.com/news/trends/how-covid-19-pandemic-impacted-millennial-home-buyers/">Learn more &raquo;</a></div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Due to lower inventory and higher demand, many buyers have had to settle for properties that need more work or repairs than they had originally planned or budgeted for. According to a survey, 56% of millennials bought a home requiring minor or major renovations, although only 42.4% began their search with that intention. If your client has connections to contractors, remodelers, interior designers, etc -- highlight that! Also, this is a good time to post home-improvement tips, DIY projects, design trends and suggestions, and the like. ">Due to lower inventory and higher demand, many buyers have had to settle for properties that need more work or repairs than they had originally planned or budgeted for. According to a survey, 56% of millennials bought a home requiring minor or major renovations, although only 42.4% began their search with that intention. If your client has connections to contractors, remodelers, interior designers, etc -- highlight that! Also, this is a good time to post home-improvement tips, DIY projects, design trends and suggestions, and the like. </div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://www.realtor.com/news/trends/how-covid-19-pandemic-impacted-millennial-home-buyers/">Learn more &raquo;</a>
+                      </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Playful details</div>
-              <div class="tile-carousel-item--topic--description">Due to budget or time constraints, making major aesthetic overhauls may be a difficulty or impossibility for some buyers. Small details, such as dashes of color, backsplashes, or unique hardware on cabinets or drawers are small,simple details that make big impacts. For audience participation, you can ask your clients' audience what their favorite small details in their home are. Alternatively, you can choose a stock photo that shows off a small detail and highlight this idea in the caption.  <a href="https://www.realtor.com/advice/home-improvement/bargain-block-unveils-a-new-design-style-that-modern-farmhouse-folks-will-love/">Learn more &raquo;</a></div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Due to budget or time constraints, making major aesthetic overhauls may be a difficulty or impossibility for some buyers. Small details, such as dashes of color, backsplashes, or unique hardware on cabinets or drawers are small,simple details that make big impacts. For audience participation, you can ask your clients' audience what their favorite small details in their home are. Alternatively, you can choose a stock photo that shows off a small detail and highlight this idea in the caption. ">Due to budget or time constraints, making major aesthetic overhauls may be a difficulty or impossibility for some buyers. Small details, such as dashes of color, backsplashes, or unique hardware on cabinets or drawers are small,simple details that make big impacts. For audience participation, you can ask your clients' audience what their favorite small details in their home are. Alternatively, you can choose a stock photo that shows off a small detail and highlight this idea in the caption. </div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://www.realtor.com/advice/home-improvement/bargain-block-unveils-a-new-design-style-that-modern-farmhouse-folks-will-love/">Learn more &raquo;</a>
+                      </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Vegetable gardens</div>
-              <div class="tile-carousel-item--topic--description">As people became wary of the grocery store in the beginning of the pandemic, at-home vegetable gardens grew (haha) in popularity. Expect to see these new gardeners keep at it as the late spring/early summer harvest season approaches.  Post gardening tips or recipes for seasonal fruits and veggies. Highlight veggie and fruit plants that look beautiful as a way to impress potential buyers and boost curb appeal.  <a href="realtor.com/videos/video-these-landscaping-trends-will-be-hot-this-summer/8302c422-ed18-480f-b791-1712b60cc4c1/">Learn more &raquo;</a></div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="As people became wary of the grocery store in the beginning of the pandemic, at-home vegetable gardens grew (haha) in popularity. Expect to see these new gardeners keep at it as the late spring/early summer harvest season approaches.  Post gardening tips or recipes for seasonal fruits and veggies. Highlight veggie and fruit plants that look beautiful as a way to impress potential buyers and boost curb appeal. ">As people became wary of the grocery store in the beginning of the pandemic, at-home vegetable gardens grew (haha) in popularity. Expect to see these new gardeners keep at it as the late spring/early summer harvest season approaches.  Post gardening tips or recipes for seasonal fruits and veggies. Highlight veggie and fruit plants that look beautiful as a way to impress potential buyers and boost curb appeal. </div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="realtor.com/videos/video-these-landscaping-trends-will-be-hot-this-summer/8302c422-ed18-480f-b791-1712b60cc4c1/">Learn more &raquo;</a>
+                      </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">DIY playgrounds</div>
-              <div class="tile-carousel-item--topic--description">Since many people spent most of their time at home last year, they invested in backyard entertainment to keep their families busy. Think inflatable pools, swing sets, rope swings, and lawn games like cornhole. These inexpensive improvements can bring a lot of life into an otherwise unimpressive backyard space.  Highlight ways to affordably and efficiently turn a backyard into a fun place the whole family can enjoy.  <a href="realtor.com/videos/video-these-landscaping-trends-will-be-hot-this-summer/8302c422-ed18-480f-b791-1712b60cc4c1/">Learn more &raquo;</a></div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Since many people spent most of their time at home last year, they invested in backyard entertainment to keep their families busy. Think inflatable pools, swing sets, rope swings, and lawn games like cornhole. These inexpensive improvements can bring a lot of life into an otherwise unimpressive backyard space.  Highlight ways to affordably and efficiently turn a backyard into a fun place the whole family can enjoy. ">Since many people spent most of their time at home last year, they invested in backyard entertainment to keep their families busy. Think inflatable pools, swing sets, rope swings, and lawn games like cornhole. These inexpensive improvements can bring a lot of life into an otherwise unimpressive backyard space.  Highlight ways to affordably and efficiently turn a backyard into a fun place the whole family can enjoy. </div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="realtor.com/videos/video-these-landscaping-trends-will-be-hot-this-summer/8302c422-ed18-480f-b791-1712b60cc4c1/">Learn more &raquo;</a>
+                      </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">New construction </div>
-              <div class="tile-carousel-item--topic--description">Since inventory in the housing market is low, more buyers may be turning to new construction as a solution. Basically, this term refers to buying a house before it is complete or built. This process comes with its own set of complications, like securing permits, finding contractors, and more.  Also, as a result, the buyer may have more influence on what the finished product looks like,  </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Since inventory in the housing market is low, more buyers may be turning to new construction as a solution. Basically, this term refers to buying a house before it is complete or built. This process comes with its own set of complications, like securing permits, finding contractors, and more.  Also, as a result, the buyer may have more influence on what the finished product looks like, ">Since inventory in the housing market is low, more buyers may be turning to new construction as a solution. Basically, this term refers to buying a house before it is complete or built. This process comes with its own set of complications, like securing permits, finding contractors, and more.  Also, as a result, the buyer may have more influence on what the finished product looks like, </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Summer vacation</div>
-              <div class="tile-carousel-item--topic--description">May launches the start of summer vacation season which typically lasts through August. Things to highlight: second homes, beach houses, family cabins, etc </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="May launches the start of summer vacation season which typically lasts through August. Things to highlight: second homes, beach houses, family cabins, etc">May launches the start of summer vacation season which typically lasts through August. Things to highlight: second homes, beach houses, family cabins, etc</div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Housing Market</div>
-              <div class="tile-carousel-item--topic--description">The spring & summer months are typically the busiest time of the year for real estate professional. Homeowners looking to sell may be finishing up renovations or looking for agents to get their houses on the market. Scoping out rental properties is common during this time of year, too. People use these months as an opportunity to check out new neighborhoods and parks, too -- the warmer weather makes strolls, walks, and other realty recon more enjoyable.  </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="The spring & summer months are typically the busiest time of the year for real estate professional. Homeowners looking to sell may be finishing up renovations or looking for agents to get their houses on the market. Scoping out rental properties is common during this time of year, too. People use these months as an opportunity to check out new neighborhoods and parks, too -- the warmer weather makes strolls, walks, and other realty recon more enjoyable. ">The spring & summer months are typically the busiest time of the year for real estate professional. Homeowners looking to sell may be finishing up renovations or looking for agents to get their houses on the market. Scoping out rental properties is common during this time of year, too. People use these months as an opportunity to check out new neighborhoods and parks, too -- the warmer weather makes strolls, walks, and other realty recon more enjoyable. </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Curb appeal</div>
-              <div class="tile-carousel-item--topic--description">Sprucing up curb appeal is a traditional seasonal real estate marketing technique. A home's "curb appeal" is the first impression it gives to the outside world. It enhances the overall look and feel of a property, and it also stimulates interest and provides a return on investment. Think of all the things you see when you stand in front of a home -- the driveway, the door, the front yard, etc. In general, touching up or enhancing these things adds to curb appeal. You could even post gardening tips or wreath examples.  <a href="https://www.lifestorage.com/blog/moving/diy-curb-appeal-tips-increase-buyer-appeal/">Learn more &raquo;</a></div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Sprucing up curb appeal is a traditional seasonal real estate marketing technique. A home's "curb appeal" is the first impression it gives to the outside world. It enhances the overall look and feel of a property, and it also stimulates interest and provides a return on investment. Think of all the things you see when you stand in front of a home -- the driveway, the door, the front yard, etc. In general, touching up or enhancing these things adds to curb appeal. You could even post gardening tips or wreath examples. ">Sprucing up curb appeal is a traditional seasonal real estate marketing technique. A home's "curb appeal" is the first impression it gives to the outside world. It enhances the overall look and feel of a property, and it also stimulates interest and provides a return on investment. Think of all the things you see when you stand in front of a home -- the driveway, the door, the front yard, etc. In general, touching up or enhancing these things adds to curb appeal. You could even post gardening tips or wreath examples. </div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://www.lifestorage.com/blog/moving/diy-curb-appeal-tips-increase-buyer-appeal/">Learn more &raquo;</a>
+                      </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Backyard Trends</div>
-              <div class="tile-carousel-item--topic--description">In the summer months, backyards can really stand out. They're defining features of the home and could lead potential buyers into thinking how to live their lives outdoors. Lately, people have been improving their backyards with particular attention paid to sustainability, "gardening with a purpose" (using native/local or functional plants, etc), and moving indoor living outside.  </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="In the summer months, backyards can really stand out. They're defining features of the home and could lead potential buyers into thinking how to live their lives outdoors. Lately, people have been improving their backyards with particular attention paid to sustainability, "gardening with a purpose" (using native/local or functional plants, etc), and moving indoor living outside. ">In the summer months, backyards can really stand out. They're defining features of the home and could lead potential buyers into thinking how to live their lives outdoors. Lately, people have been improving their backyards with particular attention paid to sustainability, "gardening with a purpose" (using native/local or functional plants, etc), and moving indoor living outside. </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Summer vacation</div>
-              <div class="tile-carousel-item--topic--description">School's out - wheeee! Families will be spending more time together -- maybe travelling, or maybe entertaining each other at home. This would be a great chance to highlight local attractions in your clients' communities (for fun day trips), or post family-friendly craft ideas or recipes. Highlight the areas your clients sell/buy houses in by calling attention to local things or places people can do/visit with their families. #SchoolsOut </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="School's out - wheeee! Families will be spending more time together -- maybe travelling, or maybe entertaining each other at home. This would be a great chance to highlight local attractions in your clients' communities (for fun day trips), or post family-friendly craft ideas or recipes. Highlight the areas your clients sell/buy houses in by calling attention to local things or places people can do/visit with their families. #SchoolsOut">School's out - wheeee! Families will be spending more time together -- maybe travelling, or maybe entertaining each other at home. This would be a great chance to highlight local attractions in your clients' communities (for fun day trips), or post family-friendly craft ideas or recipes. Highlight the areas your clients sell/buy houses in by calling attention to local things or places people can do/visit with their families. #SchoolsOut</div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Summer housing market update</div>
-              <div class="tile-carousel-item--topic--description">July is typically the last big push for sellers before the slower season starts in August. Due to the lower inventory and higher prices of homes this year, we may not see as big of a dip as previous years. </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="July is typically the last big push for sellers before the slower season starts in August. Due to the lower inventory and higher prices of homes this year, we may not see as big of a dip as previous years.">July is typically the last big push for sellers before the slower season starts in August. Due to the lower inventory and higher prices of homes this year, we may not see as big of a dip as previous years.</div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Booming Housing Market</div>
-              <div class="tile-carousel-item--topic--description">Spring is typically the best time to prep for the busy real estate market ahead (March - June). A few things folks do to prepare: renovate the backyard, tackle spring cleaning and decluttering (the first step to staging a home), explore areas for potential rental properties.  </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Spring is typically the best time to prep for the busy real estate market ahead (March - June). A few things folks do to prepare: renovate the backyard, tackle spring cleaning and decluttering (the first step to staging a home), explore areas for potential rental properties. ">Spring is typically the best time to prep for the busy real estate market ahead (March - June). A few things folks do to prepare: renovate the backyard, tackle spring cleaning and decluttering (the first step to staging a home), explore areas for potential rental properties. </div>
+                    
             </div>
             
             <!-- End: topic loop -->
@@ -652,7 +742,7 @@
   </div>
 </div>
 
-
+<div id="description_overflow"></div>
 
 <!-- Javascript -->
 <script src="/assets/js/jquery.js"></script>

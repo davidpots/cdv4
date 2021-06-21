@@ -127,6 +127,28 @@
       });
 
 
+
+
+          // ******************************************
+          // Limits long topic character count
+
+          var maxLength = 280;
+          $(".show-read-more").each(function(){
+              var myStr = $(this).text();
+              if($.trim(myStr).length > maxLength){
+                  var newStr = myStr.substring(0, maxLength);
+                  var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+                  $(this).empty().html(newStr).append('... (<span class="read-more-link">read more</span>)');
+              }
+          });
+          $(".read-more-link").hover(function(){
+            $("#description_overflow").text( $(this).parent().attr('data-full-description') ).fadeIn();
+          }, function() {
+            $("#description_overflow").fadeOut(50);
+          });
+
+
+
     });
   </script>
 

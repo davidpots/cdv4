@@ -128,6 +128,28 @@
       });
 
 
+
+
+          // ******************************************
+          // Limits long topic character count
+
+          var maxLength = 280;
+          $(".show-read-more").each(function(){
+              var myStr = $(this).text();
+              if($.trim(myStr).length > maxLength){
+                  var newStr = myStr.substring(0, maxLength);
+                  var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+                  $(this).empty().html(newStr).append('... (<span class="read-more-link">read more</span>)');
+              }
+          });
+          $(".read-more-link").hover(function(){
+            $("#description_overflow").text( $(this).parent().attr('data-full-description') ).fadeIn();
+          }, function() {
+            $("#description_overflow").fadeOut(50);
+          });
+
+
+
     });
   </script>
 
@@ -187,17 +209,79 @@
             
               
               
-                
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
               
                 
               
                 
               
-                
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
               
                 
               
+            
+              
+              
                 
+              
+            
+              
               
                 
               
@@ -210,13 +294,49 @@
               
                 
               
-                
+            
+              
               
                 
               
                 
               
+            
+              
+              
                 
+              
+            
+              
+              
+                
+              
+            
+              
+              
+                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+                
+              
+            
+              
+              
+            
+              
+              
+                
+              
+            
+              
               
                 
               
@@ -229,11 +349,8 @@
               
                 
               
-                
+            
               
-                
-              
-                
               
                 
               
@@ -246,11 +363,8 @@
               
                 
               
-                
+            
               
-                
-              
-                
               
                 
               
@@ -263,806 +377,62 @@
               
                 
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
             
               
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
                 
                   
                   <div class="tile-carousel-item tile-carousel-item--topic">
                     <div class="tile-carousel-item--topic--heading">Home Staging</div>
-                    <div class="tile-carousel-item--topic--description">Staging a home can drastically improve the rate at which it sells. It's important to keep in mind those carpets that have been walked on for over a decade or the rug under the dining table that doesn't get a deep clean all the time. Carpet cleaning is a great way to remove dust, dirt, build-up, and improve the air quality in a home. Some companies offer free estimates which is great for home owners working on a budget. <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499287218/Carpet+Cleaning">Learn more &raquo;</a></div>
+                       <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Staging a home can drastically improve the rate at which it sells. It's important to keep in mind those carpets that have been walked on for over a decade or the rug under the dining table that doesn't get a deep clean all the time. Carpet cleaning is a great way to remove dust, dirt, build-up, and improve the air quality in a home. Some companies offer free estimates which is great for home owners working on a budget.">Staging a home can drastically improve the rate at which it sells. It's important to keep in mind those carpets that have been walked on for over a decade or the rug under the dining table that doesn't get a deep clean all the time. Carpet cleaning is a great way to remove dust, dirt, build-up, and improve the air quality in a home. Some companies offer free estimates which is great for home owners working on a budget.</div>
+                     
+                       <div class="tile-carousel-item--topic--url">
+                         <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499287218/Carpet+Cleaning">Learn more &raquo;</a>
+                       </div>
+                     
                   </div>
-                
-              
                 
               
                 
               
             
               
-              
-                
-              
-                
-              
-                
               
                 
                   
                   <div class="tile-carousel-item tile-carousel-item--topic">
                     <div class="tile-carousel-item--topic--heading">Curb Appeal</div>
-                    <div class="tile-carousel-item--topic--description">Curb appeal is a big deal when it comes to selling your home. Hiring a company to pressure wash the driveway and sidewalks of a home before it gets put on the market is an easy way to elevate the look and feel without doing any major renovation. <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499025787/Power+and+Pressure+Washing">Learn more &raquo;</a></div>
+                       <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Curb appeal is a big deal when it comes to selling your home. Hiring a company to pressure wash the driveway and sidewalks of a home before it gets put on the market is an easy way to elevate the look and feel without doing any major renovation.">Curb appeal is a big deal when it comes to selling your home. Hiring a company to pressure wash the driveway and sidewalks of a home before it gets put on the market is an easy way to elevate the look and feel without doing any major renovation.</div>
+                     
+                       <div class="tile-carousel-item--topic--url">
+                         <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499025787/Power+and+Pressure+Washing">Learn more &raquo;</a>
+                       </div>
+                     
                   </div>
-                
-              
                 
               
                 
               
             
               
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
                 
                   
                   <div class="tile-carousel-item tile-carousel-item--topic">
                     <div class="tile-carousel-item--topic--heading">Unseen Issues in Old Homes</div>
-                    <div class="tile-carousel-item--topic--description">Older homes have their charm, but also can come with unseen issues. Depending on the age of the property, the chimney might be outdated compared to the rest of the home. An expert will know techniques to repair older and newer chimneys. <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499025787/Power+and+Pressure+Washing">Learn more &raquo;</a></div>
+                       <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Older homes have their charm, but also can come with unseen issues. Depending on the age of the property, the chimney might be outdated compared to the rest of the home. An expert will know techniques to repair older and newer chimneys.">Older homes have their charm, but also can come with unseen issues. Depending on the age of the property, the chimney might be outdated compared to the rest of the home. An expert will know techniques to repair older and newer chimneys.</div>
+                     
+                       <div class="tile-carousel-item--topic--url">
+                         <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499025787/Power+and+Pressure+Washing">Learn more &raquo;</a>
+                       </div>
+                     
                   </div>
                 
               
                 
               
-                
-              
             
               
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
                 
               
@@ -1071,13 +441,22 @@
               
                 
               
-                
+            
+              
               
                 
               
-                
+            
               
-                
+              
+            
+              
+              
+            
+              
+              
+            
+              
               
                 
               
@@ -1086,13 +465,8 @@
               
                 
               
-                
+            
               
-                
-              
-                
-              
-                
               
                 
               
@@ -1101,17 +475,8 @@
               
                 
               
-                
+            
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
                 
               
@@ -1120,17 +485,26 @@
               
                 
               
-                
+            
               
-                
               
-                
+            
               
-                
               
-                
+            
               
-                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
               
                 
               
@@ -1139,642 +513,54 @@
               
                 
               
-                
+            
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
                 
               
             
               
               
-                
+            
               
-                
               
-                
+            
               
-                
               
-                
+            
               
-                
               
-                
+            
               
-                
               
-                
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
               
             
               
               
                 
               
-                
+            
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
             
               
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
             
               
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
             
 
@@ -2633,7 +1419,7 @@
   </div>
 </div>
 
-
+<div id="description_overflow"></div>
 
 <!-- Javascript -->
 <script src="/assets/js/jquery.js"></script>

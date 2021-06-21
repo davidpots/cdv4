@@ -128,6 +128,28 @@
       });
 
 
+
+
+          // ******************************************
+          // Limits long topic character count
+
+          var maxLength = 280;
+          $(".show-read-more").each(function(){
+              var myStr = $(this).text();
+              if($.trim(myStr).length > maxLength){
+                  var newStr = myStr.substring(0, maxLength);
+                  var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+                  $(this).empty().html(newStr).append('... (<span class="read-more-link">read more</span>)');
+              }
+          });
+          $(".read-more-link").hover(function(){
+            $("#description_overflow").text( $(this).parent().attr('data-full-description') ).fadeIn();
+          }, function() {
+            $("#description_overflow").fadeOut(50);
+          });
+
+
+
     });
   </script>
 
@@ -187,172 +209,252 @@
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">The gift of lawn care</div>
-              <div class="tile-carousel-item--topic--description">As we move towards Mother and Father's Day season, here are seven types of people who would love lawn care as a gift: someone in need, the ameteur landscaper, the hard worker, the newbie homeowner, new parents, someone selling their home, and the person who has everything. </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="As we move towards Mother and Father's Day season, here are seven types of people who would love lawn care as a gift: someone in need, the ameteur landscaper, the hard worker, the newbie homeowner, new parents, someone selling their home, and the person who has everything.">As we move towards Mother and Father's Day season, here are seven types of people who would love lawn care as a gift: someone in need, the ameteur landscaper, the hard worker, the newbie homeowner, new parents, someone selling their home, and the person who has everything.</div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Summer Prep</div>
-              <div class="tile-carousel-item--topic--description">Many home and business owners are looking for ways to make their HVAC systems more energy-efficient. Many HVAC customers provide energy-efficient alternatives. Check to see if your customer offers discounts on swapping to a more energy-efficient or newer model. <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499351835/HVAC+Heating+Ventilation+and+Air+Conditioning#HVAC(Heating,Ventilation,andAirConditioning)-TypicalServicesProvided">Learn more &raquo;</a></div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Many home and business owners are looking for ways to make their HVAC systems more energy-efficient. Many HVAC customers provide energy-efficient alternatives. Check to see if your customer offers discounts on swapping to a more energy-efficient or newer model.">Many home and business owners are looking for ways to make their HVAC systems more energy-efficient. Many HVAC customers provide energy-efficient alternatives. Check to see if your customer offers discounts on swapping to a more energy-efficient or newer model.</div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499351835/HVAC+Heating+Ventilation+and+Air+Conditioning#HVAC(Heating,Ventilation,andAirConditioning)-TypicalServicesProvided">Learn more &raquo;</a>
+                      </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Tile Installation</div>
-              <div class="tile-carousel-item--topic--description">Tiling contractors are great to call in for these spring home renos. They usually get discounts from tile stores and ensure spaces like showers and tubs are properly sealed to prevent future damage. Spring renovations on kitchens or bathrooms are a great opportunity to call a tiling contractor. </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Tiling contractors are great to call in for these spring home renos. They usually get discounts from tile stores and ensure spaces like showers and tubs are properly sealed to prevent future damage. Spring renovations on kitchens or bathrooms are a great opportunity to call a tiling contractor.">Tiling contractors are great to call in for these spring home renos. They usually get discounts from tile stores and ensure spaces like showers and tubs are properly sealed to prevent future damage. Spring renovations on kitchens or bathrooms are a great opportunity to call a tiling contractor.</div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Home Rescue</div>
-              <div class="tile-carousel-item--topic--description">Flooding often happens this time of the year. When homes are damaged and flooded, damage restoration crews are the folks to call. Does your customer offer warranties on their services?  <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499155575/Damage+Restoration">Learn more &raquo;</a></div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Flooding often happens this time of the year. When homes are damaged and flooded, damage restoration crews are the folks to call. Does your customer offer warranties on their services? ">Flooding often happens this time of the year. When homes are damaged and flooded, damage restoration crews are the folks to call. Does your customer offer warranties on their services? </div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499155575/Damage+Restoration">Learn more &raquo;</a>
+                      </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Energy Conscious </div>
-              <div class="tile-carousel-item--topic--description">Over the years, using solar energy in the home has not only become more popular, but more affordable. Installing solar panels in the spring is a great way to prepare for the sunny summer months. </div>
-            </div>
-            
-            <div class="tile-carousel-item tile-carousel-item--topic">
-              <div class="tile-carousel-item--topic--heading">Renovations</div>
-              <div class="tile-carousel-item--topic--description">Kitchens and Bathrooms are two of the most frequently remodeled rooms before homes are put on the market. Electricians are often needed to move or install new outlets in the room. </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Over the years, using solar energy in the home has not only become more popular, but more affordable. Installing solar panels in the spring is a great way to prepare for the sunny summer months.">Over the years, using solar energy in the home has not only become more popular, but more affordable. Installing solar panels in the spring is a great way to prepare for the sunny summer months.</div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Moving Season</div>
-              <div class="tile-carousel-item--topic--description">Moving home from college for the summer, moving into new homes, removing clutter after spring cleaning. This time of year is big for movers. Check to see if your customer offers any spring cleaning or junk removal specials. </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Moving home from college for the summer, moving into new homes, removing clutter after spring cleaning. This time of year is big for movers. Check to see if your customer offers any spring cleaning or junk removal specials.">Moving home from college for the summer, moving into new homes, removing clutter after spring cleaning. This time of year is big for movers. Check to see if your customer offers any spring cleaning or junk removal specials.</div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Work From Home Needs</div>
-              <div class="tile-carousel-item--topic--description">As many folks have shifted to working from home, they're looking to upgrade their internet or running new lines to home offices. </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="As many folks have shifted to working from home, they're looking to upgrade their internet or running new lines to home offices.">As many folks have shifted to working from home, they're looking to upgrade their internet or running new lines to home offices.</div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Wall-To-Wall Cabinetry</div>
-              <div class="tile-carousel-item--topic--description">Kitchens are seeing more use after the last year, filling with gadgets and tools to help with at-home meals. This year, we're seeing a shift to wall-to-wall cabinetry instead of smaller units of open shelving or cluttered countertops. </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Kitchens are seeing more use after the last year, filling with gadgets and tools to help with at-home meals. This year, we're seeing a shift to wall-to-wall cabinetry instead of smaller units of open shelving or cluttered countertops.">Kitchens are seeing more use after the last year, filling with gadgets and tools to help with at-home meals. This year, we're seeing a shift to wall-to-wall cabinetry instead of smaller units of open shelving or cluttered countertops.</div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Remodeling Tip</div>
-              <div class="tile-carousel-item--topic--description">Remodeling a home isn't for the faint of heart. It's recommended to budget a 10% cushion into your project if you're living in the home while remodeling and 30% if you plan to live elsewhere to account for delays or mishaps during construction.  </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Remodeling a home isn't for the faint of heart. It's recommended to budget a 10% cushion into your project if you're living in the home while remodeling and 30% if you plan to live elsewhere to account for delays or mishaps during construction. ">Remodeling a home isn't for the faint of heart. It's recommended to budget a 10% cushion into your project if you're living in the home while remodeling and 30% if you plan to live elsewhere to account for delays or mishaps during construction. </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Spring Maintenance </div>
-              <div class="tile-carousel-item--topic--description">For many, A/C systems will click on for the first time since last summer. Scheduling routine maintenance can prevent pricey fixes down the road. Tasks often include: testing and cleaning the blower fan, checking the level of coolant in the cooling system, and testing the system’s thermostat and operation. Try creating content about tips on signs of A/C trouble or promoting routine maintenance checks. <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499351835/HVAC+Heating+Ventilation+and+Air+Conditioning#HVAC(Heating,Ventilation,andAirConditioning)-TypicalServicesProvided">Learn more &raquo;</a></div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="For many, A/C systems will click on for the first time since last summer. Scheduling routine maintenance can prevent pricey fixes down the road. Tasks often include: testing and cleaning the blower fan, checking the level of coolant in the cooling system, and testing the system’s thermostat and operation. Try creating content about tips on signs of A/C trouble or promoting routine maintenance checks.">For many, A/C systems will click on for the first time since last summer. Scheduling routine maintenance can prevent pricey fixes down the road. Tasks often include: testing and cleaning the blower fan, checking the level of coolant in the cooling system, and testing the system’s thermostat and operation. Try creating content about tips on signs of A/C trouble or promoting routine maintenance checks.</div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499351835/HVAC+Heating+Ventilation+and+Air+Conditioning#HVAC(Heating,Ventilation,andAirConditioning)-TypicalServicesProvided">Learn more &raquo;</a>
+                      </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Remodeling Projects</div>
-              <div class="tile-carousel-item--topic--description">Lots of people jump into remodel-mode in the spring once the weather warms up. Contractors are needed to help plan new construction or larger remodeling projects to make sure all the right people get brought and to help estimate cost. </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Lots of people jump into remodel-mode in the spring once the weather warms up. Contractors are needed to help plan new construction or larger remodeling projects to make sure all the right people get brought and to help estimate cost.">Lots of people jump into remodel-mode in the spring once the weather warms up. Contractors are needed to help plan new construction or larger remodeling projects to make sure all the right people get brought and to help estimate cost.</div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Home Refresh</div>
-              <div class="tile-carousel-item--topic--description">Hiring a painting contractor is often needed for renovation projects that cover large parts of the home, high ceilings, or even where drywall has been repaired to match paint. Does your customer offer special services for repairs, or have specialty like cabinetry or exterior wall paint? </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Hiring a painting contractor is often needed for renovation projects that cover large parts of the home, high ceilings, or even where drywall has been repaired to match paint. Does your customer offer special services for repairs, or have specialty like cabinetry or exterior wall paint?">Hiring a painting contractor is often needed for renovation projects that cover large parts of the home, high ceilings, or even where drywall has been repaired to match paint. Does your customer offer special services for repairs, or have specialty like cabinetry or exterior wall paint?</div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Home Reno</div>
-              <div class="tile-carousel-item--topic--description">Whether it's installing a pool in preparation of summer or smoothing out damaged parts of the property from fallen trees and debris, if there's dirt to be moved, Excavation Contractors are here to help. Spring is the perfect time to install a swimming pool. Check to see if your customer has any specializations or specialty equipment that could help. <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/654148382/Excavation">Learn more &raquo;</a></div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Whether it's installing a pool in preparation of summer or smoothing out damaged parts of the property from fallen trees and debris, if there's dirt to be moved, Excavation Contractors are here to help. Spring is the perfect time to install a swimming pool. Check to see if your customer has any specializations or specialty equipment that could help.">Whether it's installing a pool in preparation of summer or smoothing out damaged parts of the property from fallen trees and debris, if there's dirt to be moved, Excavation Contractors are here to help. Spring is the perfect time to install a swimming pool. Check to see if your customer has any specializations or specialty equipment that could help.</div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/654148382/Excavation">Learn more &raquo;</a>
+                      </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Home Customization</div>
-              <div class="tile-carousel-item--topic--description">Folks who are building homes this spring may have the opportunity to look into customizing their driveway. <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499123763/Pavement+and+Driveways">Learn more &raquo;</a></div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Folks who are building homes this spring may have the opportunity to look into customizing their driveway.">Folks who are building homes this spring may have the opportunity to look into customizing their driveway.</div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499123763/Pavement+and+Driveways">Learn more &raquo;</a>
+                      </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Outdoor Living Upgrade</div>
-              <div class="tile-carousel-item--topic--description">Getting ready for poolside dinners and days spent outside is the perfect opportunity to refresh outdoor living spaces — that's where our outdoor lighting customers come in. Pool lighting, advanced lighting system in gardens and yards, and professionally lit gazebos are all on the top of mind over the next few months. <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499287083/Outdoor+Lighting">Learn more &raquo;</a></div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Getting ready for poolside dinners and days spent outside is the perfect opportunity to refresh outdoor living spaces — that's where our outdoor lighting customers come in. Pool lighting, advanced lighting system in gardens and yards, and professionally lit gazebos are all on the top of mind over the next few months.">Getting ready for poolside dinners and days spent outside is the perfect opportunity to refresh outdoor living spaces — that's where our outdoor lighting customers come in. Pool lighting, advanced lighting system in gardens and yards, and professionally lit gazebos are all on the top of mind over the next few months.</div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499287083/Outdoor+Lighting">Learn more &raquo;</a>
+                      </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Tricky Trees</div>
-              <div class="tile-carousel-item--topic--description">After a season of winter weather and storms, folks begin to realize problem areas in their own backyard. Trees leaning dangerously close to the house, trees that have fallen over the last few months, or tree that need to be trimmed to keep residents safe are all top mind for new and tenured home owners. <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499188478/Tree+Care">Learn more &raquo;</a></div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="After a season of winter weather and storms, folks begin to realize problem areas in their own backyard. Trees leaning dangerously close to the house, trees that have fallen over the last few months, or tree that need to be trimmed to keep residents safe are all top mind for new and tenured home owners.">After a season of winter weather and storms, folks begin to realize problem areas in their own backyard. Trees leaning dangerously close to the house, trees that have fallen over the last few months, or tree that need to be trimmed to keep residents safe are all top mind for new and tenured home owners.</div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499188478/Tree+Care">Learn more &raquo;</a>
+                      </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Home Staging</div>
-              <div class="tile-carousel-item--topic--description">Staging a home can drastically improve the rate at which it sells. It's important to keep in mind those carpets that have been walked on for over a decade or the rug under the dining table that doesn't get a deep clean all the time. Carpet cleaning is a great way to remove dust, dirt, build-up, and improve the air quality in a home. Some companies offer free estimates which is great for home owners working on a budget. <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499287218/Carpet+Cleaning">Learn more &raquo;</a></div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Staging a home can drastically improve the rate at which it sells. It's important to keep in mind those carpets that have been walked on for over a decade or the rug under the dining table that doesn't get a deep clean all the time. Carpet cleaning is a great way to remove dust, dirt, build-up, and improve the air quality in a home. Some companies offer free estimates which is great for home owners working on a budget.">Staging a home can drastically improve the rate at which it sells. It's important to keep in mind those carpets that have been walked on for over a decade or the rug under the dining table that doesn't get a deep clean all the time. Carpet cleaning is a great way to remove dust, dirt, build-up, and improve the air quality in a home. Some companies offer free estimates which is great for home owners working on a budget.</div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499287218/Carpet+Cleaning">Learn more &raquo;</a>
+                      </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Curb Appeal</div>
-              <div class="tile-carousel-item--topic--description">Curb appeal is a big deal when it comes to selling your home. Hiring a company to pressure wash the driveway and sidewalks of a home before it gets put on the market is an easy way to elevate the look and feel without doing any major renovation. <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499025787/Power+and+Pressure+Washing">Learn more &raquo;</a></div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Curb appeal is a big deal when it comes to selling your home. Hiring a company to pressure wash the driveway and sidewalks of a home before it gets put on the market is an easy way to elevate the look and feel without doing any major renovation.">Curb appeal is a big deal when it comes to selling your home. Hiring a company to pressure wash the driveway and sidewalks of a home before it gets put on the market is an easy way to elevate the look and feel without doing any major renovation.</div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499025787/Power+and+Pressure+Washing">Learn more &raquo;</a>
+                      </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Unseen Issues in Old Homes</div>
-              <div class="tile-carousel-item--topic--description">Older homes have their charm, but also can come with unseen issues. Depending on the age of the property, the chimney might be outdated compared to the rest of the home. An expert will know techniques to repair older and newer chimneys. <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499025787/Power+and+Pressure+Washing">Learn more &raquo;</a></div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Older homes have their charm, but also can come with unseen issues. Depending on the age of the property, the chimney might be outdated compared to the rest of the home. An expert will know techniques to repair older and newer chimneys.">Older homes have their charm, but also can come with unseen issues. Depending on the age of the property, the chimney might be outdated compared to the rest of the home. An expert will know techniques to repair older and newer chimneys.</div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499025787/Power+and+Pressure+Washing">Learn more &raquo;</a>
+                      </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">A Helpful Hand</div>
-              <div class="tile-carousel-item--topic--description">Some small fixes are often needed before you close on a house. From switching light fixtures to fixing a leaky toilet, a handyman is perfect to call when there are multiple small fixes that need to get done quickly rather than calling multiple contractors. </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Some small fixes are often needed before you close on a house. From switching light fixtures to fixing a leaky toilet, a handyman is perfect to call when there are multiple small fixes that need to get done quickly rather than calling multiple contractors.">Some small fixes are often needed before you close on a house. From switching light fixtures to fixing a leaky toilet, a handyman is perfect to call when there are multiple small fixes that need to get done quickly rather than calling multiple contractors.</div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Renovations</div>
-              <div class="tile-carousel-item--topic--description">Smaller renovation and remodel projects may be doable on your own, but when trying to move or replace light fixtures it's important to have a professional to avoid costly mistakes. <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499123067/Electricians">Learn more &raquo;</a></div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Smaller renovation and remodel projects may be doable on your own, but when trying to move or replace light fixtures it's important to have a professional to avoid costly mistakes.">Smaller renovation and remodel projects may be doable on your own, but when trying to move or replace light fixtures it's important to have a professional to avoid costly mistakes.</div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499123067/Electricians">Learn more &raquo;</a>
+                      </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Clean-Lined Cabinets</div>
-              <div class="tile-carousel-item--topic--description">While trends overall are leaning away from minimalism, cabinetry is an exception. More and more homes are opting for more modern cabinets in kitchen and bathrooms instead of a more traditional style. </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="While trends overall are leaning away from minimalism, cabinetry is an exception. More and more homes are opting for more modern cabinets in kitchen and bathrooms instead of a more traditional style.">While trends overall are leaning away from minimalism, cabinetry is an exception. More and more homes are opting for more modern cabinets in kitchen and bathrooms instead of a more traditional style.</div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Pest Control in the Kitchen</div>
-              <div class="tile-carousel-item--topic--description">Spring pests, like ants, love kitchen spaces because of the availability of potential water and food sources. Crumbs, spill residue, and food left out are some of their favorite snacks. <a href="https://www.vulcantermite.com/home-pest-control/spring-cleaning-tips-avoid-spring-pests/">Learn more &raquo;</a></div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Spring pests, like ants, love kitchen spaces because of the availability of potential water and food sources. Crumbs, spill residue, and food left out are some of their favorite snacks.">Spring pests, like ants, love kitchen spaces because of the availability of potential water and food sources. Crumbs, spill residue, and food left out are some of their favorite snacks.</div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://www.vulcantermite.com/home-pest-control/spring-cleaning-tips-avoid-spring-pests/">Learn more &raquo;</a>
+                      </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Pests That Thrive in the Summer</div>
-              <div class="tile-carousel-item--topic--description">Mosquitoes, Ants, Fleas, Ticks, Termites, Grasshoppers, Flies, and Stinging Insects </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Mosquitoes, Ants, Fleas, Ticks, Termites, Grasshoppers, Flies, and Stinging Insects">Mosquitoes, Ants, Fleas, Ticks, Termites, Grasshoppers, Flies, and Stinging Insects</div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Custom-built homes</div>
-              <div class="tile-carousel-item--topic--description">With real estate prices in many areas going up, some people are considering custom-built homes. For many, the long-term cost savings of buying a new home are more attractive than maintaining an older home. </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="With real estate prices in many areas going up, some people are considering custom-built homes. For many, the long-term cost savings of buying a new home are more attractive than maintaining an older home.">With real estate prices in many areas going up, some people are considering custom-built homes. For many, the long-term cost savings of buying a new home are more attractive than maintaining an older home.</div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Pool maintenance </div>
-              <div class="tile-carousel-item--topic--description">With summer coming, it's important to make sure your pool continues to operate successfully. Skimming, brushing, and vacuuming your pool are just a few things to keep track of when considering pool maintenance. Making sure chemical levels stay where they need to be can take a little more time and practice. Some pool companies offer routine in-person maintenance, while others may provide the perfect tools to do it yourself. </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="With summer coming, it's important to make sure your pool continues to operate successfully. Skimming, brushing, and vacuuming your pool are just a few things to keep track of when considering pool maintenance. Making sure chemical levels stay where they need to be can take a little more time and practice. Some pool companies offer routine in-person maintenance, while others may provide the perfect tools to do it yourself.">With summer coming, it's important to make sure your pool continues to operate successfully. Skimming, brushing, and vacuuming your pool are just a few things to keep track of when considering pool maintenance. Making sure chemical levels stay where they need to be can take a little more time and practice. Some pool companies offer routine in-person maintenance, while others may provide the perfect tools to do it yourself.</div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Gutter cleaning </div>
-              <div class="tile-carousel-item--topic--description">Depending on where you live and if there are trees near your home, you need to make sure your gutters are clear of debris. Having clear gutters insures rainwater flows freely and does not get stuck which can cause standing water. This can cause a number of problems including damage to the gutter itself, excess moisture in walls, mold and mildew. Most roofing or handyman companies can safely and effectively clear gutters prior to unpredictable weather.  </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Depending on where you live and if there are trees near your home, you need to make sure your gutters are clear of debris. Having clear gutters insures rainwater flows freely and does not get stuck which can cause standing water. This can cause a number of problems including damage to the gutter itself, excess moisture in walls, mold and mildew. Most roofing or handyman companies can safely and effectively clear gutters prior to unpredictable weather. ">Depending on where you live and if there are trees near your home, you need to make sure your gutters are clear of debris. Having clear gutters insures rainwater flows freely and does not get stuck which can cause standing water. This can cause a number of problems including damage to the gutter itself, excess moisture in walls, mold and mildew. Most roofing or handyman companies can safely and effectively clear gutters prior to unpredictable weather. </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">New construction plumbing</div>
-              <div class="tile-carousel-item--topic--description">The housing market means an influx of new homes needing plumbing installation or updates/repairs to older plumbing in a newly-purchased home. Does your customer offer new installation warranties or discounts? <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499057101/Plumbers">Learn more &raquo;</a></div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="The housing market means an influx of new homes needing plumbing installation or updates/repairs to older plumbing in a newly-purchased home. Does your customer offer new installation warranties or discounts?">The housing market means an influx of new homes needing plumbing installation or updates/repairs to older plumbing in a newly-purchased home. Does your customer offer new installation warranties or discounts?</div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499057101/Plumbers">Learn more &raquo;</a>
+                      </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Tornado season</div>
-              <div class="tile-carousel-item--topic--description">Though tornadoes can form at any time of year in some places, May and June are typically the peak months. Texas and Oklahoma are two of the states with the highest number of tornadoes per year. Tornadoes and other severe weather can cause a wide range of potential issues for homes and businesses.  Do any of your customers offer emergency repair services? </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Though tornadoes can form at any time of year in some places, May and June are typically the peak months. Texas and Oklahoma are two of the states with the highest number of tornadoes per year. Tornadoes and other severe weather can cause a wide range of potential issues for homes and businesses.  Do any of your customers offer emergency repair services?">Though tornadoes can form at any time of year in some places, May and June are typically the peak months. Texas and Oklahoma are two of the states with the highest number of tornadoes per year. Tornadoes and other severe weather can cause a wide range of potential issues for homes and businesses.  Do any of your customers offer emergency repair services?</div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">3D printed homes</div>
-              <div class="tile-carousel-item--topic--description">3D printed homes are gaining popularity as they become more easily available in cities across the country. They can typically be built quickly and at a lower price than a traditional home. An interesting trend can make for a great audience participation post. </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="3D printed homes are gaining popularity as they become more easily available in cities across the country. They can typically be built quickly and at a lower price than a traditional home. An interesting trend can make for a great audience participation post.">3D printed homes are gaining popularity as they become more easily available in cities across the country. They can typically be built quickly and at a lower price than a traditional home. An interesting trend can make for a great audience participation post.</div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Natural mosquito control </div>
-              <div class="tile-carousel-item--topic--description">Mosquito and other pest control using natural ingredients like plant oils are gaining in popularity. Additionally, making changes to your outdoor area like treating water features with repellent or working to remedy areas with standing water can be a big help. Mosquitoes thrive in hot, humid weather. Natural alternatives are popular because they are effective and safe for children and pets.  </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Mosquito and other pest control using natural ingredients like plant oils are gaining in popularity. Additionally, making changes to your outdoor area like treating water features with repellent or working to remedy areas with standing water can be a big help. Mosquitoes thrive in hot, humid weather. Natural alternatives are popular because they are effective and safe for children and pets. ">Mosquito and other pest control using natural ingredients like plant oils are gaining in popularity. Additionally, making changes to your outdoor area like treating water features with repellent or working to remedy areas with standing water can be a big help. Mosquitoes thrive in hot, humid weather. Natural alternatives are popular because they are effective and safe for children and pets. </div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Drywall installation </div>
-              <div class="tile-carousel-item--topic--description">Drywall installation is one of the most commonly requested handyman services, home improvement or to repair damage. Professionals can repair or install drywall including cracks from settling, wear and tear, moisture damage, rodent damage, drywall hanging, and painting and finishing touches. </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Drywall installation is one of the most commonly requested handyman services, home improvement or to repair damage. Professionals can repair or install drywall including cracks from settling, wear and tear, moisture damage, rodent damage, drywall hanging, and painting and finishing touches.">Drywall installation is one of the most commonly requested handyman services, home improvement or to repair damage. Professionals can repair or install drywall including cracks from settling, wear and tear, moisture damage, rodent damage, drywall hanging, and painting and finishing touches.</div>
+                    
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Summer heat</div>
-              <div class="tile-carousel-item--topic--description">With summer ramping up, so do outside temperatures. Between May and June we see a sizeable increase in average temperature in areas that have typical summers. This means the need for potential emergency repairs, filter changes, and finding ways to keep homes cool without breaking the bank. </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="With summer ramping up, so do outside temperatures. Between May and June we see a sizeable increase in average temperature in areas that have typical summers. This means the need for potential emergency repairs, filter changes, and finding ways to keep homes cool without breaking the bank.">With summer ramping up, so do outside temperatures. Between May and June we see a sizeable increase in average temperature in areas that have typical summers. This means the need for potential emergency repairs, filter changes, and finding ways to keep homes cool without breaking the bank.</div>
+                    
             </div>
             
             <!-- End: topic loop -->
@@ -551,7 +653,7 @@
   </div>
 </div>
 
-
+<div id="description_overflow"></div>
 
 <!-- Javascript -->
 <script src="/assets/js/jquery.js"></script>

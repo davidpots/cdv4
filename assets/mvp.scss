@@ -509,6 +509,7 @@ html {
             box-shadow: 0 2px 16px rgba(0,0,0,0.08);
           }
           overflow-y: hidden;
+          position: relative;
         }
         .tile-carousel-item--topic .tile-carousel-item--topic--heading {
           font-size: 16px;
@@ -517,11 +518,20 @@ html {
           color: #09757A;
         }
         .tile-carousel-item--topic .tile-carousel-item--topic--description {
-          font-size: 14px;
+          font-size: 13px;
           color: #09757A;
-          text-overflow: ellipsis;
           a {
             font-weight: bold; color: inherit;
+          }
+        }
+        .tile-carousel-item--topic .tile-carousel-item--topic--url {
+          position: absolute;
+          bottom: 16px;
+          left: 16px;
+          font-size: 13px;
+          font-weight: 700;
+          a {
+            color: #09757A;
           }
         }
 
@@ -1239,3 +1249,28 @@ html {
       color: #09757A;
       border-radius: 4px;
     }
+
+// Read more thing
+
+.read-more-link {
+  text-decoration: underline;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+#description_overflow {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #eee;
+  width: 368px;
+  padding: 16px;
+  color: #222;
+  border-radius: 4px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+  border: 1px solid #ccc;
+  font-size: 14px;
+}

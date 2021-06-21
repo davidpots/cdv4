@@ -128,6 +128,28 @@
       });
 
 
+
+
+          // ******************************************
+          // Limits long topic character count
+
+          var maxLength = 280;
+          $(".show-read-more").each(function(){
+              var myStr = $(this).text();
+              if($.trim(myStr).length > maxLength){
+                  var newStr = myStr.substring(0, maxLength);
+                  var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+                  $(this).empty().html(newStr).append('... (<span class="read-more-link">read more</span>)');
+              }
+          });
+          $(".read-more-link").hover(function(){
+            $("#description_overflow").text( $(this).parent().attr('data-full-description') ).fadeIn();
+          }, function() {
+            $("#description_overflow").fadeOut(50);
+          });
+
+
+
     });
   </script>
 
@@ -187,21 +209,50 @@
             
               
               
-                
+            
               
-                
               
-                
+            
               
-                
               
-                
+            
               
-                
               
-                
+            
               
-                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
               
             
               
@@ -210,469 +261,38 @@
               
                 
               
-                
+            
               
-                
               
-                
+            
               
-                
               
-                
+            
               
-                
               
             
               
               
                 
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
             
               
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
               
                 
                   
                   <div class="tile-carousel-item tile-carousel-item--topic">
                     <div class="tile-carousel-item--topic--heading">Summer Prep</div>
-                    <div class="tile-carousel-item--topic--description">Many home and business owners are looking for ways to make their HVAC systems more energy-efficient. Many HVAC customers provide energy-efficient alternatives. Check to see if your customer offers discounts on swapping to a more energy-efficient or newer model. <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499351835/HVAC+Heating+Ventilation+and+Air+Conditioning#HVAC(Heating,Ventilation,andAirConditioning)-TypicalServicesProvided">Learn more &raquo;</a></div>
+                       <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Many home and business owners are looking for ways to make their HVAC systems more energy-efficient. Many HVAC customers provide energy-efficient alternatives. Check to see if your customer offers discounts on swapping to a more energy-efficient or newer model.">Many home and business owners are looking for ways to make their HVAC systems more energy-efficient. Many HVAC customers provide energy-efficient alternatives. Check to see if your customer offers discounts on swapping to a more energy-efficient or newer model.</div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499351835/HVAC+Heating+Ventilation+and+Air+Conditioning#HVAC(Heating,Ventilation,andAirConditioning)-TypicalServicesProvided">Learn more &raquo;</a>
+                      </div>
+                    
                   </div>
                 
               
-                
+            
               
-                
-                  
-                  <div class="tile-carousel-item tile-carousel-item--topic">
-                    <div class="tile-carousel-item--topic--heading">Summer Prep</div>
-                    <div class="tile-carousel-item--topic--description">Many home and business owners are looking for ways to make their HVAC systems more energy-efficient. Many HVAC customers provide energy-efficient alternatives. Check to see if your customer offers discounts on swapping to a more energy-efficient or newer model. <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499351835/HVAC+Heating+Ventilation+and+Air+Conditioning#HVAC(Heating,Ventilation,andAirConditioning)-TypicalServicesProvided">Learn more &raquo;</a></div>
-                  </div>
-                
-              
-                
-                  
-                  <div class="tile-carousel-item tile-carousel-item--topic">
-                    <div class="tile-carousel-item--topic--heading">Summer Prep</div>
-                    <div class="tile-carousel-item--topic--description">Many home and business owners are looking for ways to make their HVAC systems more energy-efficient. Many HVAC customers provide energy-efficient alternatives. Check to see if your customer offers discounts on swapping to a more energy-efficient or newer model. <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499351835/HVAC+Heating+Ventilation+and+Air+Conditioning#HVAC(Heating,Ventilation,andAirConditioning)-TypicalServicesProvided">Learn more &raquo;</a></div>
-                  </div>
-                
               
                 
               
@@ -685,9 +305,8 @@
               
                 
               
-                
+            
               
-                
               
                 
               
@@ -698,15 +317,8 @@
               
                 
               
-                
+            
               
-                
-              
-                
-              
-                
-              
-                
               
                 
               
@@ -715,184 +327,38 @@
               
                 
               
-                
+            
               
-                
               
-                
+            
               
-                
-              
-                
-              
-                
-              
-                
               
             
               
               
                 
               
-                
-              
-                
-              
-                
-              
-                
-              
             
               
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
             
               
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
                 
                   
                   <div class="tile-carousel-item tile-carousel-item--topic">
                     <div class="tile-carousel-item--topic--heading">Spring Maintenance </div>
-                    <div class="tile-carousel-item--topic--description">For many, A/C systems will click on for the first time since last summer. Scheduling routine maintenance can prevent pricey fixes down the road. Tasks often include: testing and cleaning the blower fan, checking the level of coolant in the cooling system, and testing the system’s thermostat and operation. Try creating content about tips on signs of A/C trouble or promoting routine maintenance checks. <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499351835/HVAC+Heating+Ventilation+and+Air+Conditioning#HVAC(Heating,Ventilation,andAirConditioning)-TypicalServicesProvided">Learn more &raquo;</a></div>
+                       <div class="tile-carousel-item--topic--description show-read-more" data-full-description="For many, A/C systems will click on for the first time since last summer. Scheduling routine maintenance can prevent pricey fixes down the road. Tasks often include: testing and cleaning the blower fan, checking the level of coolant in the cooling system, and testing the system’s thermostat and operation. Try creating content about tips on signs of A/C trouble or promoting routine maintenance checks.">For many, A/C systems will click on for the first time since last summer. Scheduling routine maintenance can prevent pricey fixes down the road. Tasks often include: testing and cleaning the blower fan, checking the level of coolant in the cooling system, and testing the system’s thermostat and operation. Try creating content about tips on signs of A/C trouble or promoting routine maintenance checks.</div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499351835/HVAC+Heating+Ventilation+and+Air+Conditioning#HVAC(Heating,Ventilation,andAirConditioning)-TypicalServicesProvided">Learn more &raquo;</a>
+                      </div>
+                    
                   </div>
                 
               
-                
-                  
-                  <div class="tile-carousel-item tile-carousel-item--topic">
-                    <div class="tile-carousel-item--topic--heading">Spring Maintenance </div>
-                    <div class="tile-carousel-item--topic--description">For many, A/C systems will click on for the first time since last summer. Scheduling routine maintenance can prevent pricey fixes down the road. Tasks often include: testing and cleaning the blower fan, checking the level of coolant in the cooling system, and testing the system’s thermostat and operation. Try creating content about tips on signs of A/C trouble or promoting routine maintenance checks. <a href="https://msh-success.atlassian.net/wiki/spaces/KnowledgeBase/pages/499351835/HVAC+Heating+Ventilation+and+Air+Conditioning#HVAC(Heating,Ventilation,andAirConditioning)-TypicalServicesProvided">Learn more &raquo;</a></div>
-                  </div>
-                
+            
+              
               
                 
               
@@ -905,9 +371,8 @@
               
                 
               
-                
+            
               
-                
               
                 
               
@@ -920,15 +385,8 @@
               
                 
               
-                
+            
               
-                
-              
-                
-              
-                
-              
-                
               
                 
               
@@ -941,13 +399,8 @@
               
                 
               
-                
+            
               
-                
-              
-                
-              
-                
               
                 
               
@@ -960,9 +413,8 @@
               
                 
               
-                
+            
               
-                
               
                 
               
@@ -973,17 +425,8 @@
               
                 
               
-                
+            
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
                 
               
@@ -992,19 +435,17 @@
               
                 
               
-                
+            
               
-                
               
-                
+            
               
-                
               
-                
+            
               
-                
               
-                
+            
+              
               
                 
               
@@ -1013,19 +454,8 @@
               
                 
               
-                
+            
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
                 
               
@@ -1034,13 +464,8 @@
               
                 
               
-                
+            
               
-                
-              
-                
-              
-                
               
                 
               
@@ -1049,17 +474,26 @@
               
                 
               
-                
+            
               
-                
               
-                
+            
               
-                
               
-                
+            
               
-                
+              
+            
+              
+              
+            
+              
+              
+            
+              
+              
+            
+              
               
                 
               
@@ -1068,731 +502,61 @@
               
                 
               
-                
+            
               
-                
-              
-                
-              
-                
               
                 
               
             
               
               
-                
+            
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
             
               
               
-                
+            
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
             
               
               
-                
+            
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
             
               
               
-                
+            
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
             
               
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
             
               
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
             
               
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
                 
                   
                   <div class="tile-carousel-item tile-carousel-item--topic">
                     <div class="tile-carousel-item--topic--heading">Summer heat</div>
-                    <div class="tile-carousel-item--topic--description">With summer ramping up, so do outside temperatures. Between May and June we see a sizeable increase in average temperature in areas that have typical summers. This means the need for potential emergency repairs, filter changes, and finding ways to keep homes cool without breaking the bank. </div>
+                       <div class="tile-carousel-item--topic--description show-read-more" data-full-description="With summer ramping up, so do outside temperatures. Between May and June we see a sizeable increase in average temperature in areas that have typical summers. This means the need for potential emergency repairs, filter changes, and finding ways to keep homes cool without breaking the bank.">With summer ramping up, so do outside temperatures. Between May and June we see a sizeable increase in average temperature in areas that have typical summers. This means the need for potential emergency repairs, filter changes, and finding ways to keep homes cool without breaking the bank.</div>
+                    
                   </div>
                 
               
-                
+            
+              
               
             
               
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
             
               
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
             
 
@@ -1816,125 +580,29 @@
             
               
               
-                
+            
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
             
               
               
-                
+            
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
             
               
               
-                
+            
               
-                
-              
-                
-              
-                
-              
-                
               
             
               
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
             
               
               
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
             
               
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-            
-              
-              
-                
-              
-                
-              
-                
-              
-                
               
                 
               
@@ -1943,54 +611,15 @@
               
                 
                   
-
                   <div class="tile-carousel-item tile-carousel-item--topic">
                     <div class="tile-carousel-item--topic--heading">#HVACMaintenance <a data-hashtag="#HVACMaintenance" class="copy-button copy-hashtag tile--hashtag-copy" href="#">copy</a></div>
                     <div class="tile-carousel-item--topic--description">Get the AC fixed! It's hot outside. Use this hashtag on posts promoting HVAC customers who can repair air conditioning systems when they fail in the summer.</div>
                   </div>
 
-                
-              
-                
-                  
-
-                  <div class="tile-carousel-item tile-carousel-item--topic">
-                    <div class="tile-carousel-item--topic--heading">#HVACMaintenance <a data-hashtag="#HVACMaintenance" class="copy-button copy-hashtag tile--hashtag-copy" href="#">copy</a></div>
-                    <div class="tile-carousel-item--topic--description">Get the AC fixed! It's hot outside. Use this hashtag on posts promoting HVAC customers who can repair air conditioning systems when they fail in the summer.</div>
-                  </div>
-
-                
-              
-                
-              
-                
-                  
-
-                  <div class="tile-carousel-item tile-carousel-item--topic">
-                    <div class="tile-carousel-item--topic--heading">#HVACMaintenance <a data-hashtag="#HVACMaintenance" class="copy-button copy-hashtag tile--hashtag-copy" href="#">copy</a></div>
-                    <div class="tile-carousel-item--topic--description">Get the AC fixed! It's hot outside. Use this hashtag on posts promoting HVAC customers who can repair air conditioning systems when they fail in the summer.</div>
-                  </div>
-
-                
-              
                 
               
             
               
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
               
                 
               
@@ -2673,7 +1302,7 @@
   </div>
 </div>
 
-
+<div id="description_overflow"></div>
 
 <!-- Javascript -->
 <script src="/assets/js/jquery.js"></script>
