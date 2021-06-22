@@ -101,17 +101,23 @@ p.subhead { font-size: 21px; margin-top: 0; }
 
 .tile--hashtags-wrapper { margin-top: 16px; }
 
-.tile--hashtag-pill { margin-top: 4px; margin-bottom: 4px; background: #e8f5f5; border-radius: 3px; padding: 10px 15px; font-size: 14px; }
+.tile--hashtag-pill { margin-top: 4px; margin-bottom: 4px; background: #e8f5f5; border-radius: 3px; padding: 15px 20px; font-size: 14px; }
 
-.tile--hashtag-pill p { margin: 0; overflow: hidden; width: auto; color: #777; }
+.tile--hashtag-pill p { margin: 0; overflow: hidden; width: auto; color: #777; font-size: 14px; }
 
-.tile--hashtag-pill .tile--hashtag-itself { float: left; font-weight: 600; color: #555; cursor: pointer; }
+.tile--hashtag-pill .tile--hashtag-itself { float: left; font-weight: 600; color: #555; cursor: pointer; font-size: 14px; }
 
-.tile--hashtag-pill .tile--hashtag-outbound { float: right; }
+.tile--hashtag-pill .tile--hashtag-outbound { float: right; font-size: 14px; }
 
-.tile--hashtag-pill .tile--hashtag-outbound a { color: inherit; }
+.tile--hashtag-pill .tile--hashtag-outbound a { color: inherit; font-size: 14px; }
 
 .tile--hashtag-copy { font-weight: 400; font-size: 13px; color: #777; }
+
+.tile--topic-comment--wrapper { border-radius: 3px; padding: 15px 20px; background: #FFFAE3; margin-top: 12px; }
+
+.tile p.tile--topic-comment--heading { font-weight: bold; font-size: 14px; margin-bottom: 8px; color: #555; }
+
+.tile p.tile--topic-comment--details { font-size: 14px; color: #777; }
 
 .tile.tile--featured { background: #D8EFEF; border: 1px solid #D8EFEF; padding-left: 21px; padding-bottom: 21px; padding-top: 21px; padding-right: 21px; margin-bottom: 16px; }
 
