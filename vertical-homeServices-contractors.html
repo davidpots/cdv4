@@ -127,7 +127,7 @@ subvertical: Contractors
                       <p class="tile--details"><a href="">Details</a></p>
                       <h3 class="tile--title">{{phrase.name}}</h3>
                       <div class="tile--expandedContent">
-                        <p class="tile--description">{{phrase.description}}</p>
+                        <p class="tile--description">{{phrase.description}} {% if phrase.url %}<a style="font-weight: bold;" href="{{phrase.url}}">Learn more &raquo;</a>{% endif %}</p>
                       </div>
                     </div>
                   </div>
