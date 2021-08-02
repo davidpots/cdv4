@@ -82,6 +82,16 @@
           $('.calendar-image').attr('src','/assets/images/cal-aug.png');
           return false;
         }
+        if ( $(this).parent().attr('data-current-month') == "August" ) {
+          $(this).parent().attr('data-current-month',"September");
+          $('.calendar-image').attr('src','/assets/images/cal-sep.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "September" ) {
+          $(this).parent().attr('data-current-month',"October");
+          $('.calendar-image').attr('src','/assets/images/cal-oct.png');
+          return false;
+        }
       });
 
       $('.calendar-prev').click(function(){
@@ -98,6 +108,16 @@
         if ( $(this).parent().attr('data-current-month') == "August" ) {
           $(this).parent().attr('data-current-month',"July");
           $('.calendar-image').attr('src','/assets/images/cal-july.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "September" ) {
+          $(this).parent().attr('data-current-month',"August");
+          $('.calendar-image').attr('src','/assets/images/cal-aug.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "October" ) {
+          $(this).parent().attr('data-current-month',"September");
+          $('.calendar-image').attr('src','/assets/images/cal-sep.png');
           return false;
         }
       });
@@ -236,7 +256,8 @@
             
               
               
-                
+            
+              
               
             
               
@@ -691,6 +712,34 @@
                 
               
             
+              
+              
+                
+              
+                
+              
+            
+              
+              
+            
+              
+              
+                
+                  
+                  <div class="tile-carousel-item tile-carousel-item--topic">
+                    <div class="tile-carousel-item--topic--heading">Renovating your home one room at a time</div>
+                       <div class="tile-carousel-item--topic--description show-read-more" data-full-description="You don't have to do everything all at once. With budget and time top-of-mind, you can update your home slowly, prioritizing what's most important to you.">You don't have to do everything all at once. With budget and time top-of-mind, you can update your home slowly, prioritizing what's most important to you.</div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="http://realestate.boston.com/home-improvement/2018/06/01/slow-walk-renovation-fix-one-room-time/">Learn more &raquo;</a>
+                      </div>
+                    
+                  </div>
+                
+              
+                
+              
+            
 
             
             <!-- End: topic loop -->
@@ -902,6 +951,19 @@
                 
               
                 
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
               
                 
               

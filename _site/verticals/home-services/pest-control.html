@@ -82,6 +82,16 @@
           $('.calendar-image').attr('src','/assets/images/cal-aug.png');
           return false;
         }
+        if ( $(this).parent().attr('data-current-month') == "August" ) {
+          $(this).parent().attr('data-current-month',"September");
+          $('.calendar-image').attr('src','/assets/images/cal-sep.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "September" ) {
+          $(this).parent().attr('data-current-month',"October");
+          $('.calendar-image').attr('src','/assets/images/cal-oct.png');
+          return false;
+        }
       });
 
       $('.calendar-prev').click(function(){
@@ -98,6 +108,16 @@
         if ( $(this).parent().attr('data-current-month') == "August" ) {
           $(this).parent().attr('data-current-month',"July");
           $('.calendar-image').attr('src','/assets/images/cal-july.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "September" ) {
+          $(this).parent().attr('data-current-month',"August");
+          $('.calendar-image').attr('src','/assets/images/cal-aug.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "October" ) {
+          $(this).parent().attr('data-current-month',"September");
+          $('.calendar-image').attr('src','/assets/images/cal-sep.png');
           return false;
         }
       });
@@ -236,7 +256,8 @@
             
               
               
-                
+            
+              
               
             
               
@@ -688,6 +709,23 @@
                 
               
             
+              
+              
+                
+              
+                
+              
+            
+              
+              
+            
+              
+              
+                
+              
+                
+              
+            
 
             
             <!-- End: topic loop -->
@@ -899,6 +937,19 @@
                 
               
                 
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
               
                 
               

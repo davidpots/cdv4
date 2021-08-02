@@ -82,6 +82,16 @@
           $('.calendar-image').attr('src','/assets/images/cal-aug.png');
           return false;
         }
+        if ( $(this).parent().attr('data-current-month') == "August" ) {
+          $(this).parent().attr('data-current-month',"September");
+          $('.calendar-image').attr('src','/assets/images/cal-sep.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "September" ) {
+          $(this).parent().attr('data-current-month',"October");
+          $('.calendar-image').attr('src','/assets/images/cal-oct.png');
+          return false;
+        }
       });
 
       $('.calendar-prev').click(function(){
@@ -98,6 +108,16 @@
         if ( $(this).parent().attr('data-current-month') == "August" ) {
           $(this).parent().attr('data-current-month',"July");
           $('.calendar-image').attr('src','/assets/images/cal-july.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "September" ) {
+          $(this).parent().attr('data-current-month',"August");
+          $('.calendar-image').attr('src','/assets/images/cal-aug.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "October" ) {
+          $(this).parent().attr('data-current-month',"September");
+          $('.calendar-image').attr('src','/assets/images/cal-sep.png');
           return false;
         }
       });
@@ -222,12 +242,6 @@
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Electricity conservation</div>
                  <div class="tile-carousel-item--topic--description show-read-more" data-full-description="There are many ways to reduce the use of electricity in homes during the hotter months. Common recommendations include setting your thermostat to 78 degrees or more, utilizing fans, closing blinds in windows receiving direct sunlight, and not using large appliances like dishwashers, washing machines, and ovens. ">There are many ways to reduce the use of electricity in homes during the hotter months. Common recommendations include setting your thermostat to 78 degrees or more, utilizing fans, closing blinds in windows receiving direct sunlight, and not using large appliances like dishwashers, washing machines, and ovens. </div>
-                    
-            </div>
-            
-            <div class="tile-carousel-item tile-carousel-item--topic">
-              <div class="tile-carousel-item--topic--heading">Dog Days of Summer</div>
-                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="The hot, sultry days of summer. They are taken to be the hottest, most uncomfortable part of summer in the Northern Hemisphere. This time of the year brings broken A/C units and the need for emergency maintenance. Check to see if your HVAC customers offer any warranties or services that can help. You can also lean into educational content around ways to keep your home cooler which will put less stress on the A/C. Something to note: conversation around this topic in Texas may prompt unwanted comments about ERCOT -- keep this in mind while creating content for these customers. ">The hot, sultry days of summer. They are taken to be the hottest, most uncomfortable part of summer in the Northern Hemisphere. This time of the year brings broken A/C units and the need for emergency maintenance. Check to see if your HVAC customers offer any warranties or services that can help. You can also lean into educational content around ways to keep your home cooler which will put less stress on the A/C. Something to note: conversation around this topic in Texas may prompt unwanted comments about ERCOT -- keep this in mind while creating content for these customers. </div>
                     
             </div>
             
@@ -485,7 +499,37 @@
             
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Lumber prices </div>
-                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="After rising to higher than normal levels in Sprint 2021, the cost of lumber has been falling since July. Wood prices have plunged back to levels resembling those before lockdowns cut supplies short and boosted demand. While this is a positive change for builders and DIY-ers, experts say not to expect the cost of new houses to decrease along with the price of lumber. ">After rising to higher than normal levels in Sprint 2021, the cost of lumber has been falling since July. Wood prices have plunged back to levels resembling those before lockdowns cut supplies short and boosted demand. While this is a positive change for builders and DIY-ers, experts say not to expect the cost of new houses to decrease along with the price of lumber. </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="After rising to higher than normal levels in Spring 2021, the cost of lumber has been falling since July. Wood prices have plunged back to levels resembling those before lockdowns cut supplies short and boosted demand. While this is a positive change for builders and DIY-ers, experts say not to expect the cost of new houses to decrease along with the price of lumber. ">After rising to higher than normal levels in Spring 2021, the cost of lumber has been falling since July. Wood prices have plunged back to levels resembling those before lockdowns cut supplies short and boosted demand. While this is a positive change for builders and DIY-ers, experts say not to expect the cost of new houses to decrease along with the price of lumber. </div>
+                    
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Different types of roofing</div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Depending on the climate where you live and budget, a certain type of roof may be more advantageous than others. If you need to repair part of your roof or re-do the entire thing, talk with your local roofing company about your options. ">Depending on the climate where you live and budget, a certain type of roof may be more advantageous than others. If you need to repair part of your roof or re-do the entire thing, talk with your local roofing company about your options. </div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://www.nationwide.com/lc/resources/home/articles/types-of-roofing">Learn more &raquo;</a>
+                      </div>
+                    
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Clean energy </div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Clean energy was second-most prevalent US electricity source in 2020. Solar is the best way for common homeowners to utilize clean, renewable energy.">Clean energy was second-most prevalent US electricity source in 2020. Solar is the best way for common homeowners to utilize clean, renewable energy.</div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="https://electrek.co/2021/07/28/egeb-clean-energy-was-second-most-prevalent-us-electricity-source-in-2020/">Learn more &raquo;</a>
+                      </div>
+                    
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">Renovating your home one room at a time</div>
+                 <div class="tile-carousel-item--topic--description show-read-more" data-full-description="You don't have to do everything all at once. With budget and time top-of-mind, you can update your home slowly, prioritizing what's most important to you.">You don't have to do everything all at once. With budget and time top-of-mind, you can update your home slowly, prioritizing what's most important to you.</div>
+                    
+                      <div class="tile-carousel-item--topic--url">
+                        <a href="http://realestate.boston.com/home-improvement/2018/06/01/slow-walk-renovation-fix-one-room-time/">Learn more &raquo;</a>
+                      </div>
                     
             </div>
             

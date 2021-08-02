@@ -3,9 +3,11 @@ layout: mvp
 permalink: "/"
 ---
 
-{% assign week31 = site.data.dates | where: "week","31" %}
 {% assign week32 = site.data.dates | where: "week","32" %}
 {% assign week33 = site.data.dates | where: "week","33" %}
+{% assign week34 = site.data.dates | where: "week","34" %}
+{% assign week35 = site.data.dates | where: "week","35" %}
+{% assign week36 = site.data.dates | where: "week","36" %}
 
 <h1>Content Depot</h1>
 <p class="subhead">A list of upcoming holidays, topics, and prompts to help inspire your social posts.</p>
@@ -22,7 +24,7 @@ permalink: "/"
       <span class="calendar-next"></span>
       <span class="calendar-prev"></span>
       <!-- <span class="calendar-today" style="background-image: url(/assets/images/cal-today/cal-may19.png);"></span> -->
-      <img class="calendar-image" width="100%" src="/assets/images/cal-july.png" />
+      <img class="calendar-image" width="100%" src="/assets/images/cal-aug.png" />
     </div>
     <!-- <h4 class="tile-scheduled-posts--heading">My Scheduled Posts:</h4>
     <div class="tile tile-scheduled-posts" style="height: 200px;"></div> -->
@@ -36,7 +38,7 @@ permalink: "/"
       <div class="secondary date_range">
         <div class="date-ribbon">
           <h3>This Week</h3>
-          <h4>Jul 25-31</h4>
+          <h4>Aug 1-7</h4>
         </div>
       </div>
       <div class="primary tile-wrapper">
@@ -90,27 +92,9 @@ permalink: "/"
         </div>
 
 
-        <!-- Add the tile minivan here for Aug 2 week ----it had no dates on July 26 -->
-
-
-
-
-
-      </div>
-    </article>
-
-    <article>
-      <div class="secondary date_range">
-        <div class="date-ribbon">
-          <h4>Next Week</h4>
-          <h3>Aug 1-7</h3>
-        </div>
-      </div>
-      <div class="primary tile-wrapper">
-
         <div class="tile-minivan">
           <h3 class="tile-minivan--heading">Dates of Interest</h3>
-        {% for date in week31 %}
+        {% for date in week32 %}
         <div class="tile">
           <div class="tile--icon"><img src="/assets/images/emojis/{{date.icon}}.png" /></div>
           <div class="tile--body">
@@ -144,13 +128,18 @@ permalink: "/"
         </div>
         {% endfor %}
         </div>
+
+
+
+
+
       </div>
     </article>
 
     <article>
       <div class="secondary date_range">
         <div class="date-ribbon">
-          <h4>Week of</h4>
+          <h4>Next Week</h4>
           <h3>Aug 8-14</h3>
         </div>
       </div>
@@ -158,7 +147,7 @@ permalink: "/"
 
         <div class="tile-minivan">
           <h3 class="tile-minivan--heading">Dates of Interest</h3>
-        {% for date in week32 %}
+        {% for date in week33 %}
         <div class="tile">
           <div class="tile--icon"><img src="/assets/images/emojis/{{date.icon}}.png" /></div>
           <div class="tile--body">
@@ -206,7 +195,55 @@ permalink: "/"
 
         <div class="tile-minivan">
           <h3 class="tile-minivan--heading">Dates of Interest</h3>
-        {% for date in week33 %}
+        {% for date in week34 %}
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/{{date.icon}}.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">{{date.name}}</h3>
+            <p class="tile--date">{{date.date | date: "%A, %B %e" }}</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">{{date.description}}</p>
+
+              {% assign hashtags = date.hashtags | split: " " %}
+              <div class="tile--hashtags-wrapper">
+              {% for hashtag in hashtags %}
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">{{hashtag}} <span class="tile--hashtag-copy" data-hashtag="{{hashtag}}">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/{{hashtag | slice: 1, hashtag.size}}/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              {% endfor %}
+              </div>
+
+              {% if date.comment %}
+                <div class="tile--topic-comment--wrapper">
+                  <p class="tile--topic-comment--heading">Posting Recommendation</p>
+                  <p class="tile--topic-comment--details">{{date.comment}}</p>
+                </div>
+              {% endif %}
+
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        </div>
+      </div>
+    </article>
+
+    <article>
+      <div class="secondary date_range">
+        <div class="date-ribbon">
+          <h4>Week of</h4>
+          <h3>Aug 22-28</h3>
+        </div>
+      </div>
+      <div class="primary tile-wrapper">
+
+        <div class="tile-minivan">
+          <h3 class="tile-minivan--heading">Dates of Interest</h3>
+        {% for date in week35 %}
         <div class="tile">
           <div class="tile--icon"><img src="/assets/images/emojis/{{date.icon}}.png" /></div>
           <div class="tile--body">
@@ -244,6 +281,53 @@ permalink: "/"
     </article>
 
 
+    <article>
+      <div class="secondary date_range">
+        <div class="date-ribbon">
+          <h4>Weeks of</h4>
+          <h3>Aug 29-Sep 11</h3>
+        </div>
+      </div>
+      <div class="primary tile-wrapper">
+
+        <div class="tile-minivan">
+          <h3 class="tile-minivan--heading">Dates of Interest</h3>
+        {% for date in week36 %}
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/{{date.icon}}.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">{{date.name}}</h3>
+            <p class="tile--date">{{date.date | date: "%A, %B %e" }}</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">{{date.description}}</p>
+
+              {% assign hashtags = date.hashtags | split: " " %}
+              <div class="tile--hashtags-wrapper">
+              {% for hashtag in hashtags %}
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">{{hashtag}} <span class="tile--hashtag-copy" data-hashtag="{{hashtag}}">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/{{hashtag | slice: 1, hashtag.size}}/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              {% endfor %}
+              </div>
+
+              {% if date.comment %}
+                <div class="tile--topic-comment--wrapper">
+                  <p class="tile--topic-comment--heading">Posting Recommendation</p>
+                  <p class="tile--topic-comment--details">{{date.comment}}</p>
+                </div>
+              {% endif %}
+
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        </div>
+      </div>
+    </article>
 
   </div>
 </div>

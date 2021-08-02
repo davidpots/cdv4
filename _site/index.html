@@ -82,6 +82,16 @@
           $('.calendar-image').attr('src','/assets/images/cal-aug.png');
           return false;
         }
+        if ( $(this).parent().attr('data-current-month') == "August" ) {
+          $(this).parent().attr('data-current-month',"September");
+          $('.calendar-image').attr('src','/assets/images/cal-sep.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "September" ) {
+          $(this).parent().attr('data-current-month',"October");
+          $('.calendar-image').attr('src','/assets/images/cal-oct.png');
+          return false;
+        }
       });
 
       $('.calendar-prev').click(function(){
@@ -98,6 +108,16 @@
         if ( $(this).parent().attr('data-current-month') == "August" ) {
           $(this).parent().attr('data-current-month',"July");
           $('.calendar-image').attr('src','/assets/images/cal-july.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "September" ) {
+          $(this).parent().attr('data-current-month',"August");
+          $('.calendar-image').attr('src','/assets/images/cal-aug.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "October" ) {
+          $(this).parent().attr('data-current-month',"September");
+          $('.calendar-image').attr('src','/assets/images/cal-sep.png');
           return false;
         }
       });
@@ -164,6 +184,8 @@
 
 
 
+
+
 <h1>Content Depot</h1>
 <p class="subhead">A list of upcoming holidays, topics, and prompts to help inspire your social posts.</p>
 
@@ -179,7 +201,7 @@
       <span class="calendar-next"></span>
       <span class="calendar-prev"></span>
       <!-- <span class="calendar-today" style="background-image: url(/assets/images/cal-today/cal-may19.png);"></span> -->
-      <img class="calendar-image" width="100%" src="/assets/images/cal-july.png" />
+      <img class="calendar-image" width="100%" src="/assets/images/cal-aug.png" />
     </div>
     <!-- <h4 class="tile-scheduled-posts--heading">My Scheduled Posts:</h4>
     <div class="tile tile-scheduled-posts" style="height: 200px;"></div> -->
@@ -193,7 +215,7 @@
       <div class="secondary date_range">
         <div class="date-ribbon">
           <h3>This Week</h3>
-          <h4>Jul 25-31</h4>
+          <h4>Aug 1-7</h4>
         </div>
       </div>
       <div class="primary tile-wrapper">
@@ -221,6 +243,12 @@
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">National Back to School Month</div>
+              <div class="tile-carousel-item--topic--description show-read-more" data-full-description="August is National Back to School Month.">August is National Back to School Month.</div>
+              
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Back-to-School Season</div>
               <div class="tile-carousel-item--topic--description show-read-more" data-full-description="Back-to-School season starts in early July and typically ends around Labor Day. School supplies, new school clothes, meal prepping for lunches, and after school day care are on the minds of many consumers with school-aged children. A few consumer needs to consider: teachers prepping their classrooms after teaching virtually during the pandemic, college students preparing for dorm and campus life, teachers and parents too busy to cook turning to pick-up or to-go meals, etc.">Back-to-School season starts in early July and typically ends around Labor Day. School supplies, new school clothes, meal prepping for lunches, and after school day care are on the minds of many consumers with school-aged children. A few consumer needs to consider: teachers prepping their classrooms after teaching virtually during the pandemic, college students preparing for dorm and campus life, teachers and parents too busy to cook turning to pick-up or to-go meals, etc.</div>
               
@@ -241,12 +269,6 @@
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">The "Greenaissance"</div>
               <div class="tile-carousel-item--topic--description show-read-more" data-full-description="There’s a new sense of urgency to take better care of the planet. As people reevaluated their priorities during COVID, they realized they want to live more sustainably. Now, they're building new routines and taking action on a greener lifestyle. A recent study shows 4 in 5 consumers plan to continue taking action on a more sustainable lifestyle in their “new normal.” This means folks are looking to eat clean, buy green, and drive lean. They're looking for new ideas and products to help them on their way. Look to see if your customers provide any eco-friendly, sustainable products or utilize best practices in their business that are good for the planet.">There’s a new sense of urgency to take better care of the planet. As people reevaluated their priorities during COVID, they realized they want to live more sustainably. Now, they're building new routines and taking action on a greener lifestyle. A recent study shows 4 in 5 consumers plan to continue taking action on a more sustainable lifestyle in their “new normal.” This means folks are looking to eat clean, buy green, and drive lean. They're looking for new ideas and products to help them on their way. Look to see if your customers provide any eco-friendly, sustainable products or utilize best practices in their business that are good for the planet.</div>
-              
-            </div>
-            
-            <div class="tile-carousel-item tile-carousel-item--topic">
-              <div class="tile-carousel-item--topic--heading">Dog Days of Summer</div>
-              <div class="tile-carousel-item--topic--description show-read-more" data-full-description="The hot, sultry days of summer. They are taken to be the hottest, most uncomfortable part of summer in the Northern Hemisphere.">The hot, sultry days of summer. They are taken to be the hottest, most uncomfortable part of summer in the Northern Hemisphere.</div>
               
             </div>
             
@@ -356,8 +378,13 @@
             </div>
             
             <div class="tile-carousel-item tile-carousel-item--topic">
-              <div class="tile-carousel-item--topic--heading">#National Grilling Month <a data-hashtag="#National Grilling Month" class="copy-button copy-hashtag tile--hashtag-copy" href="#">copy</a></div>
+              <div class="tile-carousel-item--topic--heading">#NationalGrillingMonth <a data-hashtag="#NationalGrillingMonth" class="copy-button copy-hashtag tile--hashtag-copy" href="#">copy</a></div>
               <div class="tile-carousel-item--topic--description">July is National Grilling Month.</div>
+            </div>
+            
+            <div class="tile-carousel-item tile-carousel-item--topic">
+              <div class="tile-carousel-item--topic--heading">#BackToSchool <a data-hashtag="#BackToSchool" class="copy-button copy-hashtag tile--hashtag-copy" href="#">copy</a></div>
+              <div class="tile-carousel-item--topic--description">August is National Back to School Month!</div>
             </div>
             
             <!-- End: hashtag loop -->
@@ -367,224 +394,8 @@
         </div>
 
 
-        <!-- Add the tile minivan here for Aug 2 week ----it had no dates on July 26 -->
-
-
-
-
-
-      </div>
-    </article>
-
-    <article>
-      <div class="secondary date_range">
-        <div class="date-ribbon">
-          <h4>Next Week</h4>
-          <h3>Aug 1-7</h3>
-        </div>
-      </div>
-      <div class="primary tile-wrapper">
-
         <div class="tile-minivan">
           <h3 class="tile-minivan--heading">Dates of Interest</h3>
-        
-        <div class="tile">
-          <div class="tile--icon"><img src="/assets/images/emojis/watermelon.png" /></div>
-          <div class="tile--body">
-            <p class="tile--details"><a href="">Details</a></p>
-            <h3 class="tile--title">National Watermelon Day</h3>
-            <p class="tile--date">Tuesday, August  3</p>
-            <div class="tile--expandedContent">
-              <p class="tile--description">August 3rd is the official day to celebrate the unofficial fruit of the summer -- Watermelon! </p>
-
-              
-              <div class="tile--hashtags-wrapper">
-              
-                <div class="tile--hashtag-pill">
-                  <p>
-                    <span class="tile--hashtag-itself">#NationalWatermelonDay <span class="tile--hashtag-copy" data-hashtag="#NationalWatermelonDay">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalWatermelonDay/" target="_blank">Instagram</a></span>
-                  </p>
-                </div>
-              
-              </div>
-
-              
-
-            </div>
-          </div>
-        </div>
-        
-        <div class="tile">
-          <div class="tile--icon"><img src="/assets/images/emojis/cookie.png" /></div>
-          <div class="tile--body">
-            <p class="tile--details"><a href="">Details</a></p>
-            <h3 class="tile--title">National Chocolate Chip Cookie Day</h3>
-            <p class="tile--date">Wednesday, August  4</p>
-            <div class="tile--expandedContent">
-              <p class="tile--description">On August 4th, pour a glass of milk and enjoy American's #1 favorite cookie. Whether they're homemade or store bought, don't miss out on National Chocolate Chip Cookie Day.</p>
-
-              
-              <div class="tile--hashtags-wrapper">
-              
-                <div class="tile--hashtag-pill">
-                  <p>
-                    <span class="tile--hashtag-itself">#NationalChocolateChipCookieDay <span class="tile--hashtag-copy" data-hashtag="#NationalChocolateChipCookieDay">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalChocolateChipCookieDay/" target="_blank">Instagram</a></span>
-                  </p>
-                </div>
-              
-              </div>
-
-              
-
-            </div>
-          </div>
-        </div>
-        
-        <div class="tile">
-          <div class="tile--icon"><img src="/assets/images/emojis/oyster.png" /></div>
-          <div class="tile--body">
-            <p class="tile--details"><a href="">Details</a></p>
-            <h3 class="tile--title">National Oyster Day</h3>
-            <p class="tile--date">Thursday, August  5</p>
-            <div class="tile--expandedContent">
-              <p class="tile--description">Whether raw, baked, broiled, or stewed, enjoy this popular shellfish on National Oyster Day.</p>
-
-              
-              <div class="tile--hashtags-wrapper">
-              
-                <div class="tile--hashtag-pill">
-                  <p>
-                    <span class="tile--hashtag-itself">#NationalOysterDay <span class="tile--hashtag-copy" data-hashtag="#NationalOysterDay">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalOysterDay/" target="_blank">Instagram</a></span>
-                  </p>
-                </div>
-              
-              </div>
-
-              
-
-            </div>
-          </div>
-        </div>
-        
-        <div class="tile">
-          <div class="tile--icon"><img src="/assets/images/emojis/beers.png" /></div>
-          <div class="tile--body">
-            <p class="tile--details"><a href="">Details</a></p>
-            <h3 class="tile--title">International Beer Day</h3>
-            <p class="tile--date">Friday, August  6</p>
-            <div class="tile--expandedContent">
-              <p class="tile--description">National Beer Day was created to gather with friends, celebrate brewers, and unite the world under the banner of beer. </p>
-
-              
-              <div class="tile--hashtags-wrapper">
-              
-                <div class="tile--hashtag-pill">
-                  <p>
-                    <span class="tile--hashtag-itself">#InternationalBeerDay <span class="tile--hashtag-copy" data-hashtag="#InternationalBeerDay">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/InternationalBeerDay/" target="_blank">Instagram</a></span>
-                  </p>
-                </div>
-              
-              </div>
-
-              
-
-            </div>
-          </div>
-        </div>
-        
-        <div class="tile">
-          <div class="tile--icon"><img src="/assets/images/emojis/fire.png" /></div>
-          <div class="tile--body">
-            <p class="tile--details"><a href="">Details</a></p>
-            <h3 class="tile--title">Campfire Day</h3>
-            <p class="tile--date">Saturday, August  7</p>
-            <div class="tile--expandedContent">
-              <p class="tile--description">Gather around the firepit to toast marshmallows, share spooky stories, and enjoy great company! This holidayis celebrated the first Saturday in August.</p>
-
-              
-              <div class="tile--hashtags-wrapper">
-              
-              </div>
-
-              
-
-            </div>
-          </div>
-        </div>
-        
-        </div>
-      </div>
-    </article>
-
-    <article>
-      <div class="secondary date_range">
-        <div class="date-ribbon">
-          <h4>Week of</h4>
-          <h3>Aug 8-14</h3>
-        </div>
-      </div>
-      <div class="primary tile-wrapper">
-
-        <div class="tile-minivan">
-          <h3 class="tile-minivan--heading">Dates of Interest</h3>
-        
-        <div class="tile">
-          <div class="tile--icon"><img src="/assets/images/emojis/bowling.png" /></div>
-          <div class="tile--body">
-            <p class="tile--details"><a href="">Details</a></p>
-            <h3 class="tile--title">National Bowling Day</h3>
-            <p class="tile--date">Sunday, August  8</p>
-            <div class="tile--expandedContent">
-              <p class="tile--description">Grab your pins and your pals, August 14 is National Bowling Day. Many bowling alleys offer discounts or specials this day.</p>
-
-              
-              <div class="tile--hashtags-wrapper">
-              
-                <div class="tile--hashtag-pill">
-                  <p>
-                    <span class="tile--hashtag-itself">#NationalBowlingDay <span class="tile--hashtag-copy" data-hashtag="#NationalBowlingDay">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalBowlingDay/" target="_blank">Instagram</a></span>
-                  </p>
-                </div>
-              
-              </div>
-
-              
-
-            </div>
-          </div>
-        </div>
-        
-        <div class="tile">
-          <div class="tile--icon"><img src="/assets/images/emojis/cat.png" /></div>
-          <div class="tile--body">
-            <p class="tile--details"><a href="">Details</a></p>
-            <h3 class="tile--title">International Cat Day</h3>
-            <p class="tile--date">Sunday, August  8</p>
-            <div class="tile--expandedContent">
-              <p class="tile--description">Created by the International Fund for Animal Welfare, International Cat Day helps raise awareness for the protection and care of cats.</p>
-
-              
-              <div class="tile--hashtags-wrapper">
-              
-                <div class="tile--hashtag-pill">
-                  <p>
-                    <span class="tile--hashtag-itself">#InternationalCatDay <span class="tile--hashtag-copy" data-hashtag="#InternationalCatDay">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/InternationalCatDay/" target="_blank">Instagram</a></span>
-                  </p>
-                </div>
-              
-              </div>
-
-              
-
-            </div>
-          </div>
-        </div>
         
         <div class="tile">
           <div class="tile--icon"><img src="/assets/images/emojis/books.png" /></div>
@@ -688,14 +499,19 @@
         </div>
         
         </div>
+
+
+
+
+
       </div>
     </article>
 
     <article>
       <div class="secondary date_range">
         <div class="date-ribbon">
-          <h4>Week of</h4>
-          <h3>Aug 15-21</h3>
+          <h4>Next Week</h4>
+          <h3>Aug 8-14</h3>
         </div>
       </div>
       <div class="primary tile-wrapper">
@@ -730,11 +546,294 @@
           </div>
         </div>
         
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/older-person.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">National Senior Citizens Day</h3>
+            <p class="tile--date">Saturday, August 21</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">In 1988, President Reagan proclaimed this holiday to raise awareness about issues that affect senior citizens and their quality of life. Use this day to show seniors how loved and appreciated they are. </p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+              </div>
+
+              
+
+            </div>
+          </div>
+        </div>
+        
+        </div>
+      </div>
+    </article>
+
+    <article>
+      <div class="secondary date_range">
+        <div class="date-ribbon">
+          <h4>Week of</h4>
+          <h3>Aug 15-21</h3>
+        </div>
+      </div>
+      <div class="primary tile-wrapper">
+
+        <div class="tile-minivan">
+          <h3 class="tile-minivan--heading">Dates of Interest</h3>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/dog.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">National Dog Day</h3>
+            <p class="tile--date">Thursday, August 26</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">As if every day doesn't feel like National Dog Day, the official day, first celebrated in 2004, is August 26!</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#NationalDogDay <span class="tile--hashtag-copy" data-hashtag="#NationalDogDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalDogDay/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+
+              
+
+            </div>
+          </div>
+        </div>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/woman.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">Women's Equality Day</h3>
+            <p class="tile--date">Thursday, August 26</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">Women’s Equality Day commemorates the passage of the 19th Amendment to the U.S. Constitution, granting the right to vote to women. In 1971, the U.S. Congress designated August 26 as Women’s Equality Day.</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#WomensEqualityDay <span class="tile--hashtag-copy" data-hashtag="#WomensEqualityDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/WomensEqualityDay/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+
+              
+
+            </div>
+          </div>
+        </div>
+        
+        </div>
+      </div>
+    </article>
+
+    <article>
+      <div class="secondary date_range">
+        <div class="date-ribbon">
+          <h4>Week of</h4>
+          <h3>Aug 22-28</h3>
+        </div>
+      </div>
+      <div class="primary tile-wrapper">
+
+        <div class="tile-minivan">
+          <h3 class="tile-minivan--heading">Dates of Interest</h3>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/bowling.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">U.S. Bowling League Day</h3>
+            <p class="tile--date">Friday, September  3</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">Each year on September 3rd, bowlers across the country lace up their bowling shoes and celebrate U.S. Bowling League Day.</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#USBowlingLeagueDay <span class="tile--hashtag-copy" data-hashtag="#USBowlingLeagueDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/USBowlingLeagueDay/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+
+              
+
+            </div>
+          </div>
+        </div>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/pizza.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">National Cheese Pizza Day</h3>
+            <p class="tile--date">Sunday, September  5</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">There are many favorites in the pizza world, but only one classic is celebrated on September 5. Step aside toppings, it's National Cheese Pizza Day.</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#NationalCheesePizzaDay <span class="tile--hashtag-copy" data-hashtag="#NationalCheesePizzaDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalCheesePizzaDay/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+
+              
+
+            </div>
+          </div>
+        </div>
+        
         </div>
       </div>
     </article>
 
 
+    <article>
+      <div class="secondary date_range">
+        <div class="date-ribbon">
+          <h4>Weeks of</h4>
+          <h3>Aug 29-Sep 11</h3>
+        </div>
+      </div>
+      <div class="primary tile-wrapper">
+
+        <div class="tile-minivan">
+          <h3 class="tile-minivan--heading">Dates of Interest</h3>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/sun.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">Labor Day</h3>
+            <p class="tile--date">Monday, September  6</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">Labor Day is celebrated on the first Monday in September. The holiday aims to honor and recognize the American labor movement and often noted as the unofficial end of summer.</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#LaborDay <span class="tile--hashtag-copy" data-hashtag="#LaborDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/LaborDay/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+
+              
+
+            </div>
+          </div>
+        </div>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/synagogue.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">Rosh Hashanah</h3>
+            <p class="tile--date">Monday, September  6</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">Rosh Hashanah, meaning “beginning of the year,” is the Jewish New Year. The holiday is an extremely joyous occasion consisting of two days of celebration, starting at sunset on Friday and ending at sunset on Sunday.</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#RoshHashanah <span class="tile--hashtag-copy" data-hashtag="#RoshHashanah">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/RoshHashanah/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+
+              
+
+            </div>
+          </div>
+        </div>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/book.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">National Read A Book Day</h3>
+            <p class="tile--date">Monday, September  6</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">Cozy up in a big chair, lounge by the pool, or visit your local library -- September 6 is National Read A Book Day.</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#NationalReadABookDay <span class="tile--hashtag-copy" data-hashtag="#NationalReadABookDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalReadABookDay/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+
+              
+
+            </div>
+          </div>
+        </div>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/flag-usa.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">9/11 (Patriot Day)</h3>
+            <p class="tile--date">Saturday, September 11</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">Sept. 11, 2001, a series of four terrorist attacks by the Islamic extremist group, al-Qaida, were led against the U.S. This day, many memorials exist to commemorate those lost in the attacks, and the day is generally somber in nature.</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#PatriotDay <span class="tile--hashtag-copy" data-hashtag="#PatriotDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/PatriotDay/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+
+              
+
+            </div>
+          </div>
+        </div>
+        
+        </div>
+      </div>
+    </article>
 
   </div>
 </div>

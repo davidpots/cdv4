@@ -82,6 +82,16 @@
           $('.calendar-image').attr('src','/assets/images/cal-aug.png');
           return false;
         }
+        if ( $(this).parent().attr('data-current-month') == "August" ) {
+          $(this).parent().attr('data-current-month',"September");
+          $('.calendar-image').attr('src','/assets/images/cal-sep.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "September" ) {
+          $(this).parent().attr('data-current-month',"October");
+          $('.calendar-image').attr('src','/assets/images/cal-oct.png');
+          return false;
+        }
       });
 
       $('.calendar-prev').click(function(){
@@ -98,6 +108,16 @@
         if ( $(this).parent().attr('data-current-month') == "August" ) {
           $(this).parent().attr('data-current-month',"July");
           $('.calendar-image').attr('src','/assets/images/cal-july.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "September" ) {
+          $(this).parent().attr('data-current-month',"August");
+          $('.calendar-image').attr('src','/assets/images/cal-aug.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "October" ) {
+          $(this).parent().attr('data-current-month',"September");
+          $('.calendar-image').attr('src','/assets/images/cal-sep.png');
           return false;
         }
       });
@@ -236,6 +256,12 @@
             
               
               
+            
+              
+              
+            
+              
+              
                 
                   
                   <div class="tile-carousel-item tile-carousel-item--topic">
@@ -243,11 +269,6 @@
                        <div class="tile-carousel-item--topic--description show-read-more" data-full-description="With a rise in increasingly unpredictable/extreme weather, many homeowners are considering and turning to solar power as an alternative to traditional energy sources. U.S. solar installations increased by 46% in the first quarter of 2021. There are some businesses that solely focus on solar installations and maintenance, but it is often a service provided across a number of home service verticals.  #SolarEnergy">With a rise in increasingly unpredictable/extreme weather, many homeowners are considering and turning to solar power as an alternative to traditional energy sources. U.S. solar installations increased by 46% in the first quarter of 2021. There are some businesses that solely focus on solar installations and maintenance, but it is often a service provided across a number of home service verticals.  #SolarEnergy</div>
                   
                   </div>
-                
-              
-            
-              
-              
                 
               
             
@@ -717,6 +738,23 @@
                 
               
             
+              
+              
+                
+              
+                
+              
+            
+              
+              
+            
+              
+              
+                
+              
+                
+              
+            
 
             
             <!-- End: topic loop -->
@@ -928,6 +966,19 @@
                 
               
                 
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
               
                 
               
