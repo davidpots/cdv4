@@ -92,6 +92,16 @@
           $('.calendar-image').attr('src','/assets/images/cal-oct.png');
           return false;
         }
+        if ( $(this).parent().attr('data-current-month') == "October" ) {
+          $(this).parent().attr('data-current-month',"November");
+          $('.calendar-image').attr('src','/assets/images/cal-nov.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "November" ) {
+          $(this).parent().attr('data-current-month',"December");
+          $('.calendar-image').attr('src','/assets/images/cal-dec.png');
+          return false;
+        }
       });
 
       $('.calendar-prev').click(function(){
@@ -118,6 +128,16 @@
         if ( $(this).parent().attr('data-current-month') == "October" ) {
           $(this).parent().attr('data-current-month',"September");
           $('.calendar-image').attr('src','/assets/images/cal-sep.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "November" ) {
+          $(this).parent().attr('data-current-month',"October");
+          $('.calendar-image').attr('src','/assets/images/cal-oct.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "December" ) {
+          $(this).parent().attr('data-current-month',"November");
+          $('.calendar-image').attr('src','/assets/images/cal-nov.png');
           return false;
         }
       });
@@ -226,12 +246,6 @@
           <div class="tile--carousel-wrapper">
             <!-- Start: topic loop -->
             
-            
-              
-              
-            
-              
-              
             
               
               
@@ -920,6 +934,51 @@
               
               
                 
+              
+                
+              
+            
+              
+              
+                
+              
+            
+              
+              
+                
+              
+            
+              
+              
+                
+              
+            
+              
+              
+                
+              
+            
+              
+              
+                
+              
+            
+              
+              
+                
+              
+            
+              
+              
+                
+              
+            
+              
+              
+                
+              
+            
+              
               
                 
               
@@ -2514,6 +2573,99 @@
                 
               
                 
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            
+              
               
                 
               

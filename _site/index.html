@@ -92,6 +92,16 @@
           $('.calendar-image').attr('src','/assets/images/cal-oct.png');
           return false;
         }
+        if ( $(this).parent().attr('data-current-month') == "October" ) {
+          $(this).parent().attr('data-current-month',"November");
+          $('.calendar-image').attr('src','/assets/images/cal-nov.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "November" ) {
+          $(this).parent().attr('data-current-month',"December");
+          $('.calendar-image').attr('src','/assets/images/cal-dec.png');
+          return false;
+        }
       });
 
       $('.calendar-prev').click(function(){
@@ -118,6 +128,16 @@
         if ( $(this).parent().attr('data-current-month') == "October" ) {
           $(this).parent().attr('data-current-month',"September");
           $('.calendar-image').attr('src','/assets/images/cal-sep.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "November" ) {
+          $(this).parent().attr('data-current-month',"October");
+          $('.calendar-image').attr('src','/assets/images/cal-oct.png');
+          return false;
+        }
+        if ( $(this).parent().attr('data-current-month') == "December" ) {
+          $(this).parent().attr('data-current-month',"November");
+          $('.calendar-image').attr('src','/assets/images/cal-nov.png');
           return false;
         }
       });
@@ -197,11 +217,11 @@
 
 <div class="feed-wrapper clearfix">
   <div class="feed-controls">
-    <div class="tile tile-calendar" data-current-month="September">
+    <div class="tile tile-calendar" data-current-month="October">
       <span class="calendar-next"></span>
       <span class="calendar-prev"></span>
       <!-- <span class="calendar-today" style="background-image: url(/assets/images/cal-today/cal-may19.png);"></span> -->
-      <img class="calendar-image" width="100%" src="/assets/images/cal-sep.png" />
+      <img class="calendar-image" width="100%" src="/assets/images/cal-oct.png" />
     </div>
     <!-- <h4 class="tile-scheduled-posts--heading">My Scheduled Posts:</h4>
     <div class="tile tile-scheduled-posts" style="height: 200px;"></div> -->
@@ -215,7 +235,7 @@
       <div class="secondary date_range">
         <div class="date-ribbon">
           <h3>This Week</h3>
-          <h4>Sep 26-Oct 2</h4>
+          <h4>Oct 3-9</h4>
         </div>
       </div>
       <div class="primary tile-wrapper">
@@ -239,40 +259,6 @@
             <div class="tile-carousel-item tile-carousel-item--topic">
               <div class="tile-carousel-item--topic--heading">Broadway is back.</div>
               <div class="tile-carousel-item--topic--description show-read-more" data-full-description="The long-awaited return of Broadway has finally arrived. Audiences are back in theaters and they couldn't be happier.  ">The long-awaited return of Broadway has finally arrived. Audiences are back in theaters and they couldn't be happier.  </div>
-              
-            </div>
-            
-            <div class="tile-carousel-item tile-carousel-item--topic">
-              <div class="tile-carousel-item--topic--heading">National Yoga Month</div>
-              <div class="tile-carousel-item--topic--description show-read-more" data-full-description="September is National Yoga Month. Many celebrate through classes and setting aside time to further their own practice.">September is National Yoga Month. Many celebrate through classes and setting aside time to further their own practice.</div>
-              
-            </div>
-            
-            <div class="tile-carousel-item tile-carousel-item--topic">
-              <div class="tile-carousel-item--topic--heading">National Indoor Plant Week</div>
-              <div class="tile-carousel-item--topic--description show-read-more" data-full-description="The third week in September is National Indoor Plant Week! Indoor plants can serve as décor, but they can also clean the air, reduce noise, create oxygen, remove carbon dioxide, and keep us connected with nature.">The third week in September is National Indoor Plant Week! Indoor plants can serve as décor, but they can also clean the air, reduce noise, create oxygen, remove carbon dioxide, and keep us connected with nature.</div>
-              
-                <div class="tile-carousel-item--topic--url">
-                  <a href="https://nationaldaycalendar.com/national-indoor-plant-week-third-week-in-september/">Learn more &raquo;</a>
-                </div>
-              
-            </div>
-            
-            <div class="tile-carousel-item tile-carousel-item--topic">
-              <div class="tile-carousel-item--topic--heading">Better Breakfast Month</div>
-              <div class="tile-carousel-item--topic--description show-read-more" data-full-description="September is Better Breakfast Month. Kids are getting back to school, and everyone is beginning to prepare for the winter months ahead. It’s important to take stock of how to start off the day. Consuming a well-balanced breakfast in the morning gives our bodies energy to get our day started the right way.">September is Better Breakfast Month. Kids are getting back to school, and everyone is beginning to prepare for the winter months ahead. It’s important to take stock of how to start off the day. Consuming a well-balanced breakfast in the morning gives our bodies energy to get our day started the right way.</div>
-              
-            </div>
-            
-            <div class="tile-carousel-item tile-carousel-item--topic">
-              <div class="tile-carousel-item--topic--heading">National Hispanic Heritage Month</div>
-              <div class="tile-carousel-item--topic--description show-read-more" data-full-description="National Hispanic Heritage Month runs from September 15 to October 15. It's a time for recognizing the contributions and influence of Hispanic Americans to the history, culture, and achievements of the United States.">National Hispanic Heritage Month runs from September 15 to October 15. It's a time for recognizing the contributions and influence of Hispanic Americans to the history, culture, and achievements of the United States.</div>
-              
-            </div>
-            
-            <div class="tile-carousel-item tile-carousel-item--topic">
-              <div class="tile-carousel-item--topic--heading">September is National Guide Dog Month</div>
-              <div class="tile-carousel-item--topic--description show-read-more" data-full-description="National Guide Dog Month is a celebration of the work of guide dogs in the United States as a way to raise awareness, show appreciation, and advocate for support.">National Guide Dog Month is a celebration of the work of guide dogs in the United States as a way to raise awareness, show appreciation, and advocate for support.</div>
               
             </div>
             
@@ -403,199 +389,7 @@
 
 
         <!-- ADD MINIVAN HERE if this week has topics -->
-        <div class="tile-minivan">
-          <h3 class="tile-minivan--heading">Dates of Interest</h3>
-        
-        <div class="tile">
-          <div class="tile--icon"><img src="/assets/images/emojis/map.png" /></div>
-          <div class="tile--body">
-            <p class="tile--details"><a href="">Details</a></p>
-            <h3 class="tile--title">World Tourism Day</h3>
-            <p class="tile--date">Monday, September 27</p>
-            <div class="tile--expandedContent">
-              <p class="tile--description">Pack your bags, September 27 is World Tourism Day.</p>
 
-              
-              <div class="tile--hashtags-wrapper">
-              
-                <div class="tile--hashtag-pill">
-                  <p>
-                    <span class="tile--hashtag-itself">#WorldTourismDay <span class="tile--hashtag-copy" data-hashtag="#WorldTourismDay">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/WorldTourismDay/" target="_blank">Instagram</a></span>
-                  </p>
-                </div>
-              
-              </div>
-
-              
-
-            </div>
-          </div>
-        </div>
-        
-        <div class="tile">
-          <div class="tile--icon"><img src="/assets/images/emojis/houses.png" /></div>
-          <div class="tile--body">
-            <p class="tile--details"><a href="">Details</a></p>
-            <h3 class="tile--title">National Good Neighbor Day</h3>
-            <p class="tile--date">Monday, September 27</p>
-            <div class="tile--expandedContent">
-              <p class="tile--description">Say hello, pass along a cup of sugar, take this opportunity to meet your neighbors.</p>
-
-              
-              <div class="tile--hashtags-wrapper">
-              
-                <div class="tile--hashtag-pill">
-                  <p>
-                    <span class="tile--hashtag-itself">#NationalGoodNeighborDay <span class="tile--hashtag-copy" data-hashtag="#NationalGoodNeighborDay">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalGoodNeighborDay/" target="_blank">Instagram</a></span>
-                  </p>
-                </div>
-              
-              </div>
-
-              
-
-            </div>
-          </div>
-        </div>
-        
-        <div class="tile">
-          <div class="tile--icon"><img src="/assets/images/emojis/house.png" /></div>
-          <div class="tile--body">
-            <p class="tile--details"><a href="">Details</a></p>
-            <h3 class="tile--title">National Neighbor Day</h3>
-            <p class="tile--date">Tuesday, September 28</p>
-            <div class="tile--expandedContent">
-              <p class="tile--description">On National Neighbor Day, draw attention to the importance of community. This day is particularly relevant for Real Estate customer that work with potential buyers. </p>
-
-              
-              <div class="tile--hashtags-wrapper">
-              
-                <div class="tile--hashtag-pill">
-                  <p>
-                    <span class="tile--hashtag-itself">#NationalNeighborDay <span class="tile--hashtag-copy" data-hashtag="#NationalNeighborDay">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalNeighborDay/" target="_blank">Instagram</a></span>
-                  </p>
-                </div>
-              
-              </div>
-
-              
-
-            </div>
-          </div>
-        </div>
-        
-        <div class="tile">
-          <div class="tile--icon"><img src="/assets/images/emojis/mic.png" /></div>
-          <div class="tile--body">
-            <p class="tile--details"><a href="">Details</a></p>
-            <h3 class="tile--title">International Podcast Day</h3>
-            <p class="tile--date">Thursday, September 30</p>
-            <div class="tile--expandedContent">
-              <p class="tile--description">Listen to your favorite podcast and connect with others about theirs on September 30.</p>
-
-              
-              <div class="tile--hashtags-wrapper">
-              
-                <div class="tile--hashtag-pill">
-                  <p>
-                    <span class="tile--hashtag-itself">#InternationalPodcastDay <span class="tile--hashtag-copy" data-hashtag="#InternationalPodcastDay">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/InternationalPodcastDay/" target="_blank">Instagram</a></span>
-                  </p>
-                </div>
-              
-              </div>
-
-              
-
-            </div>
-          </div>
-        </div>
-        
-        <div class="tile">
-          <div class="tile--icon"><img src="/assets/images/emojis/carrot.png" /></div>
-          <div class="tile--body">
-            <p class="tile--details"><a href="">Details</a></p>
-            <h3 class="tile--title">World Vegetarian Day</h3>
-            <p class="tile--date">Friday, October  1</p>
-            <div class="tile--expandedContent">
-              <p class="tile--description">Celebrated on October 1, World Vegetarian Day creates awareness about the benefits of vegetarian lifestyle.</p>
-
-              
-              <div class="tile--hashtags-wrapper">
-              
-                <div class="tile--hashtag-pill">
-                  <p>
-                    <span class="tile--hashtag-itself">#WorldVegetarianDay <span class="tile--hashtag-copy" data-hashtag="#WorldVegetarianDay">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/WorldVegetarianDay/" target="_blank">Instagram</a></span>
-                  </p>
-                </div>
-              
-              </div>
-
-              
-
-            </div>
-          </div>
-        </div>
-        
-        <div class="tile">
-          <div class="tile--icon"><img src="/assets/images/emojis/coffee.png" /></div>
-          <div class="tile--body">
-            <p class="tile--details"><a href="">Details</a></p>
-            <h3 class="tile--title">International Coffee Day</h3>
-            <p class="tile--date">Friday, October  1</p>
-            <div class="tile--expandedContent">
-              <p class="tile--description">Raise a mug to our favorite morning beverage! Schedule a post on the morning of October first to ring in International Coffee Day with your audience. You could also spin this into a local love post by highlighting a favorite local cafe or two.</p>
-
-              
-              <div class="tile--hashtags-wrapper">
-              
-                <div class="tile--hashtag-pill">
-                  <p>
-                    <span class="tile--hashtag-itself">#InternationalCoffeeDay <span class="tile--hashtag-copy" data-hashtag="#InternationalCoffeeDay">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/InternationalCoffeeDay/" target="_blank">Instagram</a></span>
-                  </p>
-                </div>
-              
-              </div>
-
-              
-
-            </div>
-          </div>
-        </div>
-        
-        <div class="tile">
-          <div class="tile--icon"><img src="/assets/images/emojis/cookie.png" /></div>
-          <div class="tile--body">
-            <p class="tile--details"><a href="">Details</a></p>
-            <h3 class="tile--title">National Homemade Cookie Day</h3>
-            <p class="tile--date">Friday, October  1</p>
-            <div class="tile--expandedContent">
-              <p class="tile--description">Happy National Homemade Cookie day! This holiday is a perfect one to recognize for restaurants, bakeries, and more. For real estate customers, consider highlighting his classi home-staging tip: "Throw some cookies in the oven right before your open house! Doing so will add a warm, delicious smell to your home -- one that potential buyers are sure to remember!"</p>
-
-              
-              <div class="tile--hashtags-wrapper">
-              
-                <div class="tile--hashtag-pill">
-                  <p>
-                    <span class="tile--hashtag-itself">#NationalHomemadeCookieDay <span class="tile--hashtag-copy" data-hashtag="#NationalHomemadeCookieDay">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalHomemadeCookieDay/" target="_blank">Instagram</a></span>
-                  </p>
-                </div>
-              
-              </div>
-
-              
-
-            </div>
-          </div>
-        </div>
-        
-        </div>
 
 
 
@@ -606,7 +400,7 @@
       <div class="secondary date_range">
         <div class="date-ribbon">
           <h3>Next Week</h3>
-          <h4>Oct 3-9</h4>
+          <h4>Oct 10-16</h4>
         </div>
       </div>
       <div class="primary tile-wrapper">
@@ -615,21 +409,21 @@
           <h3 class="tile-minivan--heading">Dates of Interest</h3>
         
         <div class="tile">
-          <div class="tile--icon"><img src="/assets/images/emojis/pie.png" /></div>
+          <div class="tile--icon"><img src="/assets/images/emojis/leaf.png" /></div>
           <div class="tile--body">
             <p class="tile--details"><a href="">Details</a></p>
-            <h3 class="tile--title">National Cinnamon Roll Day</h3>
-            <p class="tile--date">Monday, October  4</p>
+            <h3 class="tile--title">Canadian Thanksgiving</h3>
+            <p class="tile--date">Monday, October 11</p>
             <div class="tile--expandedContent">
-              <p class="tile--description">Warm, sweet, and made with love, October 4 is National Cinnamon Roll Day.</p>
+              <p class="tile--description">Celebrated in October rather than November, Canadian Thanksgiving celebrations commemorate everything from explorer Martin Frobisher’s successful 1578 crossing of the Northwest Passage to victories during the World Wars.</p>
 
               
               <div class="tile--hashtags-wrapper">
               
                 <div class="tile--hashtag-pill">
                   <p>
-                    <span class="tile--hashtag-itself">#NationalCinnamonRollDay <span class="tile--hashtag-copy" data-hashtag="#NationalCinnamonRollDay">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalCinnamonRollDay/" target="_blank">Instagram</a></span>
+                    <span class="tile--hashtag-itself">#CanadianThanksgiving <span class="tile--hashtag-copy" data-hashtag="#CanadianThanksgiving">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/CanadianThanksgiving/" target="_blank">Instagram</a></span>
                   </p>
                 </div>
               
@@ -642,21 +436,21 @@
         </div>
         
         <div class="tile">
-          <div class="tile--icon"><img src="/assets/images/emojis/cocktail.png" /></div>
+          <div class="tile--icon"><img src="/assets/images/emojis/turtle.png" /></div>
           <div class="tile--body">
             <p class="tile--details"><a href="">Details</a></p>
-            <h3 class="tile--title">National Vodka Day</h3>
-            <p class="tile--date">Monday, October  4</p>
+            <h3 class="tile--title">Columbus Day or Indigenous Peoples Day</h3>
+            <p class="tile--date">Monday, October 11</p>
             <div class="tile--expandedContent">
-              <p class="tile--description">Vodka is one of the most consumed spirits in the world. Create a cocktail or visit a distillery on National Vodka Day.</p>
+              <p class="tile--description">Columbus Day was established to commemorate Christopher Columbus’ discovery of the Americas. Indigenous Peoples Day was established as a holiday that would replace Columbus Day in many places and focus on celebrating those indigenous to the land.</p>
 
               
               <div class="tile--hashtags-wrapper">
               
                 <div class="tile--hashtag-pill">
                   <p>
-                    <span class="tile--hashtag-itself">#NationalVodkaDay <span class="tile--hashtag-copy" data-hashtag="#NationalVodkaDay">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalVodkaDay/" target="_blank">Instagram</a></span>
+                    <span class="tile--hashtag-itself">#IndigenousPeoplesDay <span class="tile--hashtag-copy" data-hashtag="#IndigenousPeoplesDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/IndigenousPeoplesDay/" target="_blank">Instagram</a></span>
                   </p>
                 </div>
               
@@ -669,21 +463,21 @@
         </div>
         
         <div class="tile">
-          <div class="tile--icon"><img src="/assets/images/emojis/golf.png" /></div>
+          <div class="tile--icon"><img src="/assets/images/emojis/plate.png" /></div>
           <div class="tile--body">
             <p class="tile--details"><a href="">Details</a></p>
-            <h3 class="tile--title">National Golf Lovers Day</h3>
-            <p class="tile--date">Monday, October  4</p>
+            <h3 class="tile--title">National Pulled Pork Day</h3>
+            <p class="tile--date">Tuesday, October 12</p>
             <div class="tile--expandedContent">
-              <p class="tile--description">Also known as National Golf Day, October 4 gives fans of the sport a special day to practice their swing on the fairway.</p>
+              <p class="tile--description">Pass the BBQ sauce and make room for sides, October 12 celebrates pitmasters everywhere.</p>
 
               
               <div class="tile--hashtags-wrapper">
               
                 <div class="tile--hashtag-pill">
                   <p>
-                    <span class="tile--hashtag-itself">#NationalGolfLoversDay <span class="tile--hashtag-copy" data-hashtag="#NationalGolfLoversDay">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalGolfLoversDay/" target="_blank">Instagram</a></span>
+                    <span class="tile--hashtag-itself">#NationalPulledPorkDay <span class="tile--hashtag-copy" data-hashtag="#NationalPulledPorkDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalPulledPorkDay/" target="_blank">Instagram</a></span>
                   </p>
                 </div>
               
@@ -696,21 +490,21 @@
         </div>
         
         <div class="tile">
-          <div class="tile--icon"><img src="/assets/images/emojis/smile.png" /></div>
+          <div class="tile--icon"><img src="/assets/images/emojis/dessert.png" /></div>
           <div class="tile--body">
             <p class="tile--details"><a href="">Details</a></p>
-            <h3 class="tile--title">National World Smile Day</h3>
-            <p class="tile--date">Monday, October  4</p>
+            <h3 class="tile--title">National Dessert Day</h3>
+            <p class="tile--date">Thursday, October 14</p>
             <div class="tile--expandedContent">
-              <p class="tile--description">National World Smile Day is a day for sharing random acts of kindness and, of course, smiles.</p>
+              <p class="tile--description">Sweet lovers rejoice. Grab your pies, cakes, cookies, and icecream — October 14 is National Dessert Day.</p>
 
               
               <div class="tile--hashtags-wrapper">
               
                 <div class="tile--hashtag-pill">
                   <p>
-                    <span class="tile--hashtag-itself">#NationalWorldSmileDay <span class="tile--hashtag-copy" data-hashtag="#NationalWorldSmileDay">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalWorldSmileDay/" target="_blank">Instagram</a></span>
+                    <span class="tile--hashtag-itself">#NationalDessertDay <span class="tile--hashtag-copy" data-hashtag="#NationalDessertDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalDessertDay/" target="_blank">Instagram</a></span>
                   </p>
                 </div>
               
@@ -723,21 +517,21 @@
         </div>
         
         <div class="tile">
-          <div class="tile--icon"><img src="/assets/images/emojis/taco.png" /></div>
+          <div class="tile--icon"><img src="/assets/images/emojis/soap.png" /></div>
           <div class="tile--body">
             <p class="tile--details"><a href="">Details</a></p>
-            <h3 class="tile--title">National Taco Day</h3>
-            <p class="tile--date">Monday, October  4</p>
+            <h3 class="tile--title">Global Handwashing Day</h3>
+            <p class="tile--date">Friday, October 15</p>
             <div class="tile--expandedContent">
-              <p class="tile--description">Last year Americans ate over 4.5 billion tacos! Something that beloved deserves its own special day.</p>
+              <p class="tile--description">Global Handwashing Day is an international handwashing promotion campaign to motivate and mobilize people around the world to improve their hand washing habits.</p>
 
               
               <div class="tile--hashtags-wrapper">
               
                 <div class="tile--hashtag-pill">
                   <p>
-                    <span class="tile--hashtag-itself">#NationalTacoDay <span class="tile--hashtag-copy" data-hashtag="#NationalTacoDay">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalTacoDay/" target="_blank">Instagram</a></span>
+                    <span class="tile--hashtag-itself">#GlobalHandwashingDay <span class="tile--hashtag-copy" data-hashtag="#GlobalHandwashingDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/GlobalHandwashingDay/" target="_blank">Instagram</a></span>
                   </p>
                 </div>
               
@@ -750,21 +544,65 @@
         </div>
         
         <div class="tile">
-          <div class="tile--icon"><img src="/assets/images/emojis/apple.png" /></div>
+          <div class="tile--icon"><img src="/assets/images/emojis/cat-face.png" /></div>
           <div class="tile--body">
             <p class="tile--details"><a href="">Details</a></p>
-            <h3 class="tile--title">World Teachers Day</h3>
-            <p class="tile--date">Tuesday, October  5</p>
+            <h3 class="tile--title">Global Cat Day</h3>
+            <p class="tile--date">Saturday, October 16</p>
             <div class="tile--expandedContent">
-              <p class="tile--description">We all know teachers deserve the world. World Teachers Day aims to raise awareness about the role teachers play in quality education at all levels and to improve the situations of teachers in the world.</p>
+              <p class="tile--description">Global Cat Day aims to raise awareness for the needs of cats all over the globe.</p>
 
               
               <div class="tile--hashtags-wrapper">
               
                 <div class="tile--hashtag-pill">
                   <p>
-                    <span class="tile--hashtag-itself">#WorldTeachersDay <span class="tile--hashtag-copy" data-hashtag="#WorldTeachersDay">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/WorldTeachersDay/" target="_blank">Instagram</a></span>
+                    <span class="tile--hashtag-itself">#GlobalCatDay <span class="tile--hashtag-copy" data-hashtag="#GlobalCatDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/GlobalCatDay/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+
+              
+
+            </div>
+          </div>
+        </div>
+        
+        </div>
+      </div>
+    </article>
+
+
+    <article>
+      <div class="secondary date_range">
+        <div class="date-ribbon">
+          <h4>Week of</h4>
+          <h3>Oct 17-23</h3>
+        </div>
+      </div>
+      <div class="primary tile-wrapper">
+
+        <div class="tile-minivan">
+          <h3 class="tile-minivan--heading">Dates of Interest</h3>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/cupcake.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">National Chocolate Cupcake Day	</h3>
+            <p class="tile--date">Monday, October 18</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">More portable than a slice of cake and just as delicious, chocolate cupcakes reign supreme. Celebrate this sweet treat on October 18.</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#NationalChocolateCupcakeDay <span class="tile--hashtag-copy" data-hashtag="#NationalChocolateCupcakeDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalChocolateCupcakeDay/" target="_blank">Instagram</a></span>
                   </p>
                 </div>
               
@@ -777,21 +615,21 @@
         </div>
         
         <div class="tile">
-          <div class="tile--icon"><img src="/assets/images/emojis/noodles.png" /></div>
+          <div class="tile--icon"><img src="/assets/images/emojis/car-red.png" /></div>
           <div class="tile--body">
             <p class="tile--details"><a href="">Details</a></p>
-            <h3 class="tile--title">National Noodle Day</h3>
-            <p class="tile--date">Wednesday, October  6</p>
+            <h3 class="tile--title">National Name Your Car Day</h3>
+            <p class="tile--date">Thursday, October 21</p>
             <div class="tile--expandedContent">
-              <p class="tile--description">Take a pasta making class or grab some ramen to go — it's National Noodle Day.</p>
+              <p class="tile--description">This day encourages a special commitment to your wheels. It's time to give your trusty automobile what it really needs, a name.</p>
 
               
               <div class="tile--hashtags-wrapper">
               
                 <div class="tile--hashtag-pill">
                   <p>
-                    <span class="tile--hashtag-itself">#NationalNoodleDay <span class="tile--hashtag-copy" data-hashtag="#NationalNoodleDay">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalNoodleDay/" target="_blank">Instagram</a></span>
+                    <span class="tile--hashtag-itself">#NationalNameYourCarDay <span class="tile--hashtag-copy" data-hashtag="#NationalNameYourCarDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalNameYourCarDay/" target="_blank">Instagram</a></span>
                   </p>
                 </div>
               
@@ -804,69 +642,21 @@
         </div>
         
         <div class="tile">
-          <div class="tile--icon"><img src="/assets/images/emojis/bicycle.png" /></div>
+          <div class="tile--icon"><img src="/assets/images/emojis/lizard.png" /></div>
           <div class="tile--body">
             <p class="tile--details"><a href="">Details</a></p>
-            <h3 class="tile--title">National Walk and Bike to School Day</h3>
-            <p class="tile--date">Wednesday, October  6</p>
+            <h3 class="tile--title">National Reptile Day</h3>
+            <p class="tile--date">Thursday, October 21</p>
             <div class="tile--expandedContent">
-              <p class="tile--description">For real estate clients, you can use National Walk and Bike to School Day as an opportunity to highlight local school districts or celebrate local infrastructure (bike paths, etc.). You can also highlight this day for your bike shops, activities and events customers, and more. </p>
+              <p class="tile--description">This day promotes awareness and education of these cold-blooded critters. From snakes to lizards, National Reptile Day is celebrated on  October 21.</p>
 
               
               <div class="tile--hashtags-wrapper">
               
                 <div class="tile--hashtag-pill">
                   <p>
-                    <span class="tile--hashtag-itself">#WalkToSchool <span class="tile--hashtag-copy" data-hashtag="#WalkToSchool">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/WalkToSchool/" target="_blank">Instagram</a></span>
-                  </p>
-                </div>
-              
-                <div class="tile--hashtag-pill">
-                  <p>
-                    <span class="tile--hashtag-itself">, <span class="tile--hashtag-copy" data-hashtag=",">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags//" target="_blank">Instagram</a></span>
-                  </p>
-                </div>
-              
-                <div class="tile--hashtag-pill">
-                  <p>
-                    <span class="tile--hashtag-itself">#BikeToSchool, <span class="tile--hashtag-copy" data-hashtag="#BikeToSchool,">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/BikeToSchool,/" target="_blank">Instagram</a></span>
-                  </p>
-                </div>
-              
-                <div class="tile--hashtag-pill">
-                  <p>
-                    <span class="tile--hashtag-itself">NationaWalkandBiketoSchoolDay <span class="tile--hashtag-copy" data-hashtag="NationaWalkandBiketoSchoolDay">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/ationaWalkandBiketoSchoolDay/" target="_blank">Instagram</a></span>
-                  </p>
-                </div>
-              
-              </div>
-
-              
-
-            </div>
-          </div>
-        </div>
-        
-        <div class="tile">
-          <div class="tile--icon"><img src="/assets/images/emojis/coffee.png" /></div>
-          <div class="tile--body">
-            <p class="tile--details"><a href="">Details</a></p>
-            <h3 class="tile--title">National Cappuccino Day</h3>
-            <p class="tile--date">Friday, October  8</p>
-            <div class="tile--expandedContent">
-              <p class="tile--description">Sip, sip, hooray! Today it's only right to celebrate by treating yourself to a specialty coffee. Make sure to support local by choosing a cafe in your neighborhood!</p>
-
-              
-              <div class="tile--hashtags-wrapper">
-              
-                <div class="tile--hashtag-pill">
-                  <p>
-                    <span class="tile--hashtag-itself">#NationalCappuccinoDay <span class="tile--hashtag-copy" data-hashtag="#NationalCappuccinoDay">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalCappuccinoDay/" target="_blank">Instagram</a></span>
+                    <span class="tile--hashtag-itself">#NationalReptileDay <span class="tile--hashtag-copy" data-hashtag="#NationalReptileDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalReptileDay/" target="_blank">Instagram</a></span>
                   </p>
                 </div>
               
@@ -886,7 +676,7 @@
       <div class="secondary date_range">
         <div class="date-ribbon">
           <h4>Week of</h4>
-          <h3>Oct 10-16</h3>
+          <h3>Oct 24-30</h3>
         </div>
       </div>
       <div class="primary tile-wrapper">
@@ -895,21 +685,307 @@
           <h3 class="tile-minivan--heading">Dates of Interest</h3>
         
         <div class="tile">
-          <div class="tile--icon"><img src="/assets/images/emojis/flag-usa.png" /></div>
+          <div class="tile--icon"><img src="/assets/images/emojis/pumpkin.png" /></div>
           <div class="tile--body">
             <p class="tile--details"><a href="">Details</a></p>
-            <h3 class="tile--title">Veterans Day</h3>
-            <p class="tile--date">Monday, October 11</p>
+            <h3 class="tile--title">National Pumpkin Day</h3>
+            <p class="tile--date">Tuesday, October 26</p>
             <div class="tile--expandedContent">
-              <p class="tile--description">Take time today to honor the people who have served in the U.S. armed forces. If you have a real estate client who specializes in helping veterans find homes, don't forget to draw attention to this national holiday. </p>
+              <p class="tile--description">By October 26 the pumpkin frenzy is in full swing! National Pumpkin Day is perfect for visiting a pumpkin patch or carving pumpkins just in time for Halloween.</p>
 
               
               <div class="tile--hashtags-wrapper">
               
                 <div class="tile--hashtag-pill">
                   <p>
-                    <span class="tile--hashtag-itself">#VeteransDay <span class="tile--hashtag-copy" data-hashtag="#VeteransDay">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/VeteransDay/" target="_blank">Instagram</a></span>
+                    <span class="tile--hashtag-itself">#NationalPumpkinDay <span class="tile--hashtag-copy" data-hashtag="#NationalPumpkinDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalPumpkinDay/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+
+              
+
+            </div>
+          </div>
+        </div>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/blackcat.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">National Black Cat Day</h3>
+            <p class="tile--date">Wednesday, October 27</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">Black cats are a popular site this time of the year, but they deserve the love and attention just as much as their tabby equivalents all year round. Old myths and tales have given black cats a bad name which may also have something to do with their low adoption rates in shelters. October 27 is a day to help turn these misconceptions around!</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#NationalBlackCatDay <span class="tile--hashtag-copy" data-hashtag="#NationalBlackCatDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalBlackCatDay/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+
+              
+
+            </div>
+          </div>
+        </div>
+        
+        </div>
+      </div>
+    </article>
+
+    <article>
+      <div class="secondary date_range">
+        <div class="date-ribbon">
+          <h4>Week of</h4>
+          <h3>Oct 31-Nov 6</h3>
+        </div>
+      </div>
+      <div class="primary tile-wrapper">
+
+        <div class="tile-minivan">
+          <h3 class="tile-minivan--heading">Dates of Interest</h3>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/pumpkin.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">Halloween</h3>
+            <p class="tile--date">Sunday, October 31</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">The spookiest day of the year! Grab your broomsticks and get ready to sling some candy. We're serving up only treats this year.</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#Halloween <span class="tile--hashtag-copy" data-hashtag="#Halloween">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/Halloween/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+
+              
+
+            </div>
+          </div>
+        </div>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/candle.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">Día de los Muertos (Day of the Dead)</h3>
+            <p class="tile--date">Monday, November  1</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">Traditionally observed in Mexico, Día de los Muertos honors the dearly departed. Many participants believe that loved ones who have passed return each year to join in the celebrations and remembrances. Important note: Día de los Muertos & Halloween are two very different holidays, and conflating the two could come across as culturally insensitive.</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#DayOfTheDead <span class="tile--hashtag-copy" data-hashtag="#DayOfTheDead">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/DayOfTheDead/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+
+              
+
+            </div>
+          </div>
+        </div>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/handwriting.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">National Author's Day</h3>
+            <p class="tile--date">Monday, November  1</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">Cheers to our favorite books and the creative minds behind them! National Author's Day celebrates those with the super power of prose.</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#NationalAuthorsDay <span class="tile--hashtag-copy" data-hashtag="#NationalAuthorsDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalAuthorsDay/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+
+              
+
+            </div>
+          </div>
+        </div>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/broccoli.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">World Vegan Day</h3>
+            <p class="tile--date">Monday, November  1</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">Vegans, assemble! This day brings awareness to the benefits of veganism to humans, our friends from the animal kingdom, and the natural environment as a whole.</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#WorldVeganDay <span class="tile--hashtag-copy" data-hashtag="#WorldVeganDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/WorldVeganDay/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+
+              
+
+            </div>
+          </div>
+        </div>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/plate.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">National Calzone Day</h3>
+            <p class="tile--date">Monday, November  1</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">You know what's great about calzones? You can put pretty much in 'em and they're still delicious. Meatballs? Check! Spinach? Check! Peppers? Check, check, check! Celebrate all things calzone on November 1.</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#NationalCalzoneDay <span class="tile--hashtag-copy" data-hashtag="#NationalCalzoneDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalCalzoneDay/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+
+              
+
+            </div>
+          </div>
+        </div>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/election.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">Election Day</h3>
+            <p class="tile--date">Tuesday, November  2</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">Although 2021 is largely an off-year election, it does include a couple heavy hitters, like the gubernatorial elections in Virginia and New Jersey, state legislative special elections, mayoral elections, and various local elections.</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#ElectionDay <span class="tile--hashtag-copy" data-hashtag="#ElectionDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/ElectionDay/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+
+              
+
+            </div>
+          </div>
+        </div>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/sandwich.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">National Sandwich Day</h3>
+            <p class="tile--date">Wednesday, November  3</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">From the ham & cheese in our kindergarten lunchbox to the grown-up reuben we order now, sandwiches are a way of life. Honor the great sandwiches in your life on November 3.</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#NationalSandwichDay <span class="tile--hashtag-copy" data-hashtag="#NationalSandwichDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalSandwichDay/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+
+              
+
+            </div>
+          </div>
+        </div>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/diwali.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">Diwali</h3>
+            <p class="tile--date">Thursday, November  4</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">May your life be as colorful, shimmering, & magical as the lights of Diwali. This Hindu festival of lights is celebrated worldwide on November 4 as a symbol of the triumph of light over darkness, good over evil, and knowledge over ignorance.</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#Diwali <span class="tile--hashtag-copy" data-hashtag="#Diwali">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/Diwali/" target="_blank">Instagram</a></span>
+                  </p>
+                </div>
+              
+              </div>
+
+              
+
+            </div>
+          </div>
+        </div>
+        
+        <div class="tile">
+          <div class="tile--icon"><img src="/assets/images/emojis/candy.png" /></div>
+          <div class="tile--body">
+            <p class="tile--details"><a href="">Details</a></p>
+            <h3 class="tile--title">National Candy Day</h3>
+            <p class="tile--date">Thursday, November  4</p>
+            <div class="tile--expandedContent">
+              <p class="tile--description">If your kid gets mad that you polished off the leftover Halloween candy, just tell them you had no choice. November 4 is National Candy Day!</p>
+
+              
+              <div class="tile--hashtags-wrapper">
+              
+                <div class="tile--hashtag-pill">
+                  <p>
+                    <span class="tile--hashtag-itself">#NationalCandyDay <span class="tile--hashtag-copy" data-hashtag="#NationalCandyDay">(<u>copy</u>)</span></span>
+                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalCandyDay/" target="_blank">Instagram</a></span>
                   </p>
                 </div>
               
@@ -930,40 +1006,13 @@
       <div class="secondary date_range">
         <div class="date-ribbon">
           <h4>Weeks of</h4>
-          <h3>Oct 17-Nov 7</h3>
+          <h3>Nov 7-13</h3>
         </div>
       </div>
       <div class="primary tile-wrapper">
 
         <div class="tile-minivan">
           <h3 class="tile-minivan--heading">Dates of Interest</h3>
-        
-        <div class="tile">
-          <div class="tile--icon"><img src="/assets/images/emojis/jack-o-lantern.png" /></div>
-          <div class="tile--body">
-            <p class="tile--details"><a href="">Details</a></p>
-            <h3 class="tile--title">National Pumpkin Day</h3>
-            <p class="tile--date">Tuesday, October 26</p>
-            <div class="tile--expandedContent">
-              <p class="tile--description">Celebrate fall and upcoming Halloween with National Pumpkin Day! The Halloween connection dates back to the 1800s.  The term “jack-o’-lantern” first appeared in 1837, while the idea of a carved pumpkin, specifically, originated in 1866.</p>
-
-              
-              <div class="tile--hashtags-wrapper">
-              
-                <div class="tile--hashtag-pill">
-                  <p>
-                    <span class="tile--hashtag-itself">#NationalPumpkinDay <span class="tile--hashtag-copy" data-hashtag="#NationalPumpkinDay">(<u>copy</u>)</span></span>
-                    <span class="tile--hashtag-outbound">View on <a href="https://www.instagram.com/explore/tags/NationalPumpkinDay/" target="_blank">Instagram</a></span>
-                  </p>
-                </div>
-              
-              </div>
-
-              
-
-            </div>
-          </div>
-        </div>
         
         <div class="tile">
           <div class="tile--icon"><img src="/assets/images/emojis/sun2.png" /></div>
